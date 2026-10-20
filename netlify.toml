@@ -1,0 +1,23 @@
+# Netlify 部署配置（Next.js 16 App Router）
+# 官方文档：https://docs.netlify.com/frameworks/next-js/overview/
+#
+# 说明：
+# - Next.js 运行时（@netlify/plugin-nextjs）由 Netlify 自动安装，这里不固定版本，
+#   以便持续获得适配器与安全修复。
+# - 依赖用项目自带的 bun.lock 安装，BUN_VERSION 固定版本保证可复现；
+#   若某天想改用 npm，把 command 换成 "npm run build" 即可（Netlify 会自动 npm install）。
+
+[build]
+  command = "bun install --frozen-lockfile && bun run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  BUN_VERSION = "1.3.5"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# 本地用 Netlify CLI 调试时：netlify dev
+[dev]
+  command = "bun run dev"
+  targetPort = 3000
+  port = 8888
