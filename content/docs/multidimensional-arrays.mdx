@@ -1,35 +1,35 @@
 ---
-title: Java Multidimensional Arrays
-description: Learn Java multidimensional arrays with examples. Understand 2D arrays, 3D arrays, initialization, and accessing elements in nested arrays.
+title: Java 多维数组
+description: 通过示例学习 Java 多维数组。了解二维数组、三维数组、初始化以及访问嵌套数组中的元素。
 icon: Layers
 ---
 
-Before we learn about the multidimensional array, make sure you know about Java array.
+在了解多维数组之前，请确保你已经了解 Java 数组。
 
-A multidimensional array is an array of arrays. Each element of a multidimensional array is an array itself. For example,
+多维数组就是数组的数组。多维数组的每个元素本身也是一个数组。例如，
 
 ```java
 int[][] a = new int[3][4];
 ```
 
-Here, we have created a multidimensional array named a. It is a 2-dimensional array, that can hold a maximum of 12 elements,
+这里，我们创建了一个名为 a 的多维数组。它是一个二维数组，最多可以容纳 12 个元素，
 
-[2-dimensional array in Java]
-2-dimensional Array
+[Java 中的二维数组]
+二维数组
 
-Remember, Java uses zero-based indexing, that is, indexing of arrays in Java starts with 0 and not 1.
+记住，Java 使用从零开始的索引，也就是说，Java 中数组的索引从 0 开始，而不是 1。
 
-Let's take another example of the multidimensional array. This time we will be creating a 3-dimensional array. For example,
+让我们再看一个多维数组的例子。这次我们将创建一个三维数组。例如，
 
 ```java
 String[][][] data = new String[3][4][2];
 ```
 
-Here, data is a 3d array that can hold a maximum of 24 (3*4*2) elements of type [String](/docs/string).
+这里，data 是一个三维数组，最多可以容纳 24（3*4*2）个 [String](/docs/string) 类型的元素。
 
-### How to initialize a 2d array in Java?
+### 如何在 Java 中初始化二维数组？
 
-Here is how we can initialize a 2-dimensional array in Java.
+以下是在 Java 中初始化二维数组的方法。
 
 ```java
 int[][] a = {
@@ -39,25 +39,25 @@ int[][] a = {
 };
 ```
 
-As we can see, each element of the multidimensional array is an array itself. And also, unlike C/C++, each row of the multidimensional array in Java can be of different lengths.
+如你所见，多维数组的每个元素本身也是一个数组。而且，与 C/C++ 不同，Java 中多维数组的每一行可以具有不同的长度。
 
-[2d array example in Java with variable length]
-Initialization of 2-dimensional Array
+[Java 中长度可变的二维数组示例]
+二维数组的初始化
 
-### Example: 2-dimensional Array
+### 示例：二维数组
 
 ```java
 class MultidimensionalArray {
     public static void main(String[] args) {
 
-        // create a 2d array
+        // 创建一个二维数组
         int[][] a = {
             {1, 2, 3},
             {4, 5, 6, 9},
             {7},
         };
 
-        // calculate the length of each row
+        // 计算每一行的长度
         System.out.println("Length of row 1: " + a[0].length);
         System.out.println("Length of row 2: " + a[1].length);
         System.out.println("Length of row 3: " + a[2].length);
@@ -65,7 +65,7 @@ class MultidimensionalArray {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Length of row 1: 3
@@ -73,11 +73,11 @@ Length of row 2: 4
 Length of row 3: 1
 ```
 
-In the above example, we are creating a multidimensional array named a. Since each component of a multidimensional array is also an array (`a[0]`,`a[1]` and `a[2]` are also arrays).
+在上面的示例中，我们创建了一个名为 a 的多维数组。由于多维数组的每个组成部分也是数组（`a[0]`、`a[1]` 和 `a[2]` 也是数组）。
 
-Here, we are using the `length` attribute to calculate the length of each row.
+这里，我们使用 `length` 属性来计算每一行的长度。
 
-### Example: Print all elements of 2d array Using Loop
+### 示例：使用循环打印二维数组的所有元素
 
 ```java
 class MultidimensionalArray {
@@ -98,7 +98,7 @@ class MultidimensionalArray {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 1
@@ -111,23 +111,23 @@ class MultidimensionalArray {
 7
 ```
 
-We can also use the [for...each loop](/docs/enhanced-for-loop) to access elements of the multidimensional array. For example,
+我们也可以使用 [for...each 循环](/docs/enhanced-for-loop) 来访问多维数组的元素。例如，
 
 ```java
 class MultidimensionalArray {
     public static void main(String[] args) {
 
-        // create a 2d array
+        // 创建一个二维数组
         int[][] a = {
             {1, -2, 3},
             {-4, -5, 6, 9},
             {7},
         };
 
-        // first for...each loop access the individual array
-        // inside the 2d array
+        // 第一个 for...each 循环访问二维数组中的
+        // 各个数组
         for (int[] innerArray: a) {
-            // second for...each loop access each element inside the row
+            // 第二个 for...each 循环访问该行中的每个元素
             for(int data: innerArray) {
                 System.out.println(data);
             }
@@ -136,7 +136,7 @@ class MultidimensionalArray {
 }
 ```
 
-Output:
+输出：
 
 ```plaintext
 1
@@ -149,14 +149,14 @@ Output:
 7
 ```
 
-In the above example, we are have created a 2d array named `a`. We then used `for` loop and `for...each` loop to access each element of the array.
+在上面的示例中，我们创建了一个名为 `a` 的二维数组。然后我们使用 `for` 循环和 `for...each` 循环来访问数组的每个元素。
 
-### How to initialize a 3d array in Java?
+### 如何在 Java 中初始化三维数组？
 
-Let's see how we can use a 3d array in Java. We can initialize a 3d array similar to the 2d array. For example,
+让我们看看如何在 Java 中使用三维数组。我们可以像初始化二维数组那样初始化三维数组。例如，
 
 ```java
-// test is a 3d array
+// test 是一个三维数组
 int[][][] test = {
         {
           {1, -2, 3},
@@ -170,15 +170,15 @@ int[][][] test = {
 };
 ```
 
-Basically, a 3d array is an array of 2d arrays. The rows of a 3d array can also vary in length just like in a 2d array.
+基本上，三维数组就是二维数组的数组。三维数组的每一行长度也可以像二维数组那样各不相同。
 
-### Example: 3-dimensional Array
+### 示例：三维数组
 
 ```java
 class ThreeArray {
     public static void main(String[] args) {
 
-        // create a 3d array
+        // 创建一个三维数组
         int[][][] test = {
             {
               {1, -2, 3},
@@ -191,7 +191,7 @@ class ThreeArray {
             }
         };
 
-        // for..each loop to iterate through elements of 3d array
+        // 用 for..each 循环遍历三维数组的元素
         for (int[][] array2D: test) {
             for (int[] array1D: array2D) {
                 for(int item: array1D) {
@@ -203,7 +203,7 @@ class ThreeArray {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 1

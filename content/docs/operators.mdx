@@ -1,66 +1,66 @@
 ---
-title: Java Operators
-description: Complete guide to Java operators with examples. Learn arithmetic, assignment, relational, logical, unary, bitwise operators and more.
+title: Java 运算符
+description: 附示例的 Java 运算符完整指南。学习算术、赋值、关系、逻辑、一元和位运算符等内容。
 icon: Calculator
 ---
 
-Operators are symbols that perform operations on variables and values. For example,`+` is an operator used for addition, while `*` is also an operator used for multiplication.
+运算符是对变量和值执行运算的符号。例如，`+` 是用于加法的运算符，而 `*` 也是用于乘法的运算符。
 
-Operators in Java can be classified into 5 types:
+Java 中的运算符可以分为 5 种类型：
 
-1. Arithmetic Operators
-2. Assignment Operators
-3. Relational Operators
-4. Logical Operators
-5. Unary Operators
-6. Bitwise Operators
+1. 算术运算符
+2. 赋值运算符
+3. 关系运算符
+4. 逻辑运算符
+5. 一元运算符
+6. 位运算符
 
-## 1. Java Arithmetic Operators
+## 1. Java 算术运算符
 
-Arithmetic operators are used to perform arithmetic operations on variables and data. For example,
+算术运算符用于对变量和数据进行算术运算。例如，
 
 ```java
 a + b;
 ```
 
-Here, the `+` operator is used to add two variables `a` and `b`. Similarly, there are various other arithmetic operators in Java.
+这里的 `+` 运算符用于把两个变量 `a` 和 `b` 相加。类似地，Java 中还有许多其他算术运算符。
 
-| Operator |                  Operation                   |
+| 运算符 |                   运算                   |
 | :------: | :------------------------------------------: |
-|  **+**   |                   Addition                   |
-|  **-**   |                 Substraction                 |
-|  **\***  |                Multiplication                |
-|  **/**   |                   Division                   |
-|  **%**   | Modulus Operation (Remainder after division) |
+|  **+**   |                   加法                   |
+|  **-**   |                 减法                 |
+|  **\***  |                乘法                |
+|  **/**   |                   除法                   |
+|  **%**   | 取模运算（除法后的余数） |
 
-#### Example 1: Arithmetic Operators
+#### 示例 1：算术运算符
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // declare variables
+    // 声明变量
     int a = 12, b = 5;
 
-    // addition operator
+    // 加法运算符
     System.out.println("a + b = " + (a + b));
 
-    // subtraction operator
+    // 减法运算符
     System.out.println("a - b = " + (a - b));
 
-    // multiplication operator
+    // 乘法运算符
     System.out.println("a * b = " + (a * b));
 
-    // division operator
+    // 除法运算符
     System.out.println("a / b = " + (a / b));
 
-    // modulo operator
+    // 取模运算符
     System.out.println("a % b = " + (a % b));
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 a + b = 17
@@ -70,13 +70,13 @@ a / b = 2
 a % b = 2
 ```
 
-In the above example, we have used `+`, `-`, and `*` operators to compute addition, subtraction, and multiplication operations.
+在上面的示例中，我们使用了 `+`、`-` 和 `*` 运算符来计算加法、减法和乘法运算。
 
-### / Division Operator
+### / 除法运算符
 
-Note the operation, `a / b` in our program. The `/` operator is the division operator.
+注意我们程序中的运算 `a / b`。`/` 运算符就是除法运算符。
 
-If we use the division operator with two integers, then the resulting quotient will also be an integer. And, if one of the operands is a floating-point number, we will get the result will also be in floating-point.
+如果我们对两个整数使用除法运算符，那么得到的商也会是一个整数。而如果其中一个操作数是浮点数，我们得到的结果也会是浮点数。
 
 ```java
 In Java,
@@ -87,30 +87,30 @@ In Java,
 (9.0 / 2.0) is 4.5
 ```
 
-### % Modulo Operator
+### % 取模运算符
 
-The modulo operator `%` computes the remainder. When `a = 7` is divided by `b = 4`, the remainder is **3**.
+取模运算符 `%` 计算余数。当 `a = 7` 除以 `b = 4` 时，余数是 **3**。
 
 <Callout>
 
-**Note**: The `%` operator is mainly used with integers.
+**注意**：`%` 运算符主要与整数一起使用。
 
 </Callout>
 
-## 2. Java Assignment Operators
+## 2. Java 赋值运算符
 
-Assignment operators are used in Java to assign values to variables. For example,
+赋值运算符在 Java 中用于给变量赋值。例如，
 
 ```java
 int age;
 age = 5;
 ```
 
-Here, = is the assignment operator. It assigns the value on its right to the variable on its left. That is, 5 is assigned to the variable age.
+这里，= 是赋值运算符。它把右侧的值赋给左侧的变量。也就是说，5 被赋给了变量 age。
 
-Let's see some more assignment operators available in Java.
+让我们再看看 Java 中可用的其他一些赋值运算符。
 
-| Operator | Example  | Equivalent to |
+| 运算符 | 示例  | 等价于 |
 | :------: | :------: | :-----------: |
 |    =     |  a = b;  |    a = b;     |
 |    +=    | a += b;  |  a = a + b;   |
@@ -119,32 +119,32 @@ Let's see some more assignment operators available in Java.
 |    /=    | a /= b;  |  a = a / b;   |
 |    %=    | a %= b;  |  a = a % b;   |
 
-#### Example 2: Assignment Operators
+#### 示例 2：赋值运算符
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // create variables
+    // 创建变量
     int a = 4;
     int var;
 
-    // assign value using =
+    // 使用 = 赋值
     var = a;
     System.out.println("var using =: " + var);
 
-    // assign value using =+
+    // 使用 =+ 赋值
     var += a;
     System.out.println("var using +=: " + var);
 
-    // assign value using =*
+    // 使用 =* 赋值
     var *= a;
     System.out.println("var using *=: " + var);
   }
 }
 ```
 
-Output
+输出
 
 ```plaintext
 var using =: 4
@@ -152,56 +152,56 @@ var using +=: 8
 var using *=: 32
 ```
 
-## 3. Java Relational Operators
+## 3. Java 关系运算符
 
-Relational operators are used to check the relationship between two operands. For example,
+关系运算符用于检查两个操作数之间的关系。例如，
 
 ```java
-// check is a is less than b
+// 检查 a 是否小于 b
 a < b;
 ```
 
-Here, `>` operator is the relational operator. It checks if `a` is less than `b` or not.
+这里，`>` 运算符是关系运算符。它检查 `a` 是否小于 `b`。
 
-It returns either true or false.
+它返回 true 或 false。
 
-| Operator |       Description        |        Example         |
+| 运算符 |       描述        |        示例         |
 | :------: | :----------------------: | :--------------------: |
-|    ==    |       Is Equal To        |  3 == 5 returns false  |
-|    !=    |       Not Equal To       |  3 != 5 returns true   |
-|   `>`    |       Greater Than       | 3 `>` 5 returns false  |
-|   `<`    |        Less Than         |  3 `<` 5 returns true  |
-|   `>=`   | Greater Than or Equal To | 3 `>=` 5 returns false |
-|   `<=`   |  Less Than or Equal To   | 3 `<=` 5 returns true  |
+|    ==    |       等于        |  3 == 5 返回 false  |
+|    !=    |       不等于       |  3 != 5 返回 true   |
+|   `>`    |       大于       | 3 `>` 5 返回 false  |
+|   `<`    |        小于         |  3 `<` 5 返回 true  |
+|   `>=`   | 大于或等于 | 3 `>=` 5 返回 false |
+|   `<=`   |  小于或等于  | 3 `<=` 5 返回 true  |
 
-#### Example 3: Relational Operators
+#### 示例 3：关系运算符
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // create variables
+    // 创建变量
     int a = 7, b = 11;
 
-    // value of a and b
+    // a 和 b 的值
     System.out.println("a is " + a + " and b is " + b);
 
-    // == operator
+    // == 运算符
     System.out.println(a == b);  // false
 
-    // != operator
+    // != 运算符
     System.out.println(a != b);  // true
 
-    // > operator
+    // > 运算符
     System.out.println(a > b);  // false
 
-    // < operator
+    // < 运算符
     System.out.println(a < b);  // true
 
-    // >= operator
+    // >= 运算符
     System.out.println(a >= b);  // false
 
-    // <= operator
+    // <= 运算符
     System.out.println(a <= b);  // true
   }
 }
@@ -211,127 +211,127 @@ class Main {
 
 <Callout>
 
-**Note**: Relational operators are used in decision making and loops.
+**注意**：关系运算符用于决策和循环中。
 
 </Callout>
 
-## 4. Java Logical Operators
+## 4. Java 逻辑运算符
 
-Logical operators are used to check whether an expression is true or false. They are used in decision making.
+逻辑运算符用于检查表达式为 true 还是 false。它们用于决策。
 
 <table>
   <thead>
     <tr>
-      <th>Operator</th>
-      <th>Example</th>
-      <th>Meaning</th>
+      <th>运算符</th>
+      <th>示例</th>
+      <th>含义</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>&&(Logical AND)</td>
+      <td>&&（逻辑与）</td>
       <td>expression1 && expression2 </td>
-      <td>true only if both expression1 and expression2 are true </td>
+      <td>仅当 expression1 和 expression2 都为 true 时才为 true </td>
     </tr>
     <tr>
-      <td>||(Logical OR)</td>
+      <td>||（逻辑或）</td>
       <td>expression1 || expression2</td>
-      <td>true if either expression1 or expression2 is</td>
+      <td>只要 expression1 或 expression2 中有一个为 true 就为 true</td>
     </tr>
     <tr>
-      <td>!(Logical NOT)</td>
+      <td>!（逻辑非）</td>
       <td>!expression</td>
-      <td>true if expression is false and vice versa</td>
+      <td>若 expression 为 false 则为 true，反之亦然</td>
     </tr>
   </tbody>
 </table>
 
-#### Example 4: Logical Operators
+#### 示例 4：逻辑运算符
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // && operator
+    // && 运算符
     System.out.println((5 > 3) && (8 > 5));  // true
     System.out.println((5 > 3) && (8 < 5));  // false
 
-    // || operator
+    // || 运算符
     System.out.println((5 < 3) || (8 > 5));  // true
     System.out.println((5 > 3) || (8 < 5));  // true
     System.out.println((5 < 3) || (8 < 5));  // false
 
-    // ! operator
+    // ! 运算符
     System.out.println(!(5 == 3));  // true
     System.out.println(!(5 > 3));  // false
   }
 }
 ```
 
-#### Working of Program
+#### 程序运行原理
 
-- (5 > 3) && (8 > 5) returns true because both (5 > 3) and (8 > 5) are true.
-- (5 > 3) && (8 < 5) returns false because the expression (8 < 5) is false.
-- (5 < 3) || (8 > 5) returns true because the expression (8 > 5) is true.
-- (5 > 3) && (8 > 5) returns true because the expression (5 > 3) is true.
-- (5 > 3) && (8 > 5) returns false because both (5 < 3) and (8 < 5) are false.
-- !(5 == 3) returns true because 5 == 3 is false.
-- !(5 > 3) returns false because 5 > 3 is true.
+- (5 > 3) && (8 > 5) 返回 true，因为 (5 > 3) 和 (8 > 5) 都为 true。
+- (5 > 3) && (8 < 5) 返回 false，因为表达式 (8 < 5) 为 false。
+- (5 < 3) || (8 > 5) 返回 true，因为表达式 (8 > 5) 为 true。
+- (5 > 3) && (8 > 5) 返回 true，因为表达式 (5 > 3) 为 true。
+- (5 > 3) && (8 > 5) 返回 false，因为 (5 < 3) 和 (8 < 5) 都为 false。
+- !(5 == 3) 返回 true，因为 5 == 3 为 false。
+- !(5 > 3) 返回 false，因为 5 > 3 为 true。
 
-## 5. Java Unary Operators
+## 5. Java 一元运算符
 
-Unary operators are used with only one operand. For example, ++ is a unary operator that increases the value of a variable by 1. That is, ++5 will return 6.
+一元运算符只与一个操作数一起使用。例如，++ 是一个一元运算符，它会把变量的值增加 1。也就是说，++5 将返回 6。
 
-Different types of unary operators are:
+不同类型的一元运算符包括：
 
-| Operator |                                   Meaning                                    |
+| 运算符 |                                   含义                                    |
 | :------: | :--------------------------------------------------------------------------: |
-|    +     | Unary plus: not necessary to use since numbers are positive without using it |
-|    -     |                Unary minus: inverts the sign of an expression                |
-|    ++    |                  Increment operator: increments value by 1                   |
-|    --    |                  Decrement operator: decrements value by 1                   |
-|    !     |         Logical complement operator: inverts the value of a boolean          |
+|    +     | 一元加：不必使用，因为数字不加它也是正数 |
+|    -     |                一元减：反转表达式的符号                |
+|    ++    |                  自增运算符：把值增加 1                   |
+|    --    |                  自减运算符：把值减少 1                   |
+|    !     |         逻辑补运算符：反转布尔值          |
 
-### Increment and Decrement Operators
+### 自增和自减运算符
 
-Java also provides increment and decrement operators: **++** and **- -** respectively. **++** increases the value of the operand by **1**, while **- -** decrease it by **1**. For example,
+Java 还提供了自增和自减运算符：分别是 **++** 和 **- -**。**++** 会把操作数的值增加 **1**，而 **- -** 会把它减少 **1**。例如，
 
 ```java
 int num = 5;
 
-// increase num by 1
+// 把 num 增加 1
 ++num;
 ```
 
-Here, the value of `num` gets increased to **6** from its initial value of **5**.
+这里，`num` 的值从初始的 **5** 增加到了 **6**。
 
-#### Example 5: Increment and Decrement Operators
+#### 示例 5：自增和自减运算符
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // declare variables
+    // 声明变量
     int a = 12, b = 12;
     int result1, result2;
 
-    // original value
+    // 原始值
     System.out.println("Value of a: " + a);
 
-    // increment operator
+    // 自增运算符
     result1 = ++a;
     System.out.println("After increment: " + result1);
 
     System.out.println("Value of b: " + b);
 
-    // decrement operator
+    // 自减运算符
     result2 = --b;
     System.out.println("After decrement: " + result2);
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Value of a: 12
@@ -340,13 +340,13 @@ Value of b: 12
 After decrement: 11
 ```
 
-In the above program, we have used the ++ and - - operator as **prefixes (++a, - -b)**. We can also use these operators as **postfix (a++, b++)**.
+在上面的程序中，我们把 ++ 和 - - 运算符用作 **前缀（++a, - -b）**。我们也可以把它们用作 **后缀（a++, b++）**。
 
-There is a slight difference when these operators are used as prefix versus when they are used as a postfix.
+这些运算符用作前缀时与用作后缀时有一点细微的差别。
 
-## 6. Java Bitwise Operators
+## 6. Java 位运算符
 
-Bitwise operators in Java are used to perform operations on individual bits. For example,
+Java 中的位运算符用于对各个位执行运算。例如，
 
 ```plaintext
 Bitwise complement Operation of 35
@@ -358,28 +358,28 @@ Bitwise complement Operation of 35
    11011100  = 220 (In decimal)
 ```
 
-Here, `~` is a bitwise operator. It inverts the value of each bit (**0** to **1** and **1** to **0**).
+这里，`~` 是一个位运算符。它会反转每一位的值（**0** 变 **1**，**1** 变 **0**）。
 
-The various bitwise operators present in Java are:
+Java 中存在的各种位运算符有：
 
-| Operator |     Description      |
+| 运算符 |     描述      |
 | :------: | :------------------: |
-|    ~     |  Bitwise Complement  |
-|   `<<`   |      Left Shift      |
-|    >>    |     Right Shift      |
-|   >>>    | Unsigned Right Shift |
-|    &     |     Bitwise AND      |
-|    ^     | Bitwise exclusive OR |
+|    ~     |  按位取反  |
+|   `<<`   |      左移      |
+|    >>    |     右移     |
+|   >>>    | 无符号右移 |
+|    &     |     按位与      |
+|    ^     | 按位异或 |
 
-These operators are not generally used in Java. To learn more, visit [Java Bitwise and Bit Shift Operators](/bitwise-and-bit-shift-operators-in-java).
+这些运算符在 Java 中一般不太常用。要了解更多内容，请访问 [Java 位运算与位移运算符](/bitwise-and-bit-shift-operators-in-java)。
 
-## 7. Other operators
+## 7. 其他运算符
 
-Besides these operators, there are other additional operators in Java.
+除了这些运算符之外，Java 中还有其他一些运算符。
 
-### Java instanceof Operator
+### Java instanceof 运算符
 
-The `instanceof` operator checks whether an object is an instanceof a particular class. For example,
+`instanceof` 运算符检查一个对象是否为某个特定类的实例。例如，
 
 ```java
 class Main {
@@ -388,35 +388,35 @@ class Main {
     String str = "";
     boolean result;
 
-    // checks if str is an instance of
-    // the String class
+    // 检查 str 是否为
+    // String 类的实例
     result = str instanceof String;
     System.out.println("Is str an object of String? " + result);
   }
 }
 ```
 
-Output
+输出
 
 ```plaintext
 Is str an object of String? true
 ```
 
-Here, str is an instance of the String class. Hence, the instanceof operator returns true. To learn more, visit Java instanceof.
+这里，str 是 String 类的一个实例。因此，instanceof 运算符返回 true。要了解更多内容，请访问 Java instanceof。
 
-### Java Ternary Operator
+### Java 三元运算符
 
-The ternary operator (conditional operator) is shorthand for the if-then-else statement. For example,
+三元运算符（条件运算符）是 if-then-else 语句的简写形式。例如，
 
 ```java
 variable = Expression ? expression1 : expression2
 ```
 
-Here's how it works.
+它的工作方式如下。
 
-- If the `Expression` is `true`, `expression1` is assigned to the `variable`.
-- If the `Expression` is `false`, `expression2` is assigned to the `variable`.
-  Let's see an example of a ternary operator.
+- 如果 `Expression` 为 `true`，则把 `expression1` 赋给 `variable`。
+- 如果 `Expression` 为 `false`，则把 `expression2` 赋给 `variable`。
+  让我们看一个三元运算符的例子。
 
 ```java
 class Java {
@@ -425,19 +425,19 @@ class Java {
     int februaryDays = 29;
     String result;
 
-    // ternary operator
+    // 三元运算符
     result = (februaryDays == 28) ? "Not a leap year" : "Leap year";
     System.out.println(result);
   }
 }
 ```
 
-Output
+输出
 
 ```plaintext
 Leap year
 ```
 
-In the above example, we have used the ternary operator to check if the year is a leap year or not. To learn more, visit the [Java ternary operator](/docs/operators#java-ternary-operator).
+在上面的示例中，我们使用三元运算符来检查某一年是否为闰年。要了解更多内容，请访问 [Java 三元运算符](/docs/operators#java-ternary-operator)。
 
-Now that you know about Java operators, it's time to know about the order in which operators are evaluated. To learn more, visit [Java Operator Precedence](/java-operator-precedence).
+现在你已经了解了 Java 运算符，接下来该了解运算符的求值顺序了。要了解更多内容，请访问 [Java 运算符优先级](/java-operator-precedence)。

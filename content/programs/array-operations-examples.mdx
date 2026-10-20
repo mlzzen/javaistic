@@ -1,46 +1,46 @@
 ---
-title: Java Program to Work with Arrays - Operations and Examples
-shortTitle: Array Operations
-description: Learn essential array operations in Java including initialization, searching, sorting, and manipulation with comprehensive examples and explanations.
+title: Java 程序：数组操作与示例
+shortTitle: 数组操作
+description: 通过全面的示例和讲解，学习 Java 中必要的数组操作，包括初始化、查找、排序和操作。
 ---
 
-In this program, you'll learn to work with arrays by performing common operations like initialization, searching, sorting, and manipulation.
+在这个程序中，你将通过执行初始化、查找、排序和操作等常见操作来学习使用数组。
 
-To understand this example, you should have the knowledge of the following Java programming topics:
+要理解这个示例，你应该了解以下 Java 编程主题：
 
-- [Java Arrays](/docs/arrays)
-- [Java for Loop](/docs/for-loop)
-- [Java Enhanced for Loop](/docs/enhanced-for-loop)
-- [Java Methods](/docs/methods)
+- [Java 数组](/docs/arrays)
+- [Java for 循环](/docs/for-loop)
+- [Java 增强 for 循环](/docs/enhanced-for-loop)
+- [Java 方法](/docs/methods)
 
-## Array Operations Program
+## 数组操作程序
 
-### Example 1: Basic Array Operations
+### 示例 1：基本的数组操作
 
 ```java
 class BasicArrayOperations {
     public static void main(String[] args) {
-        // Array initialization
+        // 数组初始化
         int[] numbers = {45, 23, 67, 12, 89, 34, 56};
 
         System.out.println("=== Original Array ===");
         printArray(numbers);
 
-        // Find maximum and minimum
+        // 查找最大值和最小值
         int max = findMaximum(numbers);
         int min = findMinimum(numbers);
 
         System.out.println("\nMaximum value: " + max);
         System.out.println("Minimum value: " + min);
 
-        // Calculate sum and average
+        // 计算总和与平均值
         int sum = calculateSum(numbers);
         double average = (double) sum / numbers.length;
 
         System.out.println("Sum: " + sum);
         System.out.println("Average: " + average);
 
-        // Search for specific elements
+        // 查找特定元素
         int searchValue = 67;
         int index = searchElement(numbers, searchValue);
 
@@ -51,7 +51,7 @@ class BasicArrayOperations {
         }
     }
 
-    // Method to print array
+    // 打印数组的方法
     static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
@@ -62,7 +62,7 @@ class BasicArrayOperations {
         System.out.println();
     }
 
-    // Method to find maximum value
+    // 查找最大值的方法
     static int findMaximum(int[] arr) {
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -73,7 +73,7 @@ class BasicArrayOperations {
         return max;
     }
 
-    // Method to find minimum value
+    // 查找最小值的方法
     static int findMinimum(int[] arr) {
         int min = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -84,7 +84,7 @@ class BasicArrayOperations {
         return min;
     }
 
-    // Method to calculate sum
+    // 计算总和的方法
     static int calculateSum(int[] arr) {
         int sum = 0;
         for (int num : arr) {
@@ -93,19 +93,19 @@ class BasicArrayOperations {
         return sum;
     }
 
-    // Method to search for an element
+    // 查找某个元素的方法
     static int searchElement(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
                 return i;
             }
         }
-        return -1; // Element not found
+        return -1; // 未找到元素
     }
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 === Original Array ===
@@ -119,7 +119,7 @@ Average: 46.57142857142857
 Element 67 found at index: 2
 ```
 
-### Example 2: Array Sorting and Manipulation
+### 示例 2：数组排序与操作
 
 ```java
 import java.util.Arrays;
@@ -131,26 +131,26 @@ class ArraySortingOperations {
         System.out.println("=== Original Array ===");
         printArray(numbers);
 
-        // Bubble sort implementation
+        // 冒泡排序实现
         int[] bubbleSorted = numbers.clone();
         bubbleSort(bubbleSorted);
         System.out.println("\n=== After Bubble Sort ===");
         printArray(bubbleSorted);
 
-        // Reverse array
+        // 反转数组
         int[] reversed = numbers.clone();
         reverseArray(reversed);
         System.out.println("\n=== Reversed Array ===");
         printArray(reversed);
 
-        // Find second largest element
+        // 查找第二大元素
         int secondLargest = findSecondLargest(numbers);
         System.out.println("\nSecond largest element: " + secondLargest);
 
-        // Count even and odd numbers
+        // 统计偶数和奇数的个数
         countEvenOdd(numbers);
 
-        // Using built-in sort
+        // 使用内置排序
         int[] builtInSorted = numbers.clone();
         Arrays.sort(builtInSorted);
         System.out.println("\n=== Built-in Sort Result ===");
@@ -168,13 +168,13 @@ class ArraySortingOperations {
         System.out.println("]");
     }
 
-    // Bubble sort implementation
+    // 冒泡排序实现
     static void bubbleSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    // Swap elements
+                    // 交换元素
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -183,7 +183,7 @@ class ArraySortingOperations {
         }
     }
 
-    // Reverse array
+    // 反转数组
     static void reverseArray(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
@@ -197,7 +197,7 @@ class ArraySortingOperations {
         }
     }
 
-    // Find second largest element
+    // 查找第二大元素
     static int findSecondLargest(int[] arr) {
         int largest = Integer.MIN_VALUE;
         int secondLargest = Integer.MIN_VALUE;
@@ -214,7 +214,7 @@ class ArraySortingOperations {
         return secondLargest;
     }
 
-    // Count even and odd numbers
+    // 统计偶数和奇数的个数
     static void countEvenOdd(int[] arr) {
         int evenCount = 0;
         int oddCount = 0;
@@ -233,7 +233,7 @@ class ArraySortingOperations {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 === Original Array ===
@@ -254,7 +254,7 @@ Odd numbers count: 3
 [11, 12, 22, 25, 34, 64, 90]
 ```
 
-### Example 3: Interactive Array Program
+### 示例 3：交互式数组程序
 
 ```java
 import java.util.Scanner;
@@ -268,7 +268,7 @@ class InteractiveArrayProgram {
 
         int[] numbers = new int[size];
 
-        // Input array elements
+        // 输入数组元素
         System.out.println("Enter " + size + " integers:");
         for (int i = 0; i < size; i++) {
             System.out.print("Element " + (i + 1) + ": ");
@@ -390,7 +390,7 @@ class InteractiveArrayProgram {
 }
 ```
 
-#### Sample Output:
+#### 示例输出：
 
 ```
 Enter the size of the array: 5
@@ -426,30 +426,30 @@ Choose an option: 2
 Maximum: 25
 ```
 
-## Key Array Operations Covered
+## 涵盖的关键数组操作
 
-1. **Array Declaration and Initialization**
-2. **Element Access and Modification**
-3. **Searching Algorithms** (Linear Search)
-4. **Sorting Algorithms** (Bubble Sort, Built-in Sort)
-5. **Array Traversal** (for loop, enhanced for loop)
-6. **Mathematical Operations** (sum, average, max, min)
-7. **Array Manipulation** (reverse, copy)
+1. **数组的声明与初始化**
+2. **元素访问与修改**
+3. **查找算法**（线性查找）
+4. **排序算法**（冒泡排序、内置排序）
+5. **数组遍历**（for 循环、增强 for 循环）
+6. **数学运算**（求和、平均值、最大值、最小值）
+7. **数组操作**（反转、复制）
 
-## Important Array Methods
+## 重要的数组方法
 
-- `Arrays.toString()` - Convert array to string
-- `Arrays.sort()` - Sort array using built-in algorithm
-- `Arrays.copyOf()` - Create a copy of array
-- `arr.length` - Get array length
-- `arr.clone()` - Create a shallow copy
+- `Arrays.toString()` - 将数组转换为字符串
+- `Arrays.sort()` - 使用内置算法对数组排序
+- `Arrays.copyOf()` - 创建数组的副本
+- `arr.length` - 获取数组长度
+- `arr.clone()` - 创建浅拷贝
 
-## Next Steps
+## 下一步
 
-Try extending these programs by:
+试着通过这些方式扩展这些程序：
 
-1. Implementing binary search for sorted arrays
-2. Working with 2D arrays (matrices)
-3. Creating array of objects
-4. Implementing more sorting algorithms
-5. Adding array comparison operations
+1. 为已排序的数组实现二分查找
+2. 使用二维数组（矩阵）
+3. 创建对象数组
+4. 实现更多排序算法
+5. 添加数组比较操作

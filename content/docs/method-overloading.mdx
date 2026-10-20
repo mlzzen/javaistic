@@ -1,13 +1,13 @@
 ---
-title: Java Method Overloading
-description: In this tutorial, we will learn how to implements methods overloading or function overloading in Java.
+title: Java 方法重载
+description: 在本教程中，我们将学习如何在 Java 中实现方法重载（函数重载）。
 ---
 
-## What is Method Overloading in Java?
+## Java 中的方法重载是什么？
 
-In Java, method overloading allows multiple methods with the same name but different parameter lists to coexist in the same class. This can involve variations in the number or types of parameters, or both. Overloaded methods provide flexibility by offering different ways to call a method, depending on the parameters passed.
+在 Java 中，方法重载允许多个同名但参数列表不同的方法共存于同一个类中。这可以是参数数量不同、参数类型不同，或者两者都不同。重载方法根据传入的参数提供了不同的调用方式，从而带来灵活性。
 
-### Example:
+### 示例：
 
 ```java
 void func() {}
@@ -16,24 +16,24 @@ float func(double a) {}
 float func(int a, float b) {}
 ```
 
-In this example, the `func()` method is overloaded with different parameter configurations. While the return types differ, this does not affect method overloading; overloading is purely based on parameters.
+在这个示例中，`func()` 方法以不同的参数配置被重载。虽然返回类型不同，但这并不影响方法重载；重载完全取决于参数。
 
-## Why Use Method Overloading?
+## 为什么使用方法重载？
 
-Consider the scenario where you need to sum numbers but could have different parameter requirements (e.g., 2 or 3 numbers). You could create separate methods like `sum2(int, int)` and `sum3(int, int, int)`. However, using method overloading allows a more readable approach by keeping the method name the same:
+设想一个场景：你需要对数字求和，但参数需求可能不同（例如 2 个或 3 个数字）。你可以分别创建 `sum2(int, int)` 和 `sum3(int, int, int)` 这样的方法。不过，使用方法重载可以让方法名保持一致，从而更易读：
 
 ```java
 int sum(int a, int b) { ... }
 int sum(int a, int b, int c) { ... }
 ```
 
-Here, `sum()` is overloaded to handle different numbers of arguments.
+这里，`sum()` 被重载，以处理不同数量的实参。
 
-## Performing Method Overloading in Java
+## 在 Java 中实现方法重载
 
-Method overloading can be achieved in two main ways:
+方法重载主要通过两种方式实现：
 
-### 1. Changing the Number of Parameters
+### 1. 改变参数数量
 
 ```java
 class MethodOverloading {
@@ -52,14 +52,14 @@ class MethodOverloading {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 Argument: 1
 Arguments: 1 and 4
 ```
 
-### 2. Changing the Parameter Data Type
+### 2. 改变参数的数据类型
 
 ```java
 class MethodOverloading {
@@ -78,16 +78,16 @@ class MethodOverloading {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 Got Integer data.
 Got String object.
 ```
 
-## Real-World Example
+## 实际应用示例
 
-In a utility class, you might use overloading to format numbers:
+在工具类中，你可能会用重载来格式化数字：
 
 ```java
 class HelperService {
@@ -112,7 +112,7 @@ class HelperService {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 500
@@ -120,14 +120,14 @@ class HelperService {
 550.00
 ```
 
-## Important Points
+## 要点
 
-- Method overloading requires methods with different parameters within the same class.
-- Overloading is achieved by varying either the number or type of parameters.
-- Changing only the return type does not constitute overloading; there must be a parameter difference.
+- 方法重载要求同一类中的方法具有不同的参数。
+- 重载通过改变参数的数量或类型来实现。
+- 只改变返回类型不构成重载；必须存在参数上的差异。
 
 <Callout>
 
-**Tip:** _Constructor overloading in Java works similarly to method overloading._
+**提示：** _Java 中的构造方法重载与方法重载的原理相同。_
 
 </Callout>

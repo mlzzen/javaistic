@@ -1,26 +1,26 @@
 ---
-title: Java Program to Swap Two Numbers
-shortTitle: Swap Two Numbers
-description: Learn different ways to swap two numbers in Java — using a temporary variable, arithmetic operations, and bitwise XOR — with clear examples and outputs.
+title: Java 程序：交换两个数
+shortTitle: 交换两个数
+description: 学习在 Java 中交换两个数的几种不同方式——使用临时变量、算术运算以及按位异或——并配有清晰的示例和输出。
 ---
 
-Swapping two numbers is a common beginner-friendly exercise in Java. Below are three simple ways to do it:
+交换两个数是 Java 中常见的入门练习。下面介绍三种简单的实现方式：
 
-- Using a temporary variable (safest and most readable)
-- Using arithmetic operations (beware of overflow for very large numbers)
-- Using bitwise XOR (no temp variable; works for integers)
+- 使用临时变量（最安全、最易读）
+- 使用算术运算（注意：数值非常大时可能溢出）
+- 使用按位异或（无需临时变量；适用于整数）
 
-Before you start, you may want to review:
+开始之前，你可以先复习：
 
-- [Java Variables and Literals](/docs/variables-and-literals)
-- [Java Operators](/docs/operators)
-- [Java Basic Input and Output](/docs/basic-input-output)
+- [Java 变量与字面量](/docs/variables-and-literals)
+- [Java 运算符](/docs/operators)
+- [Java 基础输入与输出](/docs/basic-input-output)
 
-## 1) Swap Using a Temporary Variable
+## 1) 使用临时变量交换
 
-This is the most straightforward and recommended approach.
+这是最直接、也是推荐的做法。
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -30,27 +30,27 @@ class Main {
 
     System.out.println("Before swap: a = " + a + ", b = " + b);
 
-    int temp = a; // store a
-    a = b;        // put b into a
-    b = temp;     // put original a into b
+    int temp = a; // 把 a 存起来
+    a = b;        // 把 b 放入 a
+    b = temp;     // 把原来的 a 放入 b
 
     System.out.println("After swap:  a = " + a + ", b = " + b);
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Before swap: a = 10, b = 20
 After swap:  a = 20, b = 10
 ```
 
-## 2) Swap Without Temp (Arithmetic)
+## 2) 不用临时变量交换（算术运算）
 
-Uses addition and subtraction. Note: This can overflow if the numbers are near the integer limits.
+使用加法和减法。注意：当数值接近整数上限时可能溢出。
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -60,27 +60,27 @@ class Main {
 
     System.out.println("Before swap: a = " + a + ", b = " + b);
 
-    a = a + b; // a becomes sum
-    b = a - b; // b becomes original a
-    a = a - b; // a becomes original b
+    a = a + b; // a 变成两数之和
+    b = a - b; // b 变成原来的 a
+    a = a - b; // a 变成原来的 b
 
     System.out.println("After swap:  a = " + a + ", b = " + b);
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Before swap: a = 15, b = 27
 After swap:  a = 27, b = 15
 ```
 
-## 3) Swap Using XOR (No Temp)
+## 3) 使用异或交换（不用临时变量）
 
-Works for integers and avoids extra memory, but is less readable for beginners.
+适用于整数，且不需要额外的内存，但对初学者来说可读性较差。
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -90,16 +90,16 @@ class Main {
 
     System.out.println("Before swap: a = " + a + ", b = " + b);
 
-    a = a ^ b; // Step 1
-    b = a ^ b; // Step 2: now b is original a
-    a = a ^ b; // Step 3: now a is original b
+    a = a ^ b; // 第 1 步
+    b = a ^ b; // 第 2 步：此时 b 是原来的 a
+    a = a ^ b; // 第 3 步：此时 a 是原来的 b
 
     System.out.println("After swap:  a = " + a + ", b = " + b);
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Before swap: a = 5, b = 9
@@ -108,8 +108,8 @@ After swap:  a = 9, b = 5
 
 ---
 
-### Which Method Should You Use?
+### 应该用哪种方式？
 
-- Prefer the temporary variable method for clarity and safety.
-- The arithmetic method can be a neat trick, but avoid it when values may overflow.
-- XOR is an interesting technique; use it only when it adds real value and readability is not sacrificed.
+- 为了清晰和安全，优先使用临时变量法。
+- 算术法是个不错的小技巧，但当数值可能溢出时应避免使用。
+- 异或是一种有趣的技巧；只有当它确实带来价值、且不牺牲可读性时才使用。

@@ -1,33 +1,33 @@
 ---
-title: Java final keyword
-description: In this tutorial, we will learn how to use the Java `final` keyword.
+title: Java final 关键字
+description: 在本教程中，我们将学习如何使用 Java 的 `final` 关键字。
 ---
 
-In Java, the `final` keyword is used to define constants and can be applied to variables, methods, and classes. Declaring an entity as `final` ensures it is only assigned once, meaning:
+在 Java 中，`final` 关键字用于定义常量，可以用于变量、方法和类。把某个实体声明为 `final` 就能确保它只被赋值一次，这意味着：
 
-- A `final` variable cannot be reassigned.
-- A `final` method cannot be overridden.
-- A `final` class cannot be subclassed.
+- `final` 变量不能被重新赋值。
+- `final` 方法不能被重写。
+- `final` 类不能被继承（不能有子类）。
 
-## 1. final Variable in Java
+## 1. Java 中的 final 变量
 
-A `final` variable cannot have its value changed once it has been assigned. For instance:
+`final` 变量一旦被赋值，它的值就不能再改变。例如：
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // create a final variable
+    // 创建一个 final 变量
     final int AGE = 32;
 
-    // attempt to change the final variable
+    // 尝试修改 final 变量
     AGE = 45;
     System.out.println("Age: " + AGE);
   }
 }
 ```
 
-In this example, the variable `AGE` is marked `final`, meaning its value cannot be changed after its initial assignment. Attempting to reassign it will result in a compilation error:
+在这个示例中，变量 `AGE` 被标记为 `final`，意味着它在首次赋值后值不能再改变。尝试重新赋值会导致编译错误：
 
 ```plaintext
 cannot assign a value to final variable AGE
@@ -35,25 +35,24 @@ cannot assign a value to final variable AGE
     ^
 ```
 
-<Callout title="Note">
-  The `final` keyword is often used to define constants in Java, which are
-  typically named in uppercase letters.
+<Callout title="注意">
+  Java 中的 `final` 关键字常用于定义常量，常量通常用大写字母命名。
 </Callout>
 
-## 2. final Method in Java
+## 2. Java 中的 final 方法
 
-A `final` method cannot be overridden by subclasses. For example:
+`final` 方法不能被子类重写。例如：
 
 ```java
 class FinalDemo {
-    // define a final method
+    // 定义一个 final 方法
     public final void display() {
       System.out.println("This is a final method.");
     }
 }
 
 class Main extends FinalDemo {
-  // attempt to override the final method
+  // 尝试重写 final 方法
   public final void display() {
     System.out.println("The final method is overridden.");
   }
@@ -65,28 +64,28 @@ class Main extends FinalDemo {
 }
 ```
 
-Here, the `display()` method in the `FinalDemo` class is `final`, so it cannot be overridden in the `Main` class. Attempting to do so will generate a compilation error:
+这里，`FinalDemo` 类中的 `display()` 方法是 `final` 的，因此不能在 `Main` 类中被重写。尝试这样做会产生编译错误：
 
-```plaintext title="Compilation Error" icon="<Atom/>"
+```plaintext title="编译错误" icon="<Atom/>"
 display() in Main cannot override display() in FinalDemo
   public final void display() {
                     ^
   overridden method is final
 ```
 
-## 3. final Class in Java
+## 3. Java 中的 final 类
 
-A `final` class cannot be extended by any other class. For example:
+`final` 类不能被任何其他类继承。例如：
 
 ```java
-// define a final class
+// 定义一个 final 类
 final class FinalClass {
   public void display() {
     System.out.println("This is a final method.");
   }
 }
 
-// attempt to extend the final class
+// 尝试继承 final 类
 class Main extends FinalClass {
   public void display() {
     System.out.println("The final method is overridden.");
@@ -99,7 +98,7 @@ class Main extends FinalClass {
 }
 ```
 
-In this example, `FinalClass` is declared `final`, so it cannot be subclassed by `Main`. Attempting to inherit from it will result in a compilation error:
+在这个示例中，`FinalClass` 被声明为 `final`，因此 `Main` 不能继承它。尝试继承它会导致编译错误：
 
 ```plaintext
 cannot inherit from final FinalClass

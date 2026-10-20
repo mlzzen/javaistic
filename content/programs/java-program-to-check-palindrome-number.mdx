@@ -1,32 +1,32 @@
 ---
-title: Java Program to Check Palindrome Number
+title: 用 Java 判断回文数
 
-shortTitle: Check Palindrome Number
+shortTitle: 判断回文数
 
-description: Learn how to check if a number is a palindrome in Java using digit reversal and string comparison methods with clear examples.
+description: 学习如何在 Java 中通过数字反转和字符串比较两种方法判断一个数是否为回文数，并配有清晰的示例。
 
 ---
 
-A palindrome number reads the same forwards and backwards (e.g., 121, 1331, 7). In this article, we'll implement two approaches to check if a number is a palindrome:
+回文数正着读和倒着读都一样（例如 121、1331、7）。本文中，我们将实现两种判断一个数是否为回文数的方法：
 
-- Reverse the number and compare with original
-- Convert to string and compare with its reverse
-
-
-
-Before you start, you may want to review:
-
-- [Java Variables and Literals](/docs/variables-and-literals)
-- [Java Operators](/docs/operators)
-- [Java Basic Input and Output](/docs/basic-input-output)
-
-## 1) Mathematical Approach (Reverse Number)
-
-This method reverses the number mathematically by extracting digits.
+- 反转该数并与原数比较
+- 转换为字符串并与它的反转结果比较
 
 
 
-### Example
+开始之前，你可以先复习：
+
+- [Java 变量与字面量](/docs/variables-and-literals)
+- [Java 运算符](/docs/operators)
+- [Java 基础输入与输出](/docs/basic-input-output)
+
+## 1）数学方法（反转数字）
+
+这种方法通过提取各位数字，用数学方式反转该数。
+
+
+
+### 示例
 
 ```java
 class Main {
@@ -46,10 +46,10 @@ class Main {
     int original = num;
     int reversed = 0;
 
-    // Handle negative numbers
+    // 处理负数
     if (num < 0) return false;
 
-    // Reverse the number
+    // 反转数字
     while (num > 0) {
       int digit = num % 10;
       reversed = reversed * 10 + digit;
@@ -62,18 +62,18 @@ class Main {
 
 ```
 
-#### Output (for num = 121)
+#### 输出（num = 121）
 ```plaintext
 121 is a palindrome number.
 ```
 
-## 2) String Comparison Approach
+## 2）字符串比较方法
 
-Convert the number to string and compare with its reverse.
+把数字转换成字符串，再与它的反转结果比较。
 
 
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -90,7 +90,7 @@ class Main {
 
 
   static boolean isPalindromeString(int num) {
-    // Handle negative numbers
+    // 处理负数
     if (num < 0) return false;
 
     String original = String.valueOf(num);
@@ -102,18 +102,18 @@ class Main {
 
 ```
 
-#### Output (for num = 1234)
+#### 输出（num = 1234）
 ```plaintext
 1234 is not a palindrome number.
 ```
 
-## 3) Interactive Program
+## 3）交互式程序
 
-A complete program that takes user input and tests multiple numbers.
+一个接收用户输入并测试多个数字的完整程序。
 
 
 
-### Example
+### 示例
 
 ```java
 import java.util.Scanner;
@@ -127,11 +127,11 @@ class Main {
 
     System.out.println("\nChecking " + num + "...");
 
-    // Method 1: Mathematical approach
+    // 方法 1：数学方法
     boolean result1 = isPalindromeMath(num);
     System.out.println("Mathematical method: " + (result1 ? "Palindrome" : "Not palindrome"));
 
-    // Method 2: String approach
+    // 方法 2：字符串方法
     boolean result2 = isPalindromeString(num);
     System.out.println("String method: " + (result2 ? "Palindrome" : "Not palindrome"));
 
@@ -159,7 +159,7 @@ class Main {
 
 ```
 
-#### Sample Output
+#### 示例输出
 
 ```plaintext
 Enter a number to check: 12321
@@ -171,9 +171,10 @@ String method: Palindrome
 
 ---
 
-### Notes & Tips
+### 说明与提示
 
-- **Performance**: Mathematical approach is generally faster as it avoids string operations
-- **Edge cases**: Negative numbers are typically not considered palindromes
-- **Common palindromes**: 0, 1, 11, 22, 101, 121, 131, 1001, 1221, etc.
-- **Memory**: Mathematical approach uses O(1) space, string approach uses O(log n) space
+- **性能**：数学方法通常更快，因为它避免了字符串操作
+- **边界情况**：负数通常不被视为回文数
+- **常见回文数**：0、1、11、22、101、121、131、1001、1221 等
+- **内存**：数学方法使用 O(1) 空间，字符串方法使用 O(log n) 空间
+

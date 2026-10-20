@@ -1,38 +1,38 @@
 ---
-title: Java Interfaces
-description: Complete guide to Java interfaces with examples. Learn interface declaration, implementation, multiple inheritance, default methods, and interface vs abstract class.
+title: Java 接口
+description: 通过示例完整讲解 Java 接口。学习接口声明、实现、多重继承、默认方法，以及接口与抽象类的对比。
 icon: Network
 ---
 
-An interface in Java is a reference type that defines a contract of methods that a class must implement. Interfaces are used to achieve abstraction and multiple inheritance in Java, providing a way to specify what a class must do without defining how it should do it.
+Java 中的接口是一种引用类型，它定义了一组类必须实现的方法契约。接口用于在 Java 中实现抽象和多重继承，它让你能够规定一个类必须做什么，而不规定它应该怎么做。
 
-## What is an Interface?
+## 什么是接口？
 
-An interface is a collection of abstract methods (methods without implementation) and constants. It defines a contract that implementing classes must follow. Think of an interface as a blueprint that specifies what methods a class should have.
+接口是一组抽象方法（没有实现的方法）和常量的集合。它定义了一份实现类必须遵守的契约。你可以把接口理解为一套蓝图，规定了类应该具备哪些方法。
 
-### Basic Interface Syntax
+### 基本接口语法
 
 ```java
 interface InterfaceName {
-    // Constant declarations (public, static, final by default)
+    // 常量声明（默认是 public、static、final）
     int CONSTANT_VALUE = 100;
 
-    // Abstract method declarations (public and abstract by default)
+    // 抽象方法声明（默认是 public 和 abstract）
     void method1();
     int method2(String parameter);
 }
 ```
 
-## Creating and Implementing Interfaces
+## 创建与实现接口
 
-### Example: Basic Interface
+### 示例：基础接口
 
 ```java
 interface Animal {
-    // Constants (implicitly public, static, final)
+    // 常量（隐式地是 public、static、final）
     String KINGDOM = "Animalia";
 
-    // Abstract methods (implicitly public and abstract)
+    // 抽象方法（隐式地是 public 和 abstract）
     void makeSound();
     void move();
     void eat();
@@ -92,11 +92,11 @@ class Main {
 }
 ```
 
-## Multiple Inheritance with Interfaces
+## 使用接口实现多重继承
 
-Java doesn't support multiple inheritance of classes, but it supports multiple inheritance through interfaces. A class can implement multiple interfaces.
+Java 不支持类的多重继承，但支持通过接口实现多重继承。一个类可以实现多个接口。
 
-### Example: Multiple Interface Implementation
+### 示例：实现多个接口
 
 ```java
 interface Flyable {
@@ -122,7 +122,7 @@ class Duck implements Flyable, Swimmable, Walkable {
 
     @Override
     public int getMaxAltitude() {
-        return 1000; // meters
+        return 1000; // 米
     }
 
     @Override
@@ -132,7 +132,7 @@ class Duck implements Flyable, Swimmable, Walkable {
 
     @Override
     public int getMaxDepth() {
-        return 2; // meters
+        return 2; // 米
     }
 
     @Override
@@ -142,7 +142,7 @@ class Duck implements Flyable, Swimmable, Walkable {
 
     @Override
     public int getMaxSpeed() {
-        return 8; // km/h
+        return 8; // 公里/小时
     }
 }
 
@@ -154,7 +154,7 @@ class Penguin implements Swimmable, Walkable {
 
     @Override
     public int getMaxDepth() {
-        return 500; // meters
+        return 500; // 米
     }
 
     @Override
@@ -164,7 +164,7 @@ class Penguin implements Swimmable, Walkable {
 
     @Override
     public int getMaxSpeed() {
-        return 5; // km/h
+        return 5; // 公里/小时
     }
 }
 
@@ -187,9 +187,9 @@ class AnimalShowcase {
 }
 ```
 
-## Interface Inheritance
+## 接口继承
 
-Interfaces can extend other interfaces using the `extends` keyword.
+接口可以使用 `extends` 关键字继承其他接口。
 
 ```java
 interface Vehicle {
@@ -259,24 +259,24 @@ class AmphibiousCar implements AmphibiousVehicle {
 }
 ```
 
-## Default Methods (Java 8+)
+## 默认方法（Java 8+）
 
-Since Java 8, interfaces can have default methods with implementation. This allows adding new methods to interfaces without breaking existing implementations.
+从 Java 8 开始，接口可以有带实现的默认方法。这样就能给接口添加新方法，而不会破坏已有的实现类。
 
 ```java
 interface Drawable {
-    // Abstract method
+    // 抽象方法
     void draw();
 
-    // Default method
+    // 默认方法
     default void print() {
         System.out.println("Printing: " + this.getClass().getSimpleName());
     }
 
-    // Default method with logic
+    // 带逻辑的默认方法
     default void displayInfo() {
         System.out.println("This is a drawable object");
-        draw(); // Calling abstract method
+        draw(); // 调用抽象方法
     }
 }
 
@@ -323,7 +323,7 @@ class Rectangle implements Drawable, Colorable {
         return color;
     }
 
-    // Overriding default method
+    // 重写默认方法
     @Override
     public void print() {
         System.out.println("Custom printing for rectangle");
@@ -337,28 +337,28 @@ class DefaultMethodExample {
 
         System.out.println("=== Circle ===");
         circle.draw();
-        circle.print(); // Using default method
-        circle.displayInfo(); // Using default method
+        circle.print(); // 使用默认方法
+        circle.displayInfo(); // 使用默认方法
         System.out.println("Color: " + circle.getColor());
 
         System.out.println("\n=== Rectangle ===");
         rectangle.draw();
-        rectangle.print(); // Using overridden method
-        rectangle.paintWithColor("Green"); // Using default method from Colorable
+        rectangle.print(); // 使用重写后的方法
+        rectangle.paintWithColor("Green"); // 使用 Colorable 中的默认方法
     }
 }
 ```
 
-## Static Methods in Interfaces (Java 8+)
+## 接口中的静态方法（Java 8+）
 
-Interfaces can also have static methods that belong to the interface itself.
+接口还可以有静态方法，这些方法属于接口本身。
 
 ```java
 interface MathUtils {
-    // Abstract method
+    // 抽象方法
     double calculate();
 
-    // Static method
+    // 静态方法
     static double add(double a, double b) {
         return a + b;
     }
@@ -385,17 +385,17 @@ class Calculator implements MathUtils {
     }
 
     public void add(double value) {
-        result = MathUtils.add(result, value); // Using static method
+        result = MathUtils.add(result, value); // 使用静态方法
     }
 
     public void multiply(double value) {
-        result = MathUtils.multiply(result, value); // Using static method
+        result = MathUtils.multiply(result, value); // 使用静态方法
     }
 }
 
 class StaticMethodExample {
     public static void main(String[] args) {
-        MathUtils.printWelcome(); // Calling static method directly
+        MathUtils.printWelcome(); // 直接调用静态方法
 
         Calculator calc = new Calculator(10);
         calc.add(5);
@@ -403,7 +403,7 @@ class StaticMethodExample {
 
         System.out.println("Result: " + calc.calculate());
 
-        // Using static methods directly
+        // 直接使用静态方法
         double sum = MathUtils.add(10, 20);
         double product = MathUtils.multiply(5, 6);
         System.out.println("Sum: " + sum + ", Product: " + product);
@@ -411,20 +411,20 @@ class StaticMethodExample {
 }
 ```
 
-## Real-World Example: Payment System
+## 实战示例：支付系统
 
 ```java
 interface PaymentProcessor {
-    // Constants
+    // 常量
     double MAX_TRANSACTION_AMOUNT = 10000.0;
     String CURRENCY = "USD";
 
-    // Abstract methods
+    // 抽象方法
     boolean processPayment(double amount);
     String getPaymentMethod();
     double getTransactionFee(double amount);
 
-    // Default method
+    // 默认方法
     default boolean isValidAmount(double amount) {
         return amount > 0 && amount <= MAX_TRANSACTION_AMOUNT;
     }
@@ -433,7 +433,7 @@ interface PaymentProcessor {
         System.out.println("Transaction logged: " + amount + " " + CURRENCY);
     }
 
-    // Static method
+    // 静态方法
     static String formatCurrency(double amount) {
         return String.format("%.2f %s", amount, CURRENCY);
     }
@@ -478,7 +478,7 @@ class CreditCardProcessor implements PaymentProcessor, SecurePayment {
 
     @Override
     public double getTransactionFee(double amount) {
-        return amount * 0.03; // 3% fee
+        return amount * 0.03; // 3% 手续费
     }
 
     @Override
@@ -525,7 +525,7 @@ class PayPalProcessor implements PaymentProcessor, SecurePayment {
 
     @Override
     public double getTransactionFee(double amount) {
-        return amount * 0.025; // 2.5% fee
+        return amount * 0.025; // 2.5% 手续费
     }
 
     @Override
@@ -571,21 +571,21 @@ class PaymentSystem {
 }
 ```
 
-## Interface vs Abstract Class
+## 接口与抽象类
 
-| Feature              | Interface                                      | Abstract Class                              |
+| 特性              | 接口                                      | 抽象类                              |
 | -------------------- | ---------------------------------------------- | ------------------------------------------- |
-| **Methods**          | Abstract by default (can have default/static)  | Can have both abstract and concrete methods |
-| **Variables**        | Only constants (public, static, final)         | Can have instance variables                 |
-| **Inheritance**      | Multiple inheritance supported                 | Single inheritance only                     |
-| **Constructor**      | Cannot have constructors                       | Can have constructors                       |
-| **Access Modifiers** | Methods are public by default                  | Can have any access modifier                |
-| **When to Use**      | Define contracts, achieve multiple inheritance | Share code among related classes            |
+| **方法**          | 默认是抽象的（可以有 default/static 方法）  | 可以同时有抽象方法和具体方法 |
+| **变量**        | 只能是常量（public、static、final）         | 可以有实例变量                 |
+| **继承**      | 支持多重继承                 | 只支持单继承                     |
+| **构造方法**      | 不能有构造方法                       | 可以有构造方法                       |
+| **访问修饰符** | 方法默认是 public                  | 可以使用任意访问修饰符                |
+| **使用场景**      | 定义契约、实现多重继承 | 在相关的类之间共享代码            |
 
-### Example: When to Use Interface vs Abstract Class
+### 示例：何时用接口，何时用抽象类
 
 ```java
-// Use Interface: Define contract for unrelated classes
+// 使用接口：为互不相关的类定义契约
 interface Printable {
     void print();
 }
@@ -598,7 +598,7 @@ class Photo implements Printable {
     public void print() { System.out.println("Printing photo"); }
 }
 
-// Use Abstract Class: Share common code among related classes
+// 使用抽象类：在相关的类之间共享通用代码
 abstract class Shape {
     protected String color;
 
@@ -606,12 +606,12 @@ abstract class Shape {
         this.color = color;
     }
 
-    // Concrete method
+    // 具体方法
     public void setColor(String color) {
         this.color = color;
     }
 
-    // Abstract method
+    // 抽象方法
     public abstract double getArea();
 }
 
@@ -630,12 +630,12 @@ class Circle extends Shape {
 }
 ```
 
-## Best Practices for Interfaces
+## 接口的最佳实践
 
-### 1. Keep Interfaces Focused
+### 1. 保持接口职责集中
 
 ```java
-// Good: Single responsibility
+// 好：单一职责
 interface FileReader {
     String readFile(String path);
 }
@@ -644,62 +644,62 @@ interface FileWriter {
     void writeFile(String path, String content);
 }
 
-// Avoid: Too many responsibilities
+// 避免：职责过多
 interface FileHandler {
     String readFile(String path);
     void writeFile(String path, String content);
     void deleteFile(String path);
     void copyFile(String source, String dest);
-    // ... many more methods
+    // …… 还有更多方法
 }
 ```
 
-### 2. Use Default Methods Carefully
+### 2. 谨慎使用默认方法
 
 ```java
 interface Sortable {
     void sort();
 
-    // Good: Providing useful default behavior
+    // 好：提供有用的默认行为
     default void sortDescending() {
         sort();
         reverse();
     }
 
     private void reverse() {
-        // Helper method implementation
+        // 辅助方法实现
     }
 }
 ```
 
-### 3. Design for Extension
+### 3. 为扩展而设计
 
 ```java
 interface EventHandler<T> {
     void handle(T event);
 
-    // Allows for future extension without breaking existing code
+    // 允许将来扩展，而不会破坏现有代码
     default boolean canHandle(T event) {
         return true;
     }
 }
 ```
 
-## Key Points to Remember
+## 需要记住的要点
 
-- **Interfaces** define contracts that classes must implement
-- All methods in interfaces are **public and abstract** by default (before Java 8)
-- Interface variables are **public, static, and final** by default
-- Classes can implement **multiple interfaces** (multiple inheritance)
-- Interfaces can **extend other interfaces**
-- **Default methods** (Java 8+) provide implementations in interfaces
-- **Static methods** in interfaces belong to the interface itself
-- Use interfaces for **contracts** and abstract classes for **shared implementation**
-- Interfaces promote **loose coupling** and **high cohesion**
-- **Polymorphism** works seamlessly with interfaces
+- **接口**定义了类必须实现的契约
+- 在 Java 8 之前，接口中的所有方法默认都是 **public 和 abstract**
+- 接口变量默认是 **public、static 和 final**
+- 类可以实现**多个接口**（多重继承）
+- 接口可以**继承其他接口**
+- **默认方法**（Java 8+）在接口中提供实现
+- 接口中的**静态方法**属于接口本身
+- 用接口定义**契约**，用抽象类共享**实现**
+- 接口有助于实现**松耦合**和**高内聚**
+- **多态**可以与接口无缝配合
 
 <Callout>
 
-**Best Practice:** Program to interfaces, not implementations. This makes your code more flexible, testable, and maintainable.
+**最佳实践：** 面向接口编程，而不是面向实现编程。这样你的代码会更灵活、更易测试、也更易维护。
 
 </Callout>

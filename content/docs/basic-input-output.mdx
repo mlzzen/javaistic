@@ -1,12 +1,12 @@
 ---
-title: Java Basic Input and Output
-description: Complete guide to Java input/output with examples. Learn System.out.println, Scanner class, print vs println, and user input techniques.
+title: Java 基础输入与输出
+description: 附示例的 Java 输入/输出完整指南。学习 System.out.println、Scanner 类、print 与 println 的区别，以及获取用户输入的技巧。
 icon: Terminal
 ---
 
-## Java Output
+## Java 输出
 
-In Java, you can simply use
+在 Java 中，你可以简单地使用
 
 ```java
 System.out.println(); or
@@ -16,16 +16,16 @@ System.out.print(); or
 System.out.printf();
 ```
 
-to send output to standard output (screen).
+把输出发送到标准输出（屏幕）。
 
-Here,
+这里，
 
-- `System` is a class
-- `out` is a `public` `static` field: it accepts output data.
+- `System` 是一个类
+- `out` 是一个 `public` `static` 字段：它接收输出数据。
 
-Don't worry if you don't understand it. We will discuss `class`, `public`, and `static` in later chapters.
+如果你不理解也没关系。我们会在后面的章节中讨论 `class`、`public` 和 `static`。
 
-Let's take an example to output a line.
+让我们看一个输出一行文本的例子。
 
 ```java
 class AssignmentOperator {
@@ -36,21 +36,21 @@ class AssignmentOperator {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Java programming is interesting.
 ```
 
-Here, we have used the `println()` method to display the string.
+这里，我们使用了 `println()` 方法来显示这个字符串。
 
-## Difference between println(), print() and printf()
+## println()、print() 和 printf() 的区别
 
-- `print()` - It prints string inside the quotes.
-- `println()` - It prints string inside the quotes similar like `print()` method. Then the cursor moves to the beginning of the next line.
-- `printf()` - It provides string formatting.
+- `print()` - 它打印引号内的字符串。
+- `println()` - 它和 `print()` 方法一样打印引号内的字符串。之后光标会移动到下一行的开头。
+- `printf()` - 它提供字符串格式化功能。
 
-### Example: print() and println()
+### 示例：print() 和 println()
 
 ```java
 class Output {
@@ -65,7 +65,7 @@ class Output {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 1. println
@@ -73,9 +73,9 @@ class Output {
 1. print 2. print
 ```
 
-In the above example, we have shown the working of the `print()` and `println()` methods. To learn about the `printf()` method, visit Java [**printf()**](https://www.cs.colostate.edu/~cs160/.Summer16/resources/Java_printf_method_quick_reference.pdf).
+在上面的示例中，我们展示了 `print()` 和 `println()` 方法的工作方式。要了解 `printf()` 方法，请访问 Java [**printf()**](https://www.cs.colostate.edu/~cs160/.Summer16/resources/Java_printf_method_quick_reference.pdf)。
 
-### Example: Printing Variables and Literals
+### 示例：打印变量和字面量
 
 ```java
 class Variables {
@@ -89,16 +89,16 @@ class Variables {
 }
 ```
 
-When you run the program, the output will be:
+运行程序时，输出将是：
 
 ```plaintext
 5
 -10.6
 ```
 
-Here, you can see that we have not used the quotation marks. It is because to display integers, variables and so on, we don't use quotation marks.
+这里你可以看到，我们没有使用引号。这是因为要显示整数、变量等内容时，我们不使用引号。
 
-### Example: Print Concatenated Strings
+### 示例：打印拼接的字符串
 
 ```java
 class PrintVariables {
@@ -112,52 +112,52 @@ class PrintVariables {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```java
 I am awesome.
 Number = -10.6
 ```
 
-In the above example, notice the line,
+在上面的示例中，请注意这一行，
 
 ```java
 System.out.println("I am " + "awesome.");
 ```
 
-Here, we have used the + operator to concatenate (join) the two strings: `"I am "` and `"awesome."`.
+这里，我们使用了 + 运算符来拼接（连接）两个字符串：`"I am "` 和 `"awesome."`。
 
-And also, the line,
+此外，还有这一行，
 
 ```java
 System.out.println("Number = " + number);
 ```
 
-Here, first the value of variable `number` is evaluated. Then, the value is concatenated to the string: `"Number = "`.
+这里，首先对变量 `number` 的值求值。然后，把这个值与字符串 `"Number = "` 拼接起来。
 
-## Java Input
+## Java 输入
 
-Java provides different ways to get input from the user. However, in this tutorial, you will learn to get input from user using the object of `Scanner` class.
+Java 提供了多种从用户那里获取输入的方式。不过，在本教程中，你将学习使用 `Scanner` 类的对象来获取用户输入。
 
-In order to use the object of `Scanner`, we need to import `java.util.Scanner` package.
+为了使用 `Scanner` 的对象，我们需要导入 `java.util.Scanner` 包。
 
 ```java
 import java.util.Scanner;
 ```
 
-To learn more about importing packages in Java, visit [Java Import Packages]().
+要了解更多关于在 Java 中导入包的内容，请访问 [Java 导入包]()。
 
-Then, we need to create an object of the `Scanner` class. We can use the object to take input from the user.
+然后，我们需要创建 `Scanner` 类的对象。我们可以用这个对象来接收用户的输入。
 
 ```java
-// create an object of Scanner
+// 创建 Scanner 的对象
 Scanner input = new Scanner(System.in);
 
-// take input from the user
+// 接收用户的输入
 int number = input.nextInt();
 ```
 
-### Example: Get Integer Input From the User
+### 示例：从用户处获取整数输入
 
 ```java
 import java.util.Scanner;
@@ -171,29 +171,28 @@ class Input {
         int number = input.nextInt();
         System.out.println("You entered " + number);
 
-        // closing the scanner object
+        // 关闭 scanner 对象
         input.close();
     }
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Enter an integer: 23
 You entered 23
 ```
 
-In the above example, we have created an object named `input` of the `Scanner` class. We then call the `nextInt()` method of the `Scanner` class to get an integer input from the user.
+在上面的示例中，我们创建了一个名为 `input` 的 `Scanner` 类对象。然后我们调用 `Scanner` 类的 `nextInt()` 方法来获取用户输入的整数。
 
-Similarly, we can use `nextLong()`, `nextFloat()`, `nextDouble()`, and `next()` methods to get `long`, `float`, `double`, and `string` input respectively from the user.
+类似地，我们可以使用 `nextLong()`、`nextFloat()`、`nextDouble()` 和 `next()` 方法，分别从用户那里获取 `long`、`float`、`double` 和 `string` 类型的输入。
 
 <Callout>
-  **Note:** We have used the `close()` method to close the object. It is
-  recommended to close the scanner object once the input is taken.
+  **注意：** 我们使用了 `close()` 方法来关闭该对象。建议在取完输入后关闭 scanner 对象。
 </Callout>
 
-### Example: Get float, double and String Input
+### 示例：获取 float、double 和 String 输入
 
 ```java
 import java.util.Scanner;
@@ -203,17 +202,17 @@ class Input {
 
         Scanner input = new Scanner(System.in);
 
-        // Getting float input
+        // 获取 float 输入
         System.out.print("Enter float: ");
         float myFloat = input.nextFloat();
         System.out.println("Float entered = " + myFloat);
 
-        // Getting double input
+        // 获取 double 输入
         System.out.print("Enter double: ");
         double myDouble = input.nextDouble();
         System.out.println("Double entered = " + myDouble);
 
-        // Getting String input
+        // 获取 String 输入
         System.out.print("Enter text: ");
         String myString = input.next();
         System.out.println("Text entered = " + myString);
@@ -221,7 +220,7 @@ class Input {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Enter float: 2.343
@@ -232,4 +231,4 @@ Enter text: Hey!
 Text entered = Hey!
 ```
 
-As mentioned, there are other several ways to get input from the user. To learn more about `Scanner`, visit Java Scanner.
+如前所述，还有其他几种获取用户输入的方式。要了解更多关于 `Scanner` 的内容，请访问 Java Scanner。

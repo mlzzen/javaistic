@@ -1,25 +1,25 @@
 ---
-title: Java Program to Check Armstrong Number
-shortTitle: Check Armstrong Number
-description: Learn how to check if a number is an Armstrong number in Java using digit extraction and power calculation with multiple approaches and examples.
+title: 用 Java 判断阿姆斯特朗数
+shortTitle: 判断阿姆斯特朗数
+description: 学习如何在 Java 中通过提取各位数字并计算幂来判断一个数是否为阿姆斯特朗数，包含多种方法和示例。
 ---
 
-An Armstrong number (also called a narcissistic number) is a number that equals the sum of its digits each raised to the power of the number of digits. For example:
+阿姆斯特朗数（也叫自恋数）是指这样的数：它的各位数字分别取「位数次幂」后相加，结果等于该数本身。例如：
 
-- 153 = 1³ + 5³ + 3³ = 1 + 125 + 27 = 153 (3 digits)
-- 9474 = 9⁴ + 4⁴ + 7⁴ + 4⁴ = 6561 + 256 + 2401 + 256 = 9474 (4 digits)
+- 153 = 1³ + 5³ + 3³ = 1 + 125 + 27 = 153（3 位数）
+- 9474 = 9⁴ + 4⁴ + 7⁴ + 4⁴ = 6561 + 256 + 2401 + 256 = 9474（4 位数）
 
-Before you start, you may want to review:
+开始之前，你可以先复习：
 
-- [Java Variables and Literals](/docs/variables-and-literals)
-- [Java Operators](/docs/operators)
-- [Java Basic Input and Output](/docs/basic-input-output)
+- [Java 变量与字面量](/docs/variables-and-literals)
+- [Java 运算符](/docs/operators)
+- [Java 基础输入与输出](/docs/basic-input-output)
 
-## 1) Basic Armstrong Check
+## 1）基本的阿姆斯特朗数判断
 
-This method extracts digits and calculates the sum of powers.
+这种方法逐位提取数字，并计算各位幂之和。
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -59,17 +59,17 @@ class Main {
 }
 ```
 
-#### Output (for num = 153)
+#### 输出（num = 153）
 
 ```plaintext
 153 is an Armstrong number.
 ```
 
-## 2) Optimized Version (Without Math.pow)
+## 2）优化版本（不使用 Math.pow）
 
-Avoid floating-point operations by using integer multiplication.
+用整数乘法代替浮点运算。
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -117,17 +117,17 @@ class Main {
 }
 ```
 
-#### Output (for num = 9474)
+#### 输出（num = 9474）
 
 ```plaintext
 9474 is an Armstrong number.
 ```
 
-## 3) Find Armstrong Numbers in Range
+## 3）在指定范围内查找阿姆斯特朗数
 
-Program to find all Armstrong numbers within a given range.
+找出给定范围内所有阿姆斯特朗数的程序。
 
-### Example
+### 示例
 
 ```java
 import java.util.ArrayList;
@@ -194,7 +194,7 @@ class Main {
 }
 ```
 
-#### Sample Output
+#### 示例输出
 
 ```plaintext
 Armstrong numbers between 1 and 10000:
@@ -219,10 +219,11 @@ Total Armstrong numbers found: 15
 
 ---
 
-### Notes & Tips
+### 说明与提示
 
-- **Common Armstrong numbers**: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 371, 407, 1634, 8208, 9474
-- **Performance**: The optimized version using integer multiplication is faster than Math.pow()
-- **Large numbers**: For numbers with many digits, consider using `long` or `BigInteger` to avoid overflow
-- **Time complexity**: O(d) where d is the number of digits
-- **Space complexity**: O(1) for the basic check, O(n) for range finding
+- **常见的阿姆斯特朗数**：0、1、2、3、4、5、6、7、8、9、153、371、407、1634、8208、9474
+- **性能**：使用整数乘法的优化版本比 Math.pow() 更快
+- **大数**：对于位数很多的数，考虑使用 `long` 或 `BigInteger` 以避免溢出
+- **时间复杂度**：O(d)，其中 d 是数字的位数
+- **空间复杂度**：基本检查为 O(1)，范围查找为 O(n)
+

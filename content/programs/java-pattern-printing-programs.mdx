@@ -1,29 +1,29 @@
 ---
-title: Java Pattern Printing Programs
-description: Master nested loops and logical thinking with comprehensive pattern printing examples including stars, numbers, alphabets, and complex geometric designs.
+title: Java 图案打印程序
+description: 通过涵盖星号、数字、字母以及复杂几何图形的完整图案打印示例，掌握嵌套循环与逻辑思维。
 ---
 
-## Introduction
+## 简介
 
-Pattern printing is a fundamental programming exercise that helps developers master:
+图案打印是一项基础的编程练习，可以帮助你掌握：
 
-- **Nested loops** and loop control
-- **Logical thinking** and problem-solving
-- **Mathematical relationships** in programming
-- **Output formatting** and spacing
+- **嵌套循环**与循环控制
+- **逻辑思维**与问题解决能力
+- 编程中的**数学关系**
+- **输出格式化**与空格控制
 
-This comprehensive guide covers various pattern types from basic to advanced, with detailed explanations of the logic behind each pattern.
+本指南从基础到进阶，涵盖了多种图案类型，并详细讲解每种图案背后的逻辑。
 
-## Method 1: Basic Star Patterns
+## 方法 1：基础星号图案
 
-### Right Triangle Star Pattern
+### 直角三角形星号图案
 
 ```java
 import java.util.Scanner;
 
 public class BasicStarPatterns {
 
-    // Right triangle pattern
+    // 直角三角形图案
     public static void printRightTriangle(int n) {
         System.out.println("Right Triangle Pattern:");
         for (int i = 1; i <= n; i++) {
@@ -34,7 +34,7 @@ public class BasicStarPatterns {
         }
     }
 
-    // Inverted right triangle
+    // 倒置直角三角形
     public static void printInvertedRightTriangle(int n) {
         System.out.println("\nInverted Right Triangle Pattern:");
         for (int i = n; i >= 1; i--) {
@@ -45,15 +45,15 @@ public class BasicStarPatterns {
         }
     }
 
-    // Left triangle (right-aligned)
+    // 左三角形（右对齐）
     public static void printLeftTriangle(int n) {
         System.out.println("\nLeft Triangle Pattern:");
         for (int i = 1; i <= n; i++) {
-            // Print spaces
+            // 打印空格
             for (int j = 1; j <= n - i; j++) {
                 System.out.print("  ");
             }
-            // Print stars
+            // 打印星号
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
             }
@@ -76,7 +76,7 @@ public class BasicStarPatterns {
 }
 ```
 
-**Sample Output (n=5):**
+**示例输出（n=5）：**
 
 ```
 Right Triangle Pattern:
@@ -101,22 +101,22 @@ Left Triangle Pattern:
 * * * * *
 ```
 
-## Method 2: Pyramid and Diamond Patterns
+## 方法 2：金字塔与菱形图案
 
 ```java
 import java.util.Scanner;
 
 public class PyramidPatterns {
 
-    // Full pyramid (triangle)
+    // 完整金字塔（三角形）
     public static void printPyramid(int n) {
         System.out.println("Pyramid Pattern:");
         for (int i = 1; i <= n; i++) {
-            // Print spaces
+            // 打印空格
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
-            // Print stars
+            // 打印星号
             for (int j = 1; j <= 2 * i - 1; j++) {
                 System.out.print("*");
             }
@@ -124,15 +124,15 @@ public class PyramidPatterns {
         }
     }
 
-    // Inverted pyramid
+    // 倒置金字塔
     public static void printInvertedPyramid(int n) {
         System.out.println("\nInverted Pyramid Pattern:");
         for (int i = n; i >= 1; i--) {
-            // Print spaces
+            // 打印空格
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
-            // Print stars
+            // 打印星号
             for (int j = 1; j <= 2 * i - 1; j++) {
                 System.out.print("*");
             }
@@ -140,10 +140,10 @@ public class PyramidPatterns {
         }
     }
 
-    // Diamond pattern
+    // 菱形图案
     public static void printDiamond(int n) {
         System.out.println("\nDiamond Pattern:");
-        // Upper half (including middle)
+        // 上半部分（包含中间行）
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -153,7 +153,7 @@ public class PyramidPatterns {
             }
             System.out.println();
         }
-        // Lower half
+        // 下半部分
         for (int i = n - 1; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -165,10 +165,10 @@ public class PyramidPatterns {
         }
     }
 
-    // Hollow diamond
+    // 空心菱形
     public static void printHollowDiamond(int n) {
         System.out.println("\nHollow Diamond Pattern:");
-        // Upper half
+        // 上半部分
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -182,7 +182,7 @@ public class PyramidPatterns {
             }
             System.out.println();
         }
-        // Lower half
+        // 下半部分
         for (int i = n - 1; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -214,14 +214,14 @@ public class PyramidPatterns {
 }
 ```
 
-## Method 3: Number Patterns
+## 方法 3：数字图案
 
 ```java
 import java.util.Scanner;
 
 public class NumberPatterns {
 
-    // Simple number triangle
+    // 简单数字三角形
     public static void printNumberTriangle(int n) {
         System.out.println("Number Triangle:");
         for (int i = 1; i <= n; i++) {
@@ -232,11 +232,11 @@ public class NumberPatterns {
         }
     }
 
-    // Pascal's triangle
+    // 帕斯卡三角形
     public static void printPascalTriangle(int n) {
         System.out.println("\nPascal's Triangle:");
         for (int i = 0; i < n; i++) {
-            // Print spaces for formatting
+            // 打印用于对齐的空格
             for (int j = 0; j < n - i - 1; j++) {
                 System.out.print(" ");
             }
@@ -250,7 +250,7 @@ public class NumberPatterns {
         }
     }
 
-    // Floyd's triangle
+    // 弗洛伊德三角形
     public static void printFloydTriangle(int n) {
         System.out.println("\nFloyd's Triangle:");
         int number = 1;
@@ -263,19 +263,19 @@ public class NumberPatterns {
         }
     }
 
-    // Number pyramid
+    // 数字金字塔
     public static void printNumberPyramid(int n) {
         System.out.println("\nNumber Pyramid:");
         for (int i = 1; i <= n; i++) {
-            // Print spaces
+            // 打印空格
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
-            // Print ascending numbers
+            // 打印递增数字
             for (int j = 1; j <= i; j++) {
                 System.out.print(j);
             }
-            // Print descending numbers
+            // 打印递减数字
             for (int j = i - 1; j >= 1; j--) {
                 System.out.print(j);
             }
@@ -283,7 +283,7 @@ public class NumberPatterns {
         }
     }
 
-    // Binary pattern
+    // 二进制图案
     public static void printBinaryPattern(int n) {
         System.out.println("\nBinary Pattern:");
         for (int i = 1; i <= n; i++) {
@@ -311,7 +311,7 @@ public class NumberPatterns {
 }
 ```
 
-**Sample Output (n=5):**
+**示例输出（n=5）：**
 
 ```
 Number Triangle:
@@ -343,14 +343,14 @@ Binary Pattern:
 1 0 1 0 1
 ```
 
-## Method 4: Alphabet Patterns
+## 方法 4：字母图案
 
 ```java
 import java.util.Scanner;
 
 public class AlphabetPatterns {
 
-    // Simple alphabet triangle
+    // 简单字母三角形
     public static void printAlphabetTriangle(int n) {
         System.out.println("Alphabet Triangle:");
         for (int i = 1; i <= n; i++) {
@@ -363,23 +363,23 @@ public class AlphabetPatterns {
         }
     }
 
-    // Alphabet pyramid
+    // 字母金字塔
     public static void printAlphabetPyramid(int n) {
         System.out.println("\nAlphabet Pyramid:");
         for (int i = 1; i <= n; i++) {
-            // Print spaces
+            // 打印空格
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
 
-            // Print ascending letters
+            // 打印递增字母
             char ch = 'A';
             for (int j = 1; j <= i; j++) {
                 System.out.print(ch);
                 ch++;
             }
 
-            // Print descending letters
+            // 打印递减字母
             ch = (char)('A' + i - 2);
             for (int j = 1; j <= i - 1; j++) {
                 System.out.print(ch);
@@ -390,7 +390,7 @@ public class AlphabetPatterns {
         }
     }
 
-    // Repeating alphabet pattern
+    // 重复字母图案
     public static void printRepeatingAlphabet(int n) {
         System.out.println("\nRepeating Alphabet Pattern:");
         for (int i = 1; i <= n; i++) {
@@ -402,10 +402,10 @@ public class AlphabetPatterns {
         }
     }
 
-    // Alphabet diamond
+    // 字母菱形
     public static void printAlphabetDiamond(int n) {
         System.out.println("\nAlphabet Diamond:");
-        // Upper half
+        // 上半部分
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -423,7 +423,7 @@ public class AlphabetPatterns {
             System.out.println();
         }
 
-        // Lower half
+        // 下半部分
         for (int i = n - 1; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -458,44 +458,44 @@ public class AlphabetPatterns {
 }
 ```
 
-## Method 5: Advanced Geometric Patterns
+## 方法 5：进阶几何图案
 
 ```java
 import java.util.Scanner;
 
 public class AdvancedPatterns {
 
-    // Butterfly pattern
+    // 蝴蝶图案
     public static void printButterfly(int n) {
         System.out.println("Butterfly Pattern:");
-        // Upper half
+        // 上半部分
         for (int i = 1; i <= n; i++) {
-            // Left stars
+            // 左侧星号
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            // Spaces in middle
+            // 中间空格
             for (int j = 1; j <= 2 * (n - i); j++) {
                 System.out.print(" ");
             }
-            // Right stars
+            // 右侧星号
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
 
-        // Lower half
+        // 下半部分
         for (int i = n - 1; i >= 1; i--) {
-            // Left stars
+            // 左侧星号
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            // Spaces in middle
+            // 中间空格
             for (int j = 1; j <= 2 * (n - i); j++) {
                 System.out.print(" ");
             }
-            // Right stars
+            // 右侧星号
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
@@ -503,10 +503,10 @@ public class AdvancedPatterns {
         }
     }
 
-    // Hourglass pattern
+    // 沙漏图案
     public static void printHourglass(int n) {
         System.out.println("\nHourglass Pattern:");
-        // Upper half
+        // 上半部分
         for (int i = n; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -517,7 +517,7 @@ public class AdvancedPatterns {
             System.out.println();
         }
 
-        // Lower half
+        // 下半部分
         for (int i = 2; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
@@ -529,7 +529,7 @@ public class AdvancedPatterns {
         }
     }
 
-    // Zigzag pattern
+    // 锯齿图案
     public static void printZigzag(int rows, int cols) {
         System.out.println("\nZigzag Pattern:");
         for (int i = 1; i <= rows; i++) {
@@ -544,7 +544,7 @@ public class AdvancedPatterns {
         }
     }
 
-    // Spiral pattern
+    // 螺旋图案
     public static void printSpiral(int n) {
         System.out.println("\nSpiral Pattern:");
         int[][] matrix = new int[n][n];
@@ -552,19 +552,19 @@ public class AdvancedPatterns {
         int top = 0, bottom = n - 1, left = 0, right = n - 1;
 
         while (top <= bottom && left <= right) {
-            // Fill top row
+            // 填充顶行
             for (int i = left; i <= right; i++) {
                 matrix[top][i] = num++;
             }
             top++;
 
-            // Fill right column
+            // 填充右列
             for (int i = top; i <= bottom; i++) {
                 matrix[i][right] = num++;
             }
             right--;
 
-            // Fill bottom row
+            // 填充底行
             if (top <= bottom) {
                 for (int i = right; i >= left; i--) {
                     matrix[bottom][i] = num++;
@@ -572,7 +572,7 @@ public class AdvancedPatterns {
                 bottom--;
             }
 
-            // Fill left column
+            // 填充左列
             if (left <= right) {
                 for (int i = bottom; i >= top; i--) {
                     matrix[i][left] = num++;
@@ -581,7 +581,7 @@ public class AdvancedPatterns {
             }
         }
 
-        // Print the spiral
+        // 输出螺旋矩阵
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.printf("%3d ", matrix[i][j]);
@@ -606,7 +606,7 @@ public class AdvancedPatterns {
 }
 ```
 
-## Method 6: Interactive Pattern Generator
+## 方法 6：交互式图案生成器
 
 ```java
 import java.util.Scanner;
@@ -662,7 +662,7 @@ public class PatternGenerator {
     public static void printAllBasicPatterns(int n) {
         System.out.println("\n=== All Basic Patterns (Size: " + n + ") ===");
 
-        // Right Triangle
+        // 直角三角形
         System.out.println("\n1. Right Triangle:");
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
@@ -671,7 +671,7 @@ public class PatternGenerator {
             System.out.println();
         }
 
-        // Pyramid
+        // 金字塔
         System.out.println("\n2. Pyramid:");
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
@@ -683,7 +683,7 @@ public class PatternGenerator {
             System.out.println();
         }
 
-        // Number Triangle
+        // 数字三角形
         System.out.println("\n3. Number Triangle:");
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
@@ -710,11 +710,11 @@ public class PatternGenerator {
 
             switch (choice) {
                 case 1:
-                    // Right Triangle logic here
+                    // 此处实现直角三角形逻辑
                     System.out.println("Right Triangle selected");
                     break;
                 case 2:
-                    // Pyramid logic here
+                    // 此处实现金字塔逻辑
                     System.out.println("Pyramid selected");
                     break;
                 case 8:
@@ -734,39 +734,39 @@ public class PatternGenerator {
 }
 ```
 
-## Pattern Logic Breakdown
+## 图案逻辑拆解
 
-### **Key Concepts:**
+### **核心概念：**
 
-1. **Outer Loop**: Controls the number of rows
-2. **Inner Loops**: Control elements in each row
-   - Spaces for alignment
-   - Characters/numbers for the pattern
-3. **Mathematical Relationships**:
-   - Row `i`, print `i` elements (right triangle)
-   - Row `i`, print `2*i-1` elements (pyramid)
-   - Spaces = `n-i` for center alignment
+1. **外层循环**：控制行数
+2. **内层循环**：控制每一行中的元素
+   - 用于对齐的空格
+   - 构成图案的字符/数字
+3. **数学关系**：
+   - 第 `i` 行输出 `i` 个元素（直角三角形）
+   - 第 `i` 行输出 `2*i-1` 个元素（金字塔）
+   - 居中需要 `n-i` 个空格
 
-### **Common Formulas:**
+### **常用公式：**
 
-| Pattern Type     | Stars/Elements | Spaces |
-| ---------------- | -------------- | ------ |
-| Right Triangle   | `i`            | `0`    |
-| Left Triangle    | `i`            | `n-i`  |
-| Pyramid          | `2*i-1`        | `n-i`  |
-| Inverted Pyramid | `2*(n-i+1)-1`  | `i-1`  |
+| 图案类型   | 星号/元素数   | 空格数 |
+| ---------- | ------------- | ------ |
+| 直角三角形 | `i`           | `0`    |
+| 左三角形   | `i`           | `n-i`  |
+| 金字塔     | `2*i-1`       | `n-i`  |
+| 倒置金字塔 | `2*(n-i+1)-1` | `i-1`  |
 
-## Practice Exercises
+## 练习题
 
-1. **Modify existing patterns** to use different characters
-2. **Create custom patterns** combining multiple shapes
-3. **Add color patterns** using console colors
-4. **Implement user input** for pattern customization
-5. **Create animated patterns** that change over time
+1. **修改现有图案**，改用不同的字符
+2. **创建自定义图案**，组合多种形状
+3. **添加彩色图案**，使用控制台颜色
+4. **实现用户输入**，自定义图案
+5. **创建动画图案**，使其随时间变化
 
-## Time and Space Complexity
+## 时间复杂度与空间复杂度
 
-- **Time Complexity**: O(n²) for most patterns
-- **Space Complexity**: O(1) for printing, O(n²) for matrix-based patterns
+- **时间复杂度**：大多数图案为 O(n²)
+- **空间复杂度**：纯打印为 O(1)，基于矩阵的图案为 O(n²)
 
-Pattern printing is an excellent way to master nested loops, logical thinking, and understand the relationship between mathematics and programming!
+图案打印是掌握嵌套循环、逻辑思维，以及理解数学与编程之间关系的好方法！

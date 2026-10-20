@@ -1,19 +1,19 @@
 ---
-title: Java if...else Statement
-description: In this tutorial, you will learn about control flow statements using Java if and if...else statements with the help of examples.
+title: Java if...else 语句
+description: 在本教程中，你将通过示例学习使用 Java 的 if 和 if...else 语句进行流程控制。
 ---
 
-In programming, we use the `if..else` statement to run a block of code among more than one alternatives.
+在编程中，我们使用 `if..else` 语句在多个选项中执行一个代码块。
 
-For example, assigning grades (A, B, C) based on the percentage obtained by a student.
+例如，根据学生获得的百分比来评定等级（A、B、C）。
 
-- if the percentage is above **90**, assign grade **A**
-- if the percentage is above **75**, assign grade **B**
-- if the percentage is above **65**, assign grade **C**
+- 如果百分比高于 **90**，评为 **A** 等
+- 如果百分比高于 **75**，评为 **B** 等
+- 如果百分比高于 **65**，评为 **C** 等
 
-## 1. Java if (if-then) Statement
+## 1. Java if（if-then）语句
 
-The syntax of an **if-then** statement is:
+**if-then** 语句的语法是：
 
 ```java
 if (condition) {
@@ -21,24 +21,24 @@ if (condition) {
 }
 ```
 
-Here, `condition` is a boolean expression such as `age >= 18`.
+这里，`condition` 是一个布尔表达式，例如 `age >= 18`。
 
-- if `condition` evaluates to `true` , statements are executed
-- if `condition` evaluates to `false` , statements are skipped
+- 如果 `condition` 的求值结果为 `true`，则执行语句
+- 如果 `condition` 的求值结果为 `false`，则跳过语句
 
-## Working of if Statement
+## if 语句的工作原理
 
 <div>
 
 ![Working of Java if statement](/img/docs/wroking-of-java-if-statement.svg)
 
 <p align="center" className="text-base font-medium text-neutral-600">
-  Working of Java if statement
+  Java if 语句的工作原理
 </p>
 
 </div>
 
-### Example 1: Java if Statement
+### 示例 1：Java if 语句
 
 ```java
 class IfStatement {
@@ -46,7 +46,7 @@ class IfStatement {
 
     int number = 10;
 
-    // checks if number is less than 0
+    // 检查 number 是否小于 0
     if (number < 0) {
       System.out.println("The number is negative.");
     }
@@ -56,31 +56,31 @@ class IfStatement {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Statement outside if block
 ```
 
-In the program, `number < 0` is `false`. Hence, the code inside the parenthesis is **skipped**.
+在这个程序中，`number < 0` 为 `false`。因此，圆括号内的代码被**跳过**。
 
 <Callout>
 
-**Note:** If you want to learn more about about test conditions, visit [Java Relational Operators](/docs/operators#3-java-relational-operators) and [Java Logical Operators](/docs/operators#4-java-logical-operators).
+**注意：** 如果你想了解更多关于测试条件的内容，请访问 [Java 关系运算符](/docs/operators#3-java-relational-operators) 和 [Java 逻辑运算符](/docs/operators#4-java-logical-operators)。
 
 </Callout>
 
-We can also use Java Strings as the test condition.
+我们也可以使用 Java 字符串作为测试条件。
 
-### Example 2: Java if with String
+### 示例 2：带 String 的 Java if
 
 ```java
 class Main {
   public static void main(String[] args) {
-    // create a string variable
+    // 创建一个字符串变量
     String language = "Java";
 
-    // if statement
+    // if 语句
     if (language == "Java") {
       System.out.println("Best Programming Language");
     }
@@ -88,21 +88,21 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Best Programming Language
 ```
 
-In the above example, we are comparing two strings in the `if` block.
+在上面的示例中，我们在 `if` 块中比较了两个字符串。
 
-## 2. Java if...else (if-then-else) Statement
+## 2. Java if...else（if-then-else）语句
 
-The `if` statement executes a certain section of code if the test expression is evaluated to `true`. However, if the test expression is evaluated to `false`, it does nothing.
+如果测试表达式的求值结果为 `true`，`if` 语句会执行某一段代码。但是，如果测试表达式的求值结果为 `false`，它什么也不做。
 
-In this case, we can use an optional `else` block. Statements inside the body of `else` block are executed if the test expression is evaluated to `false`. This is known as the **if-...else** statement in Java.
+在这种情况下，我们可以使用可选的 `else` 块。如果测试表达式的求值结果为 `false`，就会执行 `else` 块主体内的语句。这在 Java 中被称为 **if-...else** 语句。
 
-The syntax of the **if...else** statement is:
+**if...else** 语句的语法是：
 
 ```java
 if (condition) {
@@ -113,33 +113,33 @@ else {
 }
 ```
 
-Here, the program will do one task (codes inside if block) if the condition is true and another task (codes inside else block) if the condition is false.
+这里，如果条件为真，程序将执行一个任务（if 块内的代码）；如果条件为假，则执行另一个任务（else 块内的代码）。
 
-## How the if...else statement works?
+## if...else 语句如何工作？
 
 <div>
 ![Working of Java if statement](/img/docs/wroking-of-if-else-statement.svg)
 
 <p align="center" className="text-base font-medium text-neutral-600">
-  Working of Java if-else statements
+  Java if-else 语句的工作原理
 </p>
 
 </div>
 
-### Example 3: Java if...else Statement
+### 示例 3：Java if...else 语句
 
 ```java
 class Main {
   public static void main(String[] args) {
     int number = 10;
 
-    // checks if number is greater than 0
+    // 检查 number 是否大于 0
     if (number > 0) {
       System.out.println("The number is positive.");
     }
 
-    // execute this block
-    // if number is not greater than 0
+    // 执行这个代码块
+    // 如果 number 不大于 0
     else {
       System.out.println("The number is not positive.");
     }
@@ -149,35 +149,35 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 The number is positive.
 Statement outside if...else block
 ```
 
-In the above example, we have a variable named `number`. Here, the test expression `number > 0` checks if `number` is greater than 0.
+在上面的示例中，我们有一个名为 `number` 的变量。这里，测试表达式 `number > 0` 检查 `number` 是否大于 0。
 
-Since the value of the `number` is `10`, the test expression evaluates to `true`. Hence code inside the body of `if` is executed.
+由于 `number` 的值是 `10`，测试表达式的求值结果为 `true`。因此，执行 `if` 主体内的代码。
 
-Now, change the value of the `number` to a negative integer. Let's say `-5`.
+现在，把 `number` 的值改为一个负整数。比如 `-5`。
 
 ```java
 int number = -5;
 ```
 
-If we run the program with the new value of `number`, the output will be:
+如果用 `number` 的新值运行程序，输出将是：
 
 ```plaintext
 The number is not positive.
 Statement outside if...else block
 ```
 
-Here, the value of number is `-5`. So the test expression evaluates to `false`. Hence code inside the body of `else` is executed.
+这里，number 的值是 `-5`。所以测试表达式的求值结果为 `false`。因此，执行 `else` 主体内的代码。
 
-## 3. Java if...else...if Statement
+## 3. Java if...else...if 语句
 
-In Java, we have an if...else...if ladder, that can be used to execute one block of code among multiple other blocks.
+在 Java 中，我们有 if...else...if 阶梯，它可以用来在多个代码块中执行一个代码块。
 
 ```java
 if (condition1) {
@@ -196,16 +196,16 @@ else {
 }
 ```
 
-Here, `if` statements are executed from the top towards the bottom. When the test condition is `true`, codes inside the body of that `if` block is executed. And, program control jumps outside the **if...else...if** ladder.
+这里，`if` 语句从上到下依次执行。当测试条件为 `true` 时，执行该 `if` 块主体内的代码。然后，程序控制会跳出 **if...else...if** 阶梯。
 
-If all test expressions are `false`, codes inside the body of `else` are executed.
+如果所有测试表达式的求值结果都为 `false`，则执行 `else` 主体内的代码。
 
-## How the if...else...if ladder works?
+## if...else...if 阶梯如何工作？
 
-If the first test condition if true, code inside first if block is executed, if the second condition is true, block inside second if is executed, and if all conditions are false, the else block is executed
-Working of if...else...if ladder
+如果第一个测试条件为真，则执行第一个 if 块内的代码；如果第二个条件为真，则执行第二个 if 块内的代码；如果所有条件都为假，则执行 else 块
+if...else...if 阶梯的工作原理
 
-### Example 4: Java if...else...if Statement
+### 示例 4：Java if...else...if 语句
 
 ```java
 class Main {
@@ -213,17 +213,17 @@ class Main {
 
     int number = 0;
 
-    // checks if number is greater than 0
+    // 检查 number 是否大于 0
     if (number > 0) {
       System.out.println("The number is positive.");
     }
 
-    // checks if number is less than 0
+    // 检查 number 是否小于 0
     else if (number < 0) {
       System.out.println("The number is negative.");
     }
 
-    // if both condition is false
+    // 如果两个条件都为假
     else {
       System.out.println("The number is 0.");
     }
@@ -231,45 +231,45 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 The number is 0.
 ```
 
-In the above example, we are checking whether `number` is **positive**, **negative**, or **zero**. Here, we have two condition expressions:
+在上面的示例中，我们检查 `number` 是**正数**、**负数**还是**零**。这里，我们有两个条件表达式：
 
-- `number > 0` - checks if `number` is greater than `0`.
-- `number < 0` - checks if `number` is less than `0`.
+- `number > 0` - 检查 `number` 是否大于 `0`。
+- `number < 0` - 检查 `number` 是否小于 `0`。
 
-Here, the value of `number` is `0`. So both the conditions evaluate to `false`. Hence the statement inside the body of `else` is executed.
+这里，`number` 的值是 `0`。所以两个条件的求值结果都为 `false`。因此，执行 `else` 主体内的语句。
 
 <Callout>
 
-**Note:** Java provides a special operator called **ternary operator**, which is a kind of shorthand notation of **if...else...if** statement. To learn about the ternary operator, visit [Java Ternary Operator](/docs/operators#java-ternary-operator).
+**注意：** Java 提供了一个特殊的运算符，称为**三元运算符**，它是 **if...else...if** 语句的一种简写形式。要了解三元运算符，请访问 [Java 三元运算符](/docs/operators#java-ternary-operator)。
 
 </Callout>
 
-## 4. Java Nested if..else Statement
+## 4. Java 嵌套 if..else 语句
 
-In Java, it is also possible to use `if..else` statements inside an `if...else` statement. It's called the nested `if...else` statement.
+在 Java 中，也可以在一个 `if...else` 语句内使用 `if..else` 语句。这称为嵌套 `if...else` 语句。
 
-Here's a program to find the largest of **3** numbers using the nested `if...else` statement.
+下面是一个使用嵌套 `if...else` 语句找出 **3** 个数中最大值的程序。
 
-### Example 5: Nested if...else Statement
+### 示例 5：嵌套 if...else 语句
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // declaring double type variables
+    // 声明 double 类型的变量
     Double n1 = -1.0, n2 = 4.5, n3 = -5.3, largest;
 
-    // checks if n1 is greater than or equal to n2
+    // 检查 n1 是否大于或等于 n2
     if (n1 >= n2) {
 
-      // if...else statement inside the if block
-      // checks if n1 is greater than or equal to n3
+      // if 块内的 if...else 语句
+      // 检查 n1 是否大于或等于 n3
       if (n1 >= n3) {
         largest = n1;
       }
@@ -279,8 +279,8 @@ class Main {
       }
     } else {
 
-      // if..else statement inside else block
-      // checks if n2 is greater than or equal to n3
+      // else 块内的 if..else 语句
+      // 检查 n2 是否大于或等于 n3
       if (n2 >= n3) {
         largest = n2;
       }
@@ -295,12 +295,12 @@ class Main {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Largest Number: 4.5
 ```
 
-In the above programs, we have assigned the value of variables ourselves to make this easier.
+在上面的程序中，我们为了方便直接自己给变量赋了值。
 
-However, in real-world applications, these values may come from user input data, log files, form submission, etc.
+然而，在实际应用中，这些值可能来自用户输入的数据、日志文件、表单提交等。

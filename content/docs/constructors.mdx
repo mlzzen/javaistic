@@ -1,29 +1,29 @@
 ---
-title: Java Constructors
-description: In this tutorial, we will learn how to use the Java constructors with examples.
+title: Java 构造方法
+description: 在本教程中，我们将通过示例学习如何使用 Java 构造方法。
 ---
 
-A constructor in Java is similar to a method that is invoked when an object of the class is created.
+Java 中的构造方法与方法类似，它会在创建类的对象时被调用。
 
-Unlike Java methods, a constructor has the same name as that of the class and does not have any return type. For example,
+与 Java 方法不同，构造方法的名称与类名相同，而且没有任何返回类型。例如：
 
 ```java
 class Test {
   Test() {
-    // constructor body
+    // 构造方法体
   }
 }
 ```
 
-Here, `Test()` is a constructor. It has the same name as that of the class and doesn't have a return type.
+这里，`Test()` 就是一个构造方法。它的名称与类名相同，并且没有返回类型。
 
-## Example: Java Constructor
+## 示例：Java 构造方法
 
 ```java
 class Main {
   private String name;
 
-  // constructor
+  // 构造方法
   Main() {
     System.out.println("Constructor Called:");
     name = "Javaistic";
@@ -31,63 +31,63 @@ class Main {
 
   public static void main(String[] args) {
 
-    // constructor is invoked while
-    // creating an object of the Main class
+    // 创建 Main 类的对象时
+    // 会调用构造方法
     Main obj = new Main();
     System.out.println("The name is " + obj.name);
   }
 }
 ```
 
-### Output:
+### 输出：
 
 ```plaintext
 Constructor Called:
 The name is Javaistic
 ```
 
-In the above example, we have created a constructor named `Main()`.
+在上面的示例中，我们创建了一个名为 `Main()` 的构造方法。
 
-Inside the constructor, we are initializing the value of the `name` [variable](/docs/variables-literals).
+在构造方法内部，我们初始化了 `name` [变量](/docs/variables-literals)的值。
 
-Notice the statement creating an object of the `Main` class.
+注意创建 `Main` 类对象的那条语句。
 
 ```java
 Main obj = new Main();
 ```
 
-Here, when the object is created, the `Main()` constructor is called. And the value of the name variable is initialized.
+这里，创建对象时会调用 `Main()` 构造方法，并初始化 name 变量的值。
 
-Hence, the program prints the value of the name variables as Javaistic.
+因此，程序把 name 变量的值打印为 Javaistic。
 
-## Types of Constructor
+## 构造方法的类型
 
-In Java, constructors can be divided into three types:
+在 Java 中，构造方法可以分为三种类型：
 
-- [No-Arg Constructor](#1-java-no-arg-constructors)
-- [Parameterized Constructor](#2-java-parameterized-constructor)
-- [Default Constructor](#3-java-default-constructor)
+- [无参构造方法](#1-java-no-arg-constructors)
+- [带参构造方法](#2-java-parameterized-constructor)
+- [默认构造方法](#3-java-default-constructor)
 
-## 1. Java No-Arg Constructors
+## 1. Java 无参构造方法
 
-Similar to methods, a Java constructor may or may not have any parameters (arguments).
+与方法类似，Java 构造方法可以有参数（实参），也可以没有参数。
 
-If a constructor does not accept any parameters, it is known as a no-argument constructor. For example,
+如果构造方法不接收任何参数，它就被称为无参构造方法。例如：
 
 ```java
 private Constructor() {
-   // body of the constructor
+   // 构造方法体
 }
 ```
 
-### Example: Java Private No-arg Constructor
+### 示例：Java private 无参构造方法
 
 ```java
 class Main {
 
   int i;
 
-  // constructor with no parameter
+  // 无参构造方法
   private Main() {
     i = 5;
     System.out.println("Constructor is called");
@@ -95,38 +95,38 @@ class Main {
 
   public static void main(String[] args) {
 
-    // calling the constructor without any parameter
+    // 调用无参构造方法
     Main obj = new Main();
     System.out.println("Value of i: " + obj.i);
   }
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Constructor is called
 Value of i: 5
 ```
 
-In the above example, we have created a constructor Main().
-Here, the constructor does not accept any parameters. Hence, it is known as a no-arg constructor.
-Notice that we have declared the constructor as private.
-Once a constructor is declared private, it cannot be accessed from outside the class.
+在上面的示例中，我们创建了一个构造方法 Main()。
+这里，构造方法不接收任何参数，因此它被称为无参构造方法。
+注意我们把构造方法声明为 private。
+一旦构造方法被声明为 private，它就无法从类外部访问。
 
-So, creating objects from outside the class is prohibited using the private constructor.
-Here, we are creating the object inside the same class.
+因此，使用私有构造方法时，无法从类外部创建对象。
+这里，我们是在同一个类内部创建对象。
 
-Hence, the program is able to access the constructor. To learn more, visit Java Implement Private Constructor.
-However, if we want to create objects outside the class, then we need to declare the constructor as public.
+所以程序能够访问这个构造方法。想了解更多，请访问 Java 实现私有构造方法。
+不过，如果我们想在类外部创建对象，就需要把构造方法声明为 public。
 
-### Example: Java Public no-arg Constructors
+### 示例：Java public 无参构造方法
 
 ```java
 class Company {
   String name;
 
-  // public constructor
+  // public 构造方法
   public Company() {
     name = "Javaistic";
   }
@@ -135,31 +135,31 @@ class Company {
 class Main {
   public static void main(String[] args) {
 
-    // object is created in another class
+    // 在另一个类中创建对象
     Company obj = new Company();
     System.out.println("Company name = " + obj.name);
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Company name = Javaistic
 ```
 
-## 2. Java Parameterized Constructor
+## 2. Java 带参构造方法
 
-A Java constructor can also accept one or more parameters. Such constructors are known as parameterized constructors (constructors with parameters).
+Java 构造方法也可以接收一个或多个参数。这样的构造方法被称为带参构造方法（带参数的构造方法）。
 
-### Example: Parameterized Constructor
+### 示例：带参构造方法
 
 ```java
 class Main {
 
   String languages;
 
-  // constructor accepting single value
+  // 接收单个值的构造方法
   Main(String lang) {
     languages = lang;
     System.out.println(languages + " Programming Language");
@@ -167,7 +167,7 @@ class Main {
 
   public static void main(String[] args) {
 
-    // call constructor by passing a single value
+    // 传入单个值调用构造方法
     Main obj1 = new Main("Java");
     Main obj2 = new Main("Python");
     Main obj3 = new Main("C");
@@ -175,7 +175,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Java Programming Language
@@ -183,22 +183,22 @@ Python Programming Language
 C Programming Language
 ```
 
-In the above example, we have created a constructor named `Main()`.
-Here, the constructor takes a single parameter. Notice the expression:
+在上面的示例中，我们创建了一个名为 `Main()` 的构造方法。
+这里，构造方法接收一个参数。注意这个表达式：
 
 ```java
 Main obj1 = new Main("Java");
 ```
 
-Here, we are passing the single value to the constructor.
-Based on the argument passed, the language variable is initialized inside the constructor.
+这里，我们把单个值传给了构造方法。
+根据传入的实参，language 变量会在构造方法内部被初始化。
 
-## 3. Java Default Constructor
+## 3. Java 默认构造方法
 
-If we do not create any constructor, the Java compiler automatically creates a no-arg constructor during the execution of the program.
-This constructor is called the default constructor.
+如果我们没有创建任何构造方法，Java 编译器会在程序执行期间自动创建一个无参构造方法。
+这个构造方法被称为默认构造方法。
 
-### Example: Default Constructor
+### 示例：默认构造方法
 
 ```java
 class Main {
@@ -208,7 +208,7 @@ class Main {
 
   public static void main(String[] args) {
 
-    // calls default constructor
+    // 调用默认构造方法
     Main obj = new Main();
 
     System.out.println("Default Value:");
@@ -218,7 +218,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Default Value:
@@ -226,13 +226,13 @@ a = 0
 b = false
 ```
 
-Here, we haven't created any constructors.
+这里，我们没有创建任何构造方法。
 
-Hence, the Java compiler automatically creates the default constructor.
+因此，Java 编译器会自动创建默认构造方法。
 
-The default constructor initializes any uninitialized instance variables with default values.
+默认构造方法会用默认值初始化所有未初始化的实例变量。
 
-|  Type   |  Default  | Value  |
+|   类型   |    默认    |   值   |
 | :-----: | :-------: | :----: |
 | boolean |           | false  |
 |  byte   |           |   0    |
@@ -242,12 +242,12 @@ The default constructor initializes any uninitialized instance variables with de
 |  char   |           | \u0000 |
 |  float  |           |  0.0f  |
 | double  |           |  0.0d  |
-| object  | Reference |  null  |
+| object  |   引用    |  null  |
 
-To learn more, visit [Java Data Types](/docs/variables-primitive-data-types).
-In the above program, the variables a and b are initialized with default value `0` and `false` respectively.
+想了解更多，请访问 [Java 数据类型](/docs/variables-primitive-data-types)。
+在上面的程序中，变量 a 和 b 分别被初始化为默认值 `0` 和 `false`。
 
-The above program is equivalent to:
+上面的程序等价于：
 
 ```java
 class Main {
@@ -261,7 +261,7 @@ class Main {
   }
 
   public static void main(String[] args) {
-    // call the constructor
+    // 调用构造方法
     Main obj = new Main();
 
     System.out.println("Default Value:");
@@ -271,7 +271,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Default Value:
@@ -279,42 +279,42 @@ a = 0
 b = false
 ```
 
-### Important Notes on Java Constructors
+### 关于 Java 构造方法的重要说明
 
-Constructors are invoked implicitly when you instantiate objects.
+当你实例化对象时，构造方法会被隐式调用。
 
-The two rules for creating a constructor are:
+创建构造方法的两条规则是：
 
-1. The name of the constructor should be the same as the class.
-2. A Java constructor must not have a return type.
+1. 构造方法的名称应与类名相同。
+2. Java 构造方法不能有返回类型。
 
-If a class doesn't have a constructor, the Java compiler automatically creates a default constructor during run-time. The default constructor initializes instance variables with default values. For example, the int variable will be initialized to 0
+如果一个类没有构造方法，Java 编译器会在运行时自动创建一个默认构造方法。默认构造方法会用默认值初始化实例变量。例如，int 变量会被初始化为 0
 
-### Constructor types:
+### 构造方法的类型：
 
-No-Arg Constructor - a constructor that does not accept any arguments
-Parameterized constructor - a constructor that accepts arguments
-Default Constructor - a constructor that is automatically created by the Java compiler if it is not explicitly defined.
-A constructor cannot be abstract or static or final.
-A constructor can be overloaded but can not be overridden.
+无参构造方法 - 不接收任何实参的构造方法
+带参构造方法 - 接收实参的构造方法
+默认构造方法 - 如果没有显式定义，由 Java 编译器自动创建的构造方法。
+构造方法不能是 abstract、static 或 final。
+构造方法可以被重载，但不能被重写。
 
-## Constructors Overloading in Java
+## Java 中的构造方法重载
 
-Similar to Java method overloading, we can also create two or more constructors with different parameters. This is called constructor overloading.
+与 Java 方法重载类似，我们也可以创建两个或更多参数不同的构造方法。这被称为构造方法重载。
 
-### Example: Java Constructor Overloading
+### 示例：Java 构造方法重载
 
 ```java
 class Main {
 
   String language;
 
-  // constructor with no parameter
+  // 无参构造方法
   Main() {
     this.language = "Java";
   }
 
-  // constructor with a single parameter
+  // 带一个参数的构造方法
   Main(String language) {
     this.language = language;
   }
@@ -325,10 +325,10 @@ class Main {
 
   public static void main(String[] args) {
 
-    // call constructor with no parameter
+    // 调用无参构造方法
     Main obj1 = new Main();
 
-    // call constructor with a single parameter
+    // 调用带一个参数的构造方法
     Main obj2 = new Main("Python");
 
     obj1.getName();
@@ -337,21 +337,21 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Programming Language: Java
 Programming Language: Python
 ```
 
-In the above example, we have two constructors: `Main()` and `Main(String language)`.
+在上面的示例中，我们有两个构造方法：`Main()` 和 `Main(String language)`。
 
-Here, both the constructors initialize the value of the variable language with different values.
-Based on the parameter passed during object creation, different constructors are called, and different values are assigned.
-It is also possible to call one constructor from another constructor. To learn more, visit Java Call One Constructor from Another.
+这里，两个构造方法用不同的值初始化 language 变量。
+根据创建对象时传入的参数，会调用不同的构造方法，并赋予不同的值。
+也可以从一个构造方法调用另一个构造方法。想了解更多，请访问 Java 从一个构造方法调用另一个构造方法。
 
 <Callout>
 
-**Note:** We have used this keyword to specify the variable of the class. To know more about this keyword, visit [Java this keyword](/docs/this-keyword).
+**注意：** 我们使用了 this 关键字来指明类的变量。想进一步了解 this 关键字，请访问 [Java this 关键字](/docs/this-keyword)。
 
 </Callout>

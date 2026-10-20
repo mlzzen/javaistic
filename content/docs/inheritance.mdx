@@ -1,17 +1,17 @@
 ---
-title: Java Inheritance
-description: Complete guide to Java inheritance with examples. Learn extends keyword, super keyword, method overriding, and inheritance types in Java OOP.
+title: Java 继承
+description: 包含示例的 Java 继承完整指南。学习 extends 关键字、super 关键字、方法重写，以及 Java 面向对象中的继承类型。
 icon: GitBranch
 ---
 
-Inheritance is one of the fundamental concepts of Object-Oriented Programming (OOP). It allows a class to inherit properties and methods from another class, promoting code reusability and establishing a relationship between classes.
+继承是面向对象编程（OOP）的基本概念之一。它允许一个类继承另一个类的属性和方法，从而提高代码复用性，并在类之间建立关系。
 
-## What is Inheritance in Java?
+## Java 中的继承是什么？
 
-Inheritance is a mechanism where a new class (child class or subclass) can inherit properties and methods from an existing class (parent class or superclass). The child class can use the parent class's methods and fields, and can also add its own methods and fields.
+继承是一种机制：一个新类（子类，child class 或 subclass）可以继承已有类（父类，parent class 或 superclass）的属性和方法。子类可以使用父类的方法和字段，也可以添加自己的方法和字段。
 
 ```java
-class Animal {  // Parent class (superclass)
+class Animal {  // 父类（超类）
     String name;
 
     void eat() {
@@ -19,26 +19,26 @@ class Animal {  // Parent class (superclass)
     }
 }
 
-class Dog extends Animal {  // Child class (subclass)
+class Dog extends Animal {  // 子类
     void bark() {
         System.out.println(name + " is barking");
     }
 }
 ```
 
-## The extends Keyword
+## extends 关键字
 
-The `extends` keyword is used to establish inheritance between classes. The child class extends the parent class.
+`extends` 关键字用于在类之间建立继承关系。子类通过继承扩展父类。
 
-### Syntax
+### 语法
 
 ```java
 class ChildClass extends ParentClass {
-    // child class body
+    // 子类主体
 }
 ```
 
-### Example: Basic Inheritance
+### 示例：基本继承
 
 ```java
 class Vehicle {
@@ -70,17 +70,17 @@ class Main {
         myCar.speed = 180;
         myCar.doors = 4;
 
-        // Using inherited methods
+        // 使用继承来的方法
         myCar.displayInfo();
         myCar.start();
 
-        // Using car-specific method
+        // 使用汽车特有的方法
         myCar.honk();
     }
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Brand: Toyota
@@ -89,11 +89,11 @@ Vehicle is starting...
 Car is honking!
 ```
 
-## Types of Inheritance
+## 继承的类型
 
-### 1. Single Inheritance
+### 1. 单继承
 
-One class inherits from another class.
+一个类继承另一个类。
 
 ```java
 class Animal {
@@ -109,9 +109,9 @@ class Dog extends Animal {
 }
 ```
 
-### 2. Multilevel Inheritance
+### 2. 多级继承
 
-A class inherits from another class, which itself inherits from another class.
+一个类继承另一个类，而那个类又继承自另一个类。
 
 ```java
 class Animal {
@@ -135,16 +135,16 @@ class Dog extends Mammal {
 class Main {
     public static void main(String[] args) {
         Dog dog = new Dog();
-        dog.eat();   // From Animal class
-        dog.walk();  // From Mammal class
-        dog.bark();  // From Dog class
+        dog.eat();   // 来自 Animal 类
+        dog.walk();  // 来自 Mammal 类
+        dog.bark();  // 来自 Dog 类
     }
 }
 ```
 
-### 3. Hierarchical Inheritance
+### 3. 层次继承
 
-Multiple classes inherit from a single parent class.
+多个类继承同一个父类。
 
 ```java
 class Animal {
@@ -168,15 +168,15 @@ class Cat extends Animal {
 
 <Callout>
 
-**Note:** Java doesn't support multiple inheritance of classes (a class cannot extend multiple classes), but it supports multiple inheritance through interfaces.
+**注意：**Java 不支持类的多重继承（一个类不能 extends 多个类），但可以通过接口实现多重继承。
 
 </Callout>
 
-## The super Keyword
+## super 关键字
 
-The `super` keyword is used to refer to the immediate parent class object. It has several uses:
+`super` 关键字用于指向直接父类的对象。它有以下几种用法：
 
-### 1. Accessing Parent Class Methods
+### 1. 访问父类方法
 
 ```java
 class Animal {
@@ -187,7 +187,7 @@ class Animal {
 
 class Dog extends Animal {
     void display() {
-        super.display(); // Call parent class method
+        super.display(); // 调用父类方法
         System.out.println("I am a dog");
     }
 }
@@ -200,14 +200,14 @@ class Main {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 I am an animal
 I am a dog
 ```
 
-### 2. Accessing Parent Class Variables
+### 2. 访问父类变量
 
 ```java
 class Animal {
@@ -224,7 +224,7 @@ class Dog extends Animal {
 }
 ```
 
-### 3. Calling Parent Class Constructor
+### 3. 调用父类构造方法
 
 ```java
 class Animal {
@@ -240,7 +240,7 @@ class Dog extends Animal {
     String breed;
 
     Dog(String name, String breed) {
-        super(name); // Call parent constructor
+        super(name); // 调用父类构造方法
         this.breed = breed;
         System.out.println("Dog constructor called");
     }
@@ -258,7 +258,7 @@ class Main {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Animal constructor called
@@ -266,17 +266,17 @@ Dog constructor called
 Name: Buddy, Breed: Golden Retriever
 ```
 
-## Method Overriding
+## 方法重写
 
-Method overriding allows a child class to provide a specific implementation of a method that is already defined in its parent class.
+方法重写允许子类为父类中已定义的方法提供专门的具体实现。
 
-### Rules for Method Overriding
+### 方法重写的规则
 
-1. The method must have the same name as in the parent class
-2. The method must have the same parameters as in the parent class
-3. There must be an IS-A relationship (inheritance)
+1. 方法名必须与父类中的方法名相同
+2. 方法的参数必须与父类中的相同
+3. 必须存在 IS-A 关系（继承）
 
-### Example: Method Overriding
+### 示例：方法重写
 
 ```java
 class Animal {
@@ -295,7 +295,7 @@ class Dog extends Animal {
         System.out.println("Dog barks");
     }
 
-    // sleep() method is inherited as-is
+    // sleep() 方法被原样继承
 }
 
 class Cat extends Animal {
@@ -310,17 +310,17 @@ class Main {
         Animal animal1 = new Dog();
         Animal animal2 = new Cat();
 
-        animal1.makeSound(); // Dog barks
-        animal2.makeSound(); // Cat meows
+        animal1.makeSound(); // 输出：Dog barks
+        animal2.makeSound(); // 输出：Cat meows
 
-        animal1.sleep();     // Animal is sleeping
+        animal1.sleep();     // 输出：Animal is sleeping
     }
 }
 ```
 
-### @Override Annotation
+### @Override 注解
 
-The `@Override` annotation is used to indicate that a method is being overridden. It helps catch errors at compile time.
+`@Override` 注解用于表明某个方法正在被重写。它有助于在编译时发现错误。
 
 ```java
 class Parent {
@@ -331,26 +331,26 @@ class Parent {
 
 class Child extends Parent {
     @Override
-    void display() { // This annotation ensures correct overriding
+    void display() { // 这个注解确保重写是正确的
         System.out.println("Child display");
     }
 }
 ```
 
-## Access Modifiers and Inheritance
+## 访问修饰符与继承
 
-Different access modifiers affect how members are inherited:
+不同的访问修饰符会影响成员的继承方式：
 
-| Access Modifier | Same Class | Same Package | Subclass | Other Package |
+| 访问修饰符 | 同一个类 | 同一个包 | 子类 | 其他包 |
 | --------------- | ---------- | ------------ | -------- | ------------- |
 | private         | ✓          | ✗            | ✗        | ✗             |
 | default         | ✓          | ✓            | ✓\*      | ✗             |
 | protected       | ✓          | ✓            | ✓        | ✗             |
 | public          | ✓          | ✓            | ✓        | ✓             |
 
-\*Only if subclass is in the same package
+\*仅当子类位于同一个包中
 
-### Example: Protected Members
+### 示例：protected 成员
 
 ```java
 class Parent {
@@ -363,15 +363,15 @@ class Parent {
 
 class Child extends Parent {
     void show() {
-        System.out.println(message); // Can access protected member
-        display(); // Can access protected method
+        System.out.println(message); // 可以访问 protected 成员
+        display(); // 可以访问 protected 方法
     }
 }
 ```
 
-## Constructor Chaining in Inheritance
+## 继承中的构造方法链
 
-When creating an object of a child class, constructors are called in a chain from parent to child.
+创建子类对象时，构造方法会按从父类到子类的顺序依次调用。
 
 ```java
 class GrandParent {
@@ -399,7 +399,7 @@ class Main {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 GrandParent constructor
@@ -407,7 +407,7 @@ Parent constructor
 Child constructor
 ```
 
-## Real-World Example: Employee Management System
+## 实战示例：员工管理系统
 
 ```java
 class Employee {
@@ -428,7 +428,7 @@ class Employee {
     }
 
     public double calculateBonus() {
-        return salary * 0.05; // 5% bonus
+        return salary * 0.05; // 5% 奖金
     }
 }
 
@@ -449,7 +449,7 @@ class Manager extends Employee {
 
     @Override
     public double calculateBonus() {
-        return salary * 0.15; // 15% bonus for managers
+        return salary * 0.15; // 管理者的奖金为 15%
     }
 }
 
@@ -485,20 +485,20 @@ class Main {
 }
 ```
 
-## Key Points to Remember
+## 需要记住的要点
 
-- Use `extends` keyword to establish inheritance
-- Child class inherits all non-private members from parent class
-- Use `super` keyword to access parent class members
-- Method overriding allows child class to provide specific implementation
-- Use `@Override` annotation to ensure correct method overriding
-- Constructor chaining happens automatically from parent to child
-- Java supports single inheritance for classes
-- `private` members are not inherited
-- `protected` members are accessible to child classes
+- 使用 `extends` 关键字建立继承关系
+- 子类继承父类所有非 private 成员
+- 使用 `super` 关键字访问父类成员
+- 方法重写允许子类提供专门的具体实现
+- 使用 `@Override` 注解确保正确重写方法
+- 构造方法链会自动从父类到子类依次执行
+- Java 的类支持单继承
+- `private` 成员不会被继承
+- `protected` 成员可以被子类访问
 
 <Callout>
 
-**Best Practice:** Always use the `@Override` annotation when overriding methods to catch errors early and improve code readability.
+**最佳实践：**重写方法时始终使用 `@Override` 注解，这样可以尽早发现错误，并提高代码可读性。
 
 </Callout>

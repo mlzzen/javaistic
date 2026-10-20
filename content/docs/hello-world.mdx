@@ -1,13 +1,13 @@
 ---
 title: Hello World
-description: In this tutorial, you will learn to write "Hello World" program in Java.
+description: 在本教程中，你将学习用 Java 编写“Hello World”程序。
 ---
 
-A "Hello, World!" is a simple program that outputs `Hello, World!` on the screen. Since it's a very simple program, it's often used to introduce a new programming language to a newbie.
+“Hello, World!”是一个简单的程序，它在屏幕上输出 `Hello, World!`。由于它非常简单，常被用来向新手介绍一门新的编程语言。
 
-Let's explore how Java "Hello, World!" program works.
+我们来看看 Java 的“Hello, World!”程序是如何工作的。
 
-## Java "Hello, World!" Program
+## Java 的“Hello, World!”程序
 
 ```java title="HelloWorld.java"
 class HelloWorld {
@@ -18,19 +18,19 @@ class HelloWorld {
 
 ```
 
-```bash title="Output"
+```bash title="输出"
 Hello, World!
 ```
 
-## How Java "Hello, World!" Program Works?
+## Java 的“Hello, World!”程序如何工作？
 
-### 1. Your First Program
+### 1. 你的第一个程序
 
-In Java, any line starting with `//` is a comment. Comments are intended for users reading the code to understand the intent and functionality of the program. It is completely ignored by the Java compiler (an application that translates Java program to Java bytecode that computer can execute). To learn more, visit [Java comments](/docs/comments).
+在 Java 中，任何以 `//` 开头的行都是注释。注释是写给阅读代码的用户看的，用于理解程序的意图和功能。它会被 Java 编译器（一个把 Java 程序转换成计算机可执行的 Java 字节码的应用程序）完全忽略。要了解更多，请访问 [Java 注释](/docs/comments)。
 
 ### 2. class HelloWorld
 
-In Java, every application begins with a class definition. In the program, HelloWorld is the name of the class, and the class definition is:
+在 Java 中，每个应用程序都从类定义开始。在这个程序里，HelloWorld 是类的名字，类定义是：
 
 ```java
 class HelloWorld {
@@ -39,15 +39,15 @@ class HelloWorld {
 
 ```
 
-For now, just remember that every Java application has a class definition, and the name of the class should match the filename in Java.
+目前你只需要记住，每个 Java 应用程序都有一个类定义，并且类的名字应当与文件名一致。
 
 ### 3. public static void main(String[] args)
 
-This is the main method. Every application in Java must contain the main method. The Java compiler starts executing the code from the main method.
+这是主方法。Java 中的每个应用程序都必须包含主方法。Java 编译器从主方法开始执行代码。
 
-**How does it work?** Good question. However, we will not discuss it in this article. After all, it's a basic program to introduce Java programming language to a newbie. We will learn the meaning of `public`, `static`, `void`, and how methods work? in later chapters.
+**它是如何工作的？** 问得好。不过我们不会在本文中讨论它。毕竟，这只是一个向新手介绍 Java 编程语言的基础程序。我们会在后面的章节中学习 `public`、`static`、`void` 的含义，以及方法是如何工作的。
 
-For now, just remember that the main function is the entry point of your Java application, and it's mandatory in a Java program. The signature of the main method in Java is:
+目前你只需要记住，main 函数是 Java 应用程序的入口点，它在 Java 程序中是必需的。Java 中主方法的签名是：
 
 ```java
 public static void main(String[] args) {
@@ -57,24 +57,24 @@ public static void main(String[] args) {
 
 ### 4. System.out.println("Hello, World!");
 
-The code above is a print statement. It prints the text `Hello, World!` to standard output (your screen). The text inside the quotation marks is called String in Java.
+上面的代码是一条打印语句。它把文本 `Hello, World!` 输出到标准输出（你的屏幕）。引号内的文本在 Java 中被称为字符串。
 
-Notice the print statement is inside the main function, which is inside the class definition.
+注意，这条打印语句位于 main 函数内部，而 main 函数又位于类定义内部。
 
-## Things to take away
+## 要点回顾
 
-    - Every valid Java Application must have a class definition (that matches the filename)
-    - The main method must be inside the class definition.
-    - The compiler executes the codes starting from the main function.
+    - 每个有效的 Java 应用程序都必须有一个（与文件名一致的）类定义
+    - 主方法必须位于类定义内部。
+    - 编译器从 main 函数开始执行代码。
 
-This is a valid Java program that does nothing.
+这是一个什么都不做的有效 Java 程序。
 
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
-        // Write your code here
+        // 在此处编写你的代码
     }
 }
 ```
 
-Don't worry if you don't understand the meaning of `class` , `static` , methods, and so on for now. We will discuss it in detail in later chapters.
+如果你现在还不理解 `class`、`static`、方法等的含义，不用担心。我们会在后面的章节中详细讨论。

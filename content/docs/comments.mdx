@@ -1,67 +1,67 @@
 ---
-title: Java Comments
-description: In this tutorial, you will learn about Java comments, why we use them, and how to use comments in right way.
+title: Java 注释
+description: 在本教程中，你将了解 Java 注释，为什么要使用注释，以及如何正确地使用注释。
 ---
 
-In computer programming, comments are a portion of the program that are completely ignored by Java compilers. They are mainly used to help programmers to understand the code. For example,
+在计算机编程中，注释是程序中会被 Java 编译器完全忽略的一部分。它们主要用于帮助程序员理解代码。例如：
 
 ```java
-// declare and initialize two variables
+// 声明并初始化两个变量
 int a = 1;
 int b = 3;
 
-// print the output
+// 打印输出
 System.out.println("This is output");
 ```
 
-Here, we have used the following comments,
+这里，我们使用了以下注释：
 
-- declare and initialize two variables
-- print the output
+- 声明并初始化两个变量
+- 打印输出
 
-## Types of Comments in Java
+## Java 中的注释类型
 
-In Java, there are two types of comments:
+在 Java 中，有两种类型的注释：
 
-- single-line comment
-- multi-line comment
+- 单行注释
+- 多行注释
 
-### Single-line Comment
+### 单行注释
 
-A single-line comment starts and ends in the same line. To write a single-line comment, we can use the `//` symbol. For example,
+单行注释在同一行开始并在同一行结束。要编写单行注释，我们可以使用 `//` 符号。例如：
 
 ```java
-// "Hello, World!" program example
+// "Hello, World!" 程序示例
 
 class Main {
     public static void main(String[] args) {
     {
-        // prints "Hello, World!"
+        // 输出 "Hello, World!"
         System.out.println("Hello, World!");
     }
 }
 ```
 
-Output:
+输出：
 
 ```plaintext
 Hello, World!
 ```
 
-Here, we have used two single-line comments:
+这里，我们使用了两个单行注释：
 
 - `"Hello, World!" program example`
 - `prints "Hello World!"`
 
-The Java compiler ignores everything from `//` to the end of line. Hence, it is also known as **End of Line** comment.
+Java 编译器会忽略从 `//` 到行尾的所有内容。因此，它也被称为**行尾注释**（End of Line comment）。
 
-### Multi-line Comment
+### 多行注释
 
-When we want to write comments in multiple lines, we can use the multi-line comment. To write multi-line comments, we can use the `/*....*/` symbol. For example,
+当我们需要跨多行写注释时，就可以使用多行注释。要编写多行注释，我们可以使用 `/*....*/` 符号。例如：
 
 ```java
-/* This is an example of  multi-line comment.
- * The program prints "Hello, World!" to the standard output.
+/* 这是一个多行注释的示例。
+ * 该程序将 "Hello, World!" 输出到标准输出。
  */
 
 class HelloWorld {
@@ -72,30 +72,30 @@ class HelloWorld {
 }
 ```
 
-Output:
+输出：
 
 ```plaintext
 Hello, World!
 ```
 
-Here, we have used the multi-line comment:
+这里，我们使用了多行注释：
 
 ```java
-/* This is an example of multi-line comment.
-* The program prints "Hello, World!" to the standard output.
+/* 这是一个多行注释的示例。
+* 该程序将 "Hello, World!" 输出到标准输出。
 */
 ```
 
-This type of comment is also known as **Traditional Comment**. In this type of comment, the Java compiler ignores everything from `/*` to `*/`.
+这种注释也被称为**传统注释**（Traditional Comment）。在这种注释中，Java 编译器会忽略从 `/*` 到 `*/` 的所有内容。
 
-## Use Comments the Right Way
+## 正确使用注释
 
-One thing you should always consider that comments shouldn't be the substitute for a way to explain poorly written code in English. You should always write well structured and self explaining code. And, then use comments.
+有一点你应该始终记住：注释不应当成为用英文解释写得糟糕的代码的替代品。你应当始终编写结构良好、自解释的代码。然后，再使用注释。
 
-Some believe that code should be self-describing and comments should be rarely used. However, in my personal opinion, there is nothing wrong with using comments. We can use comments to explain complex algorithms, regex or scenarios where we have to choose one technique among different technique to solve problems.
+有人认为代码应当自我描述，注释应当尽量少用。不过，在我看来，使用注释并没有什么错。我们可以用注释来解释复杂的算法、正则表达式，或者说明在多种技术方案中为什么选择其中一种来解决问题。
 
 <Callout>
 
-**Note:** In most cases, always use comments to explain **'why'** rather than **'how'** and you are good to go.
+**注意：** 在大多数情况下，始终用注释解释**“为什么”**，而不是**“怎么做”**，这样就没问题了。
 
 </Callout>

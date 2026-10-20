@@ -1,21 +1,21 @@
 ---
-title: Java for Loop
-description: In this tutorial, we will learn how to use for loop in Java with the help of examples and we will also learn about the working of Loop in computer programming.
+title: Java for 循环
+description: 在本教程中，我们将通过示例学习如何在 Java 中使用 for 循环，并了解循环在计算机编程中的工作原理。
 ---
 
-In computer programming, loops are used to repeat a block of code. For example, if you want to show a message 100 times, then rather than typing the same code 100 times, you can use a loop.
+在计算机编程中，循环用于重复执行一个代码块。例如，如果你想显示 100 次相同的信息，那么与其把同样的代码输入 100 遍，不如使用循环。
 
-In Java, there are three types of loops.
+在 Java 中，有三种类型的循环。
 
-- for loop
-- while loop
-- do...while loop
+- for 循环
+- while 循环
+- do...while 循环
 
-This tutorial focuses on the for loop. You will learn about the other type of loops in the upcoming tutorials.
+本教程重点讲解 for 循环。你将在后续教程中了解其他类型的循环。
 
-## Java for Loop
+## Java for 循环
 
-Java `for` loop is used to run a block of code for a certain number of times. The syntax of `for` loop is:
+Java 的 `for` 循环用于将一段代码块运行指定的次数。`for` 循环的语法是：
 
 ```java
 for (initialExpression; testExpression; updateExpression) {
@@ -23,39 +23,39 @@ for (initialExpression; testExpression; updateExpression) {
 }
 ```
 
-Here,
+这里，
 
-1. The **initialExpression** initializes and/or declares variables and executes only once.
-2. The **condition** is evaluated. If the **condition** is `true`, the body of the `for` loop is executed.
-3. The **updateExpression** updates the value of **initialExpression**.
-4. The **condition** is evaluated again. The process continues until the **condition** is `false`.
+1. **initialExpression** 初始化或声明变量，并且只执行一次。
+2. 对**条件**求值。如果**条件**为 `true`，则执行 `for` 循环的主体。
+3. **updateExpression** 更新 **initialExpression** 的值。
+4. 再次对**条件**求值。这个过程会一直持续，直到**条件**为 `false`。
 
-To learn more about the conditions, visit [Java relational](operators#3-java-relational-operators) and [logical operators](operators#4-java-logical-operators).
+要了解更多关于条件的内容，请访问 [Java 关系运算符](operators#3-java-relational-operators) 和 [逻辑运算符](operators#4-java-logical-operators)。
 
-## Working of for loop in Java with flowchart
+## 结合流程图理解 Java for 循环的工作原理
 
 <div>
 
 ![Working of Java if statement](/img/docs/working-of-for-loop.svg)
 
 <p align="center" className="text-base font-medium text-neutral-600">
-  Flowchart of Java for loop
+  Java for 循环的流程图
 </p>
 
 </div>
 
-### Example 1: Display a Text Five Times
+### 示例 1：显示五次文本
 
-#### Input
+#### 输入
 
 ```java
-// Program to print a text 5 times
+// 打印文本 5 次的程序
 
 class Main {
   public static void main(String[] args) {
 
     int n = 5;
-    // for loop
+    // for 循环
     for (int i = 1; i <= n; ++i) {
       System.out.println("Java is fun");
     }
@@ -63,7 +63,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Java is fun
@@ -73,29 +73,29 @@ Java is fun
 Java is fun
 ```
 
-Here is how this program works.
+这个程序的工作过程如下。
 
-| Iteration |     Variable     | Condition: i `<=` n |                       Action                        |
-| :-------: | :--------------: | :-----------------: | :-------------------------------------------------: |
-|    1st    | `i = 1`, `n = 5` |       `true`        | `Java is fun` is printed `i` is increased to **2**. |
-|    2nd    | `i = 2`, `n = 5` |       `true`        | `Java is fun` is printed `i` is increased to **3**. |
-|    3rd    | `i = 3`, `n = 5` |       `true`        | `Java is fun` is printed `i` is increased to **4**. |
-|    4th    | `i = 4`, `n = 5` |       `true`        | `Java is fun` is printed `i` is increased to **5**. |
-|    5th    | `i = 5`, `n = 5` |       `true`        | `Java is fun` is printed `i` is increased to **6**. |
-|    6th    | `i = 6`, `n = 5` |       `false`       |               The loop is terminated.               |
+|      迭代       |       变量       | 条件：i `<=` n |                操作                 |
+| :-------------: | :--------------: | :------------: | :---------------------------------: |
+|     第 1 次     | `i = 1`, `n = 5` |     `true`     | 打印 `Java is fun`，`i` 增加到 **2**。 |
+|     第 2 次     | `i = 2`, `n = 5` |     `true`     | 打印 `Java is fun`，`i` 增加到 **3**。 |
+|     第 3 次     | `i = 3`, `n = 5` |     `true`     | 打印 `Java is fun`，`i` 增加到 **4**。 |
+|     第 4 次     | `i = 4`, `n = 5` |     `true`     | 打印 `Java is fun`，`i` 增加到 **5**。 |
+|     第 5 次     | `i = 5`, `n = 5` |     `true`     | 打印 `Java is fun`，`i` 增加到 **6**。 |
+|     第 6 次     | `i = 6`, `n = 5` |    `false`     |             循环终止。              |
 
-### Example 2: Display numbers from 1 to 5
+### 示例 2：显示 1 到 5 的数字
 
-#### Input
+#### 输入
 
 ```java
-// Program to print numbers from 1 to 5
+// 打印 1 到 5 的数字的程序
 
 class Main {
   public static void main(String[] args) {
 
     int n = 5;
-    // for loop
+    // for 循环
     for (int i = 1; i <= n; ++i) {
       System.out.println(i);
     }
@@ -103,7 +103,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 1
@@ -113,21 +113,21 @@ class Main {
 5
 ```
 
-Here is how the program works.
+这个程序的工作过程如下。
 
-| Iteration |     Variable     | Condition: i `<=` n |                  Action                   |
-| :-------: | :--------------: | :-----------------: | :---------------------------------------: |
-|    1st    | `i = 1`, `n = 5` |       `true`        | `1` is printed `i` is increased to **2**. |
-|    2nd    | `i = 2`, `n = 5` |       `true`        | `2` is printed `i` is increased to **3**. |
-|    3rd    | `i = 3`, `n = 5` |       `true`        | `3` is printed `i` is increased to **4**. |
-|    4th    | `i = 4`, `n = 5` |       `true`        | `4` is printed `i` is increased to **5**. |
-|    5th    | `i = 5`, `n = 5` |       `true`        | `5` is printed `i` is increased to **6**. |
-|    6th    | `i = 6`, `n = 5` |       `false`       |          The loop is terminated.          |
+|      迭代       |       变量       | 条件：i `<=` n |         操作          |
+| :-------------: | :--------------: | :------------: | :--------------------: |
+|     第 1 次     | `i = 1`, `n = 5` |     `true`     | 打印 `1`，`i` 增加到 **2**。 |
+|     第 2 次     | `i = 2`, `n = 5` |     `true`     | 打印 `2`，`i` 增加到 **3**。 |
+|     第 3 次     | `i = 3`, `n = 5` |     `true`     | 打印 `3`，`i` 增加到 **4**。 |
+|     第 4 次     | `i = 4`, `n = 5` |     `true`     | 打印 `4`，`i` 增加到 **5**。 |
+|     第 5 次     | `i = 5`, `n = 5` |     `true`     | 打印 `5`，`i` 增加到 **6**。 |
+|     第 6 次     | `i = 6`, `n = 5` |    `false`     |       循环终止。       |
 
-### Example 3: Display Sum of n Natural Numbers
+### 示例 3：显示 n 个自然数之和
 
 ```java
-// Program to find the sum of natural numbers from 1 to 1000.
+// 求 1 到 1000 的自然数之和的程序。
 
 class Main {
   public static void main(String[] args) {
@@ -135,9 +135,9 @@ class Main {
     int sum = 0;
     int n = 1000;
 
-    // for loop
+    // for 循环
     for (int i = 1; i <= n; ++i) {
-      // body inside for loop
+      // for 循环内部的主体
       sum += i;     // sum = sum + i
     }
 
@@ -146,20 +146,20 @@ class Main {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Sum = 500500
 ```
 
-Here, the value of `sum` is **0** initially. Then, the for loop is iterated from `i = 1 to 1000`. In each iteration, `i` is added to `sum`and its value is increased by **1**.
+这里，`sum` 的值最初是 **0**。然后，for 循环从 `i = 1 to 1000` 进行迭代。在每次迭代中，`i` 被加到 `sum` 上，同时 `i` 的值增加 **1**。
 
-When `i` becomes **1001**, the test condition is `false` and `sum` will be equal to `0 + 1 + 2 + .... + 1000`.
+当 `i` 变成 **1001** 时，测试条件为 `false`，此时 `sum` 将等于 `0 + 1 + 2 + .... + 1000`。
 
-The above program to add the sum of natural numbers can also be written as
+上面这个计算自然数之和的程序也可以写成
 
 ```java
-// Program to find the sum of natural numbers from 1 to 1000.
+// 求 1 到 1000 的自然数之和的程序。
 
 class Main {
   public static void main(String[] args) {
@@ -167,9 +167,9 @@ class Main {
     int sum = 0;
     int n = 1000;
 
-    // for loop
+    // for 循环
     for (int i = n; i >= 1; --i) {
-      // body inside for loop
+      // for 循环内部的主体
       sum += i;     // sum = sum + i
     }
 
@@ -178,24 +178,24 @@ class Main {
 }
 ```
 
-The output of this program is the same as the **Example 3**.
+这个程序的输出与**示例 3**相同。
 
-## Java for-each Loop
+## Java for-each 循环
 
-The Java for loop has an alternative syntax that makes it easy to iterate through [arrays](arrays) and collections. For example,
+Java for 循环还有一种替代语法，可以方便地遍历[数组](arrays)和集合。例如，
 
-#### Input
+#### 输入
 
 ```java
-// print array elements
+// 打印数组元素
 
 class Main {
   public static void main(String[] args) {
 
-    // create an array
+    // 创建一个数组
     int[] numbers = {3, 7, 5, -5};
 
-    // iterating through the array
+    // 遍历数组
     for (int number: numbers) {
        System.out.println(number);
     }
@@ -203,7 +203,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 3
@@ -212,20 +212,20 @@ class Main {
 -5
 ```
 
-Here, we have used the **for-each loop** to print each element of the `numbers` array one by one.
+这里，我们使用 **for-each 循环**逐个打印 `numbers` 数组的每个元素。
 
-In the first iteration of the loop, `number` will be 3, `number` will be 7 in second iteration and so on.
+在循环的第一次迭代中，`number` 为 3；在第二次迭代中，`number` 为 7，依此类推。
 
-To learn more, visit [Java for-each Loop](enhanced-for-loop).
+想了解更多，请访问 [Java for-each 循环](enhanced-for-loop)。
 
-## Java Infinite for Loop
+## Java 无限 for 循环
 
-If we set the test expression in such a way that it never evaluates to false, the for loop will run forever. This is called infinite for loop. For example,
+如果我们把测试表达式设置为永远不会求值为 false 的形式，for 循环就会一直运行下去。这称为无限 for 循环。例如，
 
-#### Input
+#### 输入
 
 ```java
-// Infinite for Loop
+// 无限 for 循环
 
 class Infinite {
     public static void main(String[] args) {
@@ -239,4 +239,4 @@ class Infinite {
 }
 ```
 
-Here, the test expression ,`i <= 10`, is never `false` and Hello is printed repeatedly until the memory runs out.
+这里，测试表达式 `i <= 10` 永远不会是 `false`，Hello 会被反复打印，直到内存耗尽。

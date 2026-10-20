@@ -1,11 +1,11 @@
 ---
-title: Java switch Statement
-description: In this tutorial, you will learn to use the switch statement in Java to control the flow of your program’s execution with the help of examples.
+title: Java switch 语句
+description: 在本教程中，你将通过示例学习使用 Java 中的 switch 语句来控制程序的执行流程。
 ---
 
-The `switch` statement allows us to execute a block of code among many alternatives.
+`switch` 语句允许我们在众多选项中执行一个代码块。
 
-The syntax of the `switch` statement in Java is:
+Java 中 `switch` 语句的语法是：
 
 ```java
 switch (expression) {
@@ -26,26 +26,26 @@ switch (expression) {
   }
 ```
 
-## How does the switch-case statement work?
+## switch-case 语句如何工作？
 
-The `expression` is evaluated once and compared with the values of each case.
+`expression` 只求值一次，并与每个 case 的值进行比较。
 
-- If `expression` matches with `value1`, the code of `case value1` are executed. Similarly, the code of `case value2` is executed if `expression` matches with `value2`.
-- If there is no match, the code of the **default case** is executed.
+- 如果 `expression` 与 `value1` 匹配，则执行 `case value1` 的代码。同样，如果 `expression` 与 `value2` 匹配，则执行 `case value2` 的代码。
+- 如果没有任何匹配，则执行 **default 分支**的代码。
 
 <Callout>
 
-**Note:** The working of the switch-case statement is similar to the [Java if...else...if ladder](/docs/if-else-statement#3-java-if-else-if-statement). However, the syntax of the `switch` statement is cleaner and much easier to read and write.
+**注意：** switch-case 语句的工作方式与 [Java if...else...if 阶梯](/docs/if-else-statement#3-java-if-else-if-statement) 类似。不过，`switch` 语句的语法更简洁，读写起来也容易得多。
 
 </Callout>
 
-### Example: Java switch Statement
+### 示例：Java switch 语句
 
-#### Input
+#### 输入
 
 ```java
-// Java Program to check the size
-// using the switch...case statement
+// 检查尺寸的 Java 程序
+// 使用 switch...case 语句
 
 class Main {
   public static void main(String[] args) {
@@ -53,7 +53,7 @@ class Main {
     int number = 44;
     String size;
 
-    // switch statement to check size
+    // 用 switch 语句检查尺寸
     switch (number) {
 
       case 29:
@@ -64,7 +64,7 @@ class Main {
         size = "Medium";
         break;
 
-      // match the value of week
+      // 匹配 week 的值
       case 44:
         size = "Large";
         break;
@@ -83,38 +83,38 @@ class Main {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Size: Large
 ```
 
-In the above example, we have used the switch statement to find the size. Here, we have a variable `number`. The variable is compared with the value of each case statement.
+在上面的示例中，我们使用 switch 语句来查找尺寸。这里，我们有一个变量 `number`。该变量会与每个 case 语句的值进行比较。
 
-Since the value matches with **44**, the code of `case 44` is executed.
+由于值与 **44** 匹配，所以执行 `case 44` 的代码。
 
 ```java
 size = "Large";
 break;
 ```
 
-Here, the `size` variable is assigned with the value `Large`.
+这里，`size` 变量被赋值为 `Large`。
 
-## Flowchart of switch Statement
+## switch 语句的流程图
 
 <div className="items-center">
 
 ![Working of Java if statement](/img/docs/switch-case-flowchart.svg)
 
 <p align="center" className="text-base font-medium text-neutral-600">
-  Flow chart of the Java switch statement
+  Java switch 语句的流程图
 </p>
 
 </div>
 
-## break statement in Java switch...case
+## Java switch...case 中的 break 语句
 
-Notice that we have been using break in each case block.
+注意，我们在每个 case 块中都使用了 break。
 
 ```java
  ...
@@ -124,9 +124,9 @@ case 29:
 ...
 ```
 
-The `break` statement is used to terminate the **switch-case** statement. If `break` is not used, all the cases after the matching case are also executed. For example,
+`break` 语句用于终止 **switch-case** 语句。如果不使用 `break`，那么匹配的 case 之后的所有 case 也会被执行。例如，
 
-#### Input
+#### 输入
 
 ```java
 class Main {
@@ -134,12 +134,12 @@ class Main {
 
     int expression = 2;
 
-    // switch statement to check size
+    // 用 switch 语句检查尺寸
     switch (expression) {
       case 1:
         System.out.println("Case 1");
 
-        // matching case
+        // 匹配的 case
       case 2:
         System.out.println("Case 2");
 
@@ -153,7 +153,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Case 2
@@ -161,17 +161,17 @@ Case 3
 Default case
 ```
 
-In the above example, `expression` matches with `case 2`. Here, we haven't used the break statement after each case.
+在上面的示例中，`expression` 与 `case 2` 匹配。这里，我们没有在每个 case 之后使用 break 语句。
 
-Hence, all the cases after `case 2` are also executed.
+因此，`case 2` 之后的所有 case 也会被执行。
 
-This is why the `break` statement is needed to terminate the **switch-case** statement after the matching case. To learn more, visit Java break Statement.
+这就是为什么需要在匹配的 case 之后使用 `break` 语句来终止 **switch-case** 语句。想了解更多，请访问 Java break 语句。
 
-## default case in Java switch-case
+## Java switch-case 中的 default 分支
 
-The switch statement also includes an **optional default case**. It is executed when the expression doesn't match any of the cases. For example,
+switch 语句还包含一个**可选的 default 分支**。当表达式不匹配任何 case 时，就会执行它。例如，
 
-#### Input
+#### 输入
 
 ```java
 class Main {
@@ -189,7 +189,7 @@ class Main {
         System.out.println("Large Size");
         break;
 
-      // default case
+      // default 分支
       default:
         System.out.println("Unknown Size");
     }
@@ -197,15 +197,15 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Unknown Size
 ```
 
-In the above example, we have created a **switch-case** statement. Here, the value of `expression` doesn't match with any of the cases.
+在上面的示例中，我们创建了一个 **switch-case** 语句。这里，`expression` 的值不匹配任何 case。
 
-Hence, the code inside the **default case** is executed.
+因此，执行 **default 分支**内的代码。
 
 ```java
 default:
@@ -216,27 +216,27 @@ default:
 
 <Callout>
 
-**Note:** The Java switch statement only works with:
+**注意：** Java switch 语句只适用于：
 
 <ul>
   <li>
     {" "}
     <a href="/docs/variables-primitive-data-types">
-      <b>Primitive data types:</b>
+      <b>基本数据类型：</b>
     </a>{" "}
-    byte, short, char, and int{" "}
+    byte、short、char 和 int{" "}
   </li>
   <li>
     {" "}
-    <b>Enumerated types</b>{" "}
+    <b>枚举类型</b>{" "}
   </li>
   <li>
     {" "}
-    <b>String Class</b>{" "}
+    <b>String 类</b>{" "}
   </li>
   <li>
     {" "}
-    <b>Wrapper Classes:</b> Character, Byte, Short, and Integer.
+    <b>包装类：</b> Character、Byte、Short 和 Integer。
   </li>
 </ul>
 

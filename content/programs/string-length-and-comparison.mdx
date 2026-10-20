@@ -1,20 +1,20 @@
 ---
-title: Java Program to Find String Length and Compare Strings
-shortTitle: String Length & Comparison
-description: Learn to find string length, compare strings using equals(), and perform basic string operations in Java with practical examples and explanations.
+title: 用 Java 查找字符串长度并比较字符串
+shortTitle: 字符串长度与比较
+description: 学习如何查找字符串长度、使用 equals() 比较字符串，并通过实用示例和讲解在 Java 中完成基本的字符串操作。
 ---
 
-In this program, you'll learn to work with Java strings by finding their length and comparing different strings using various methods.
+在这个程序中，你将学习如何操作 Java 字符串：查找字符串的长度，并用多种方法比较不同的字符串。
 
-To understand this example, you should have the knowledge of the following Java programming topics:
+要理解这个示例，你需要了解以下 Java 编程主题：
 
-- [Java Strings](/docs/strings)
-- [Java Basic Input and Output](/docs/basic-input-output)
-- [Java Variables and Data Types](/docs/variables-primitive-data-types)
+- [Java 字符串](/docs/strings)
+- [Java 基础输入与输出](/docs/basic-input-output)
+- [Java 变量与数据类型](/docs/variables-primitive-data-types)
 
-## Program to Find String Length and Compare Strings
+## 查找字符串长度并比较字符串的程序
 
-### Example 1: Finding String Length
+### 示例 1：查找字符串长度
 
 ```java
 class StringLength {
@@ -35,7 +35,7 @@ class StringLength {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 String: "Java Programming"
@@ -48,7 +48,7 @@ String: ""
 Length: 0
 ```
 
-### Example 2: Comparing Strings
+### 示例 2：比较字符串
 
 ```java
 class StringComparison {
@@ -58,22 +58,22 @@ class StringComparison {
         String str3 = "JAVA";
         String str4 = new String("Java");
 
-        // Using equals() method
+        // 使用 equals() 方法
         System.out.println("=== Using equals() method ===");
         System.out.println("str1.equals(str2): " + str1.equals(str2));
         System.out.println("str1.equals(str3): " + str1.equals(str3));
         System.out.println("str1.equals(str4): " + str1.equals(str4));
 
-        // Using equalsIgnoreCase() method
+        // 使用 equalsIgnoreCase() 方法
         System.out.println("\n=== Using equalsIgnoreCase() method ===");
         System.out.println("str1.equalsIgnoreCase(str3): " + str1.equalsIgnoreCase(str3));
 
-        // Using == operator (not recommended for strings)
+        // 使用 == 运算符（不推荐用于字符串）
         System.out.println("\n=== Using == operator ===");
         System.out.println("str1 == str2: " + (str1 == str2));
         System.out.println("str1 == str4: " + (str1 == str4));
 
-        // Using compareTo() method
+        // 使用 compareTo() 方法
         System.out.println("\n=== Using compareTo() method ===");
         System.out.println("str1.compareTo(str2): " + str1.compareTo(str2));
         System.out.println("str1.compareTo(str3): " + str1.compareTo(str3));
@@ -81,7 +81,7 @@ class StringComparison {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 === Using equals() method ===
@@ -101,7 +101,7 @@ str1.compareTo(str2): 0
 str1.compareTo(str3): 32
 ```
 
-### Example 3: Interactive String Operations
+### 示例 3：交互式字符串操作
 
 ```java
 import java.util.Scanner;
@@ -116,12 +116,12 @@ class InteractiveStringOps {
         System.out.print("Enter second string: ");
         String second = scanner.nextLine();
 
-        // Display lengths
+        // 显示长度
         System.out.println("\n=== String Analysis ===");
         System.out.println("First string length: " + first.length());
         System.out.println("Second string length: " + second.length());
 
-        // Compare strings
+        // 比较字符串
         System.out.println("\n=== String Comparison ===");
         if (first.equals(second)) {
             System.out.println("The strings are exactly the same!");
@@ -131,7 +131,7 @@ class InteractiveStringOps {
             System.out.println("The strings are different.");
         }
 
-        // Additional operations
+        // 其他操作
         System.out.println("\n=== Additional Information ===");
         System.out.println("First string in uppercase: " + first.toUpperCase());
         System.out.println("Second string in lowercase: " + second.toLowerCase());
@@ -142,7 +142,7 @@ class InteractiveStringOps {
 }
 ```
 
-#### Sample Output:
+#### 示例输出：
 
 ```
 Enter first string: Hello
@@ -161,19 +161,20 @@ Second string in lowercase: hello
 Combined length: 10
 ```
 
-## Key Points
+## 要点
 
-- Use `length()` method to find the length of a string
-- Use `equals()` method to compare strings for content equality
-- Use `equalsIgnoreCase()` for case-insensitive comparison
-- Avoid using `==` operator for string comparison
-- `compareTo()` returns 0 if strings are equal, negative if first is smaller, positive if first is larger
+- 使用 `length()` 方法获取字符串的长度
+- 使用 `equals()` 方法比较字符串的内容是否相等
+- 使用 `equalsIgnoreCase()` 进行不区分大小写的比较
+- 避免使用 `==` 运算符比较字符串
+- 如果两个字符串相等，`compareTo()` 返回 0；如果第一个较小则返回负数，较大则返回正数
 
-## Next Steps
+## 下一步
 
-Try modifying the program to:
+试着修改程序，完成以下任务：
 
-1. Check if a string is empty or null
-2. Find the longest and shortest string from multiple inputs
-3. Count specific characters in a string
-4. Reverse a string and compare with the original
+1. 检查字符串是否为空或为 null
+2. 从多个输入中找出最长和最短的字符串
+3. 统计字符串中某个字符出现的次数
+4. 反转字符串并与原字符串比较
+

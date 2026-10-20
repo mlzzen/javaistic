@@ -1,17 +1,17 @@
 ---
-title: Java Program to Reverse a Number
-description: Learn different methods to reverse a number in Java with complete code examples and explanations.
+title: 用 Java 反转一个数字
+description: 学习在 Java 中反转数字的多种方法，配有完整代码示例和讲解。
 ---
 
-## Introduction
+## 引言
 
-Reversing a number is a fundamental programming concept that involves extracting digits from right to left and reconstructing them in reverse order. For example, reversing 1234 gives us 4321.
+反转数字是一个基础编程概念：从右到左逐位取出数字，再按相反顺序重新组合。例如，反转 1234 会得到 4321。
 
-This program demonstrates multiple approaches to reverse a number in Java, from basic iterative methods to advanced techniques.
+这个程序演示了在 Java 中反转数字的多种方法，从基本的迭代方法到更高级的技巧。
 
-## Method 1: Using While Loop (Most Common)
+## 方法 1：使用 while 循环（最常用）
 
-This is the most straightforward approach using digit extraction and mathematical operations.
+这是最直观的方法，通过提取各位数字和数学运算实现。
 
 ```java
 import java.util.Scanner;
@@ -26,17 +26,17 @@ public class ReverseNumber {
         int originalNumber = number;
         int reversedNumber = 0;
 
-        // Handle negative numbers
+        // 处理负数
         boolean isNegative = number < 0;
         number = Math.abs(number);
 
         while (number != 0) {
-            int digit = number % 10;           // Extract last digit
-            reversedNumber = reversedNumber * 10 + digit;  // Build reversed number
-            number = number / 10;              // Remove last digit
+            int digit = number % 10;           // 取出最后一位
+            reversedNumber = reversedNumber * 10 + digit;  // 构造反转后的数字
+            number = number / 10;              // 去掉最后一位
         }
 
-        // Apply sign if original was negative
+        // 如果原数是负数，则补上符号
         if (isNegative) {
             reversedNumber = -reversedNumber;
         }
@@ -49,7 +49,7 @@ public class ReverseNumber {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```
 Enter a number to reverse: 1234
@@ -57,16 +57,16 @@ Original number: 1234
 Reversed number: 4321
 ```
 
-## Method 2: Using For Loop
+## 方法 2：使用 for 循环
 
-The same logic can be implemented using a for loop, which is more compact but requires knowing the number of digits.
+同样的逻辑也可以用 for 循环实现，代码更紧凑，但需要事先知道数字的位数。
 
 ```java
 import java.util.Scanner;
 
 public class ReverseNumberForLoop {
 
-    // Method to count digits in a number
+    // 统计数字位数的方法
     public static int countDigits(int number) {
         if (number == 0) return 1;
         int count = 0;
@@ -109,9 +109,9 @@ public class ReverseNumberForLoop {
 }
 ```
 
-## Method 3: Using String Manipulation
+## 方法 3：使用字符串操作
 
-This approach converts the number to a string and uses built-in string methods.
+这种方法把数字转换成字符串，并使用内置的字符串方法。
 
 ```java
 import java.util.Scanner;
@@ -123,16 +123,16 @@ public class ReverseNumberString {
         System.out.print("Enter a number to reverse: ");
         int number = scanner.nextInt();
 
-        // Convert to string and handle negative sign
+        // 转换为字符串并处理负号
         String numberStr = String.valueOf(Math.abs(number));
 
-        // Reverse the string
+        // 反转字符串
         String reversedStr = new StringBuilder(numberStr).reverse().toString();
 
-        // Convert back to integer
+        // 再转换回整数
         int reversedNumber = Integer.parseInt(reversedStr);
 
-        // Apply negative sign if original was negative
+        // 如果原数是负数，则补上负号
         if (number < 0) {
             reversedNumber = -reversedNumber;
         }
@@ -145,16 +145,16 @@ public class ReverseNumberString {
 }
 ```
 
-## Method 4: Using Recursion
+## 方法 4：使用递归
 
-A recursive approach that demonstrates functional programming concepts.
+一种体现函数式编程思想的递归方法。
 
 ```java
 import java.util.Scanner;
 
 public class ReverseNumberRecursive {
 
-    // Recursive method to reverse a number
+    // 递归反转数字的方法
     public static int reverseNumber(int number, int reversedNumber) {
         if (number == 0) {
             return reversedNumber;
@@ -189,9 +189,9 @@ public class ReverseNumberRecursive {
 }
 ```
 
-## Method 5: Complete Program with Palindrome Check
+## 方法 5：带回文判断的完整程序
 
-This enhanced version also checks if the number is a palindrome.
+这个增强版本还会判断该数是否为回文数。
 
 ```java
 import java.util.Scanner;
@@ -224,7 +224,7 @@ public class CompleteReverseNumber {
 
         int reversedNumber = reverseNumber(number);
 
-        // Apply negative sign if original was negative
+        // 如果原数是负数，则补上负号
         if (number < 0) {
             reversedNumber = -reversedNumber;
         }
@@ -232,7 +232,7 @@ public class CompleteReverseNumber {
         System.out.println("Original number: " + number);
         System.out.println("Reversed number: " + reversedNumber);
 
-        // Check if palindrome
+        // 判断是否为回文数
         if (isPalindrome(number)) {
             System.out.println(Math.abs(number) + " is a palindrome!");
         } else {
@@ -244,7 +244,7 @@ public class CompleteReverseNumber {
 }
 ```
 
-**Sample Output:**
+**示例输出：**
 
 ```
 Enter a number to reverse: 12321
@@ -253,45 +253,46 @@ Reversed number: 12321
 12321 is a palindrome!
 ```
 
-## Key Concepts Explained
+## 核心概念讲解
 
-### 1. **Digit Extraction**
+### 1. **提取各位数字**
 
-- `number % 10` extracts the last digit
-- `number / 10` removes the last digit
+- `number % 10` 取出最后一位数字
+- `number / 10` 去掉最后一位数字
 
-### 2. **Building Reversed Number**
+### 2. **构造反转后的数字**
 
-- `reversedNumber * 10 + digit` adds the extracted digit to the left
+- `reversedNumber * 10 + digit` 把取出的数字加到左侧
 
-### 3. **Handling Negative Numbers**
+### 3. **处理负数**
 
-- Store the sign separately and apply it at the end
-- Work with absolute value during reversal
+- 单独保存符号，最后再补上
+- 反转过程中只处理绝对值
 
-### 4. **Edge Cases**
+### 4. **边界情况**
 
-- Single digit numbers (0-9)
-- Negative numbers
-- Numbers ending with zeros (e.g., 1200 becomes 21)
+- 一位数（0-9）
+- 负数
+- 末尾带零的数（例如 1200 会变成 21）
 
-## Time and Space Complexity
+## 时间与空间复杂度
 
-- **Time Complexity**: O(log n) where n is the input number (number of digits)
-- **Space Complexity**: O(1) for iterative methods, O(log n) for recursive method
+- **时间复杂度**：O(log n)，其中 n 是输入的数值（即数字的位数）
+- **空间复杂度**：迭代方法为 O(1)，递归方法为 O(log n)
 
-## Common Applications
+## 常见应用
 
-1. **Palindrome Detection**: Checking if a number reads the same forwards and backwards
-2. **Mathematical Operations**: Various number theory problems
-3. **Data Processing**: Reversing sequences or patterns
-4. **Algorithm Practice**: Understanding digit manipulation techniques
+1. **回文检测**：判断一个数正着读和倒着读是否相同
+2. **数学运算**：各类数论问题
+3. **数据处理**：反转序列或模式
+4. **算法练习**：理解数字位操作技巧
 
-## Practice Exercises
+## 练习题
 
-1. Modify the program to reverse only the digits, keeping the sign in the original position
-2. Create a version that reverses numbers in different bases (binary, octal, hexadecimal)
-3. Implement a method that reverses alternating digits (1st, 3rd, 5th, etc.)
-4. Write a program that finds all palindromic numbers in a given range
+1. 修改程序，只反转数字的各位，符号保持原来的位置
+2. 编写一个能在不同进制下反转数字的版本（二进制、八进制、十六进制）
+3. 实现一个方法，反转间隔位置的数字（第 1、3、5 位等）
+4. 编写程序，找出给定范围内所有回文数
 
-This program provides a solid foundation for understanding digit manipulation in Java programming!
+这个程序为你理解 Java 中的数字位操作打下了扎实的基础！
+

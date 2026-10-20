@@ -1,155 +1,155 @@
 ---
-title: Java Class and Objects
-description: In this tutorial, we will learn about classes and objects in Java with the help of examples.
+title: Java 类与对象
+description: 在本教程中，我们将借助示例学习 Java 中的类和对象。
 ---
 
-Java is an object-oriented programming language. The core concept of the object-oriented approach is to break complex problems into smaller objects.
+Java 是一门面向对象的编程语言。面向对象方法的核心思想，就是把复杂的问题拆解成更小的对象。
 
-An object is any entity that has a state and behavior. For example, a bicycle is an object. It has
+对象是任何拥有状态和行为的实体。例如，一辆自行车就是一个对象。它有：
 
-- **States**: idle, first gear, etc
-- **Behaviors**: braking, accelerating, etc.
+- **状态**：静止、一挡等
+- **行为**：刹车、加速等
 
-Before we learn about objects, let's first know about classes in Java.
+在学习对象之前，我们先来了解 Java 中的类。
 
-## Java Class
+## Java 类
 
-A class is a blueprint for the object. Before we create an object, we first need to define the class.
+类是对象的蓝图。在创建对象之前，我们需要先定义类。
 
-We can think of the class as a sketch (prototype) of a house. It contains all the details about the floors, doors, windows, etc. Based on these descriptions we build the house. House is the object.
+我们可以把类想象成房子的设计图（原型）。它包含关于楼层、门、窗户等的全部细节。我们根据这些描述来建造房子。房子就是对象。
 
-Since many houses can be made from the same description, we can create many objects from a class.
+既然同一份描述可以建造出许多房子，我们也可以从一个类创建出许多对象。
 
-### Create a class in Java
+### 在 Java 中创建类
 
-We can create a class in Java using the class keyword. For example,
+我们可以使用 `class` 关键字在 Java 中创建类。例如：
 
 ```java
 class ClassName {
-  // fields
-  // methods
+  // 字段
+  // 方法
 }
 ```
 
-Here, `fields` [(variables)](/docs/variables-literals) and [methods](/docs/methods) represent the **state** and **behavior** of the object respectively.
+这里的 `fields` [（变量）](/docs/variables-literals)和[方法](/docs/methods)分别表示对象的**状态**和**行为**。
 
-- fields are used to store data
-- methods are used to perform some operations
+- 字段用于存储数据
+- 方法用于执行某些操作
 
-For our `bicycle` object, we can create the class as
+对于我们的 `bicycle` 对象，可以这样创建类：
 
 ```java
 class Bicycle {
 
-  // state or field
+  // 状态或字段
   private int gear = 5;
 
-  // behavior or method
+  // 行为或方法
   public void braking() {
     System.out.println("Working of Braking");
   }
 }
 ```
 
-In the above example, we have created a class named `Bicycle`. It contains a field named `gear` and a method named `braking()`.
+在上面的示例中，我们创建了一个名为 `Bicycle` 的类。它包含一个名为 `gear` 的字段和一个名为 `braking()` 的方法。
 
-Here, `Bicycle` is a prototype. Now, we can create any number of bicycles using the prototype. And, all the bicycles will share the fields and methods of the prototype.
+这里，`Bicycle` 是一个原型。现在，我们可以用这个原型创建任意数量的自行车。而且，所有自行车都会共享这个原型的字段和方法。
 
 <Callout>
 
-**Note:** We have used keywords private and public. These are known as access modifiers. To learn more, visit Java access modifiers.
+**注意：** 我们使用了 private 和 public 这两个关键字。它们被称为访问修饰符。想了解更多，请访问 Java 访问修饰符。
 
 </Callout>
 
 ---
 
-## Java Objects
+## Java 对象
 
-An object is called an instance of a class. For example, suppose Bicycle is a class then MountainBicycle, SportsBicycle, TouringBicycle, etc can be considered as objects of the class.
+对象被称为类的实例。例如，假设 Bicycle 是一个类，那么 MountainBicycle、SportsBicycle、TouringBicycle 等都可以看作这个类的对象。
 
-Creating an Object in Java
-Here is how we can create an object of a class.
+在 Java 中创建对象
+下面是我们创建类的对象的方法。
 
 ```java
 className object = new className();
 
-// for Bicycle class
+// 对于 Bicycle 类
 Bicycle sportsBicycle = new Bicycle();
 
 Bicycle touringBicycle = new Bicycle();
 ```
 
-We have used the `new` keyword along with the constructor of the class to create an object. Constructors are similar to methods and have the same name as the class. For example, `Bicycle()` is the constructor of the `Bicycle` class. To learn more, visit [Java Constructors](/docs/constructors).
+我们使用 `new` 关键字配合类的构造方法来创建对象。构造方法与方法类似，名称与类名相同。例如，`Bicycle()` 就是 `Bicycle` 类的构造方法。想了解更多，请访问 [Java 构造方法](/docs/constructors)。
 
-Here, `sportsBicycle` and `touringBicycle` are the names of objects. We can use them to access fields and methods of the class.
+这里，`sportsBicycle` 和 `touringBicycle` 是对象的名称。我们可以用它们来访问类的字段和方法。
 
-As you can see, we have created two objects of the class. We can create multiple objects of a single class in Java.
+如你所见，我们创建了这个类的两个对象。在 Java 中，我们可以为一个类创建多个对象。
 
 <Callout>
 
-**Note:** Fields and methods of a class are also called members of the class.
+**注意：** 类的字段和方法也被称为类的成员。
 
 </Callout>
 
 ---
 
-## Access Members of a Class
+## 访问类的成员
 
-We can use the name of objects along with the `.` operator to access members of a class. For example,
+我们可以用对象的名称配合 `.` 运算符来访问类的成员。例如：
 
 ```java
 class Bicycle {
 
-  // field of class
+  // 类的字段
   int gear = 5;
 
-  // method of class
+  // 类的方法
   void braking() {
     ...
   }
 }
 
-// create object
+// 创建对象
 Bicycle sportsBicycle = new Bicycle();
 
-// access field and method
+// 访问字段和方法
 sportsBicycle.gear;
 sportsBicycle.braking();
 ```
 
-In the above example, we have created a class named `Bicycle`. It includes a field named `gear` and a method named `braking()`. Notice the statement,
+在上面的示例中，我们创建了一个名为 `Bicycle` 的类。它包含一个名为 `gear` 的字段和一个名为 `braking()` 的方法。注意这条语句：
 
 ```java
 Bicycle sportsBicycle = new Bicycle();
 ```
 
-Here, we have created an object of Bicycle named sportsBicycle. We then use the object to access the field and method of the class.
+这里，我们创建了一个名为 sportsBicycle 的 Bicycle 对象。之后我们用这个对象访问类的字段和方法。
 
-- `sportsBicycle.gear` - access the field gear
-- `sportsBicycle.braking()` - access the method `braking()`
+- `sportsBicycle.gear` - 访问字段 gear
+- `sportsBicycle.braking()` - 访问方法 `braking()`
 
-We have mentioned the word **method** quite a few times. You will learn about [Java methods](/docs/methods) in detail in the next chapter.
+我们已经多次提到**方法**这个词。你将在下一章详细了解 [Java 方法](/docs/methods)。
 
-Now that we understand what is class and object. Let's see a fully working example.
+现在我们理解了什么是类和对象，来看一个完整的可运行示例。
 
-### Example: Java Class and Objects
+### 示例：Java 类与对象
 
 ```java
 class Lamp {
 
-  // stores the value for light
-  // true if light is on
-  // false if light is off
+  // 存储灯光的值
+  // 灯亮时为 true
+  // 灯灭时为 false
   boolean isOn;
 
-  // method to turn on the light
+  // 打开灯的方法
   void turnOn() {
     isOn = true;
     System.out.println("Light on? " + isOn);
 
   }
 
-  // method to turnoff the light
+  // 关闭灯的方法
   void turnOff() {
     isOn = false;
     System.out.println("Light on? " + isOn);
@@ -159,54 +159,54 @@ class Lamp {
 public class Main {
   public static void main(String[] args) {
 
-    // create objects led and halogen
+    // 创建对象 led 和 halogen
     Lamp led = new Lamp();
     Lamp halogen = new Lamp();
 
-    // turn on the light by
-    // calling method turnOn()
+    // 通过调用 turnOn() 方法
+    // 打开灯
     led.turnOn();
 
-    // turn off the light by
-    // calling method turnOff()
+    // 通过调用 turnOff() 方法
+    // 关闭灯
     halogen.turnOff();
   }
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Light on? true
 Light on? false
 ```
 
-In the above program, we have created a class named `Lamp`. It contains a variable: `isOn` and two methods: `turnOn()` and `turnOff()`.
+在上面的程序中，我们创建了一个名为 `Lamp` 的类。它包含一个变量 `isOn` 和两个方法 `turnOn()` 与 `turnOff()`。
 
-Inside the `Main` class, we have created two objects: `led` and `halogen` of the `Lamp` class. We then used the objects to call the methods of the class.
+在 `Main` 类中，我们创建了 `Lamp` 类的两个对象：`led` 和 `halogen`。然后我们用这些对象调用了类的方法。
 
-- `led.turnOn()` - It sets the isOn variable to true and prints the output.
-- `halogen.turnOff()` - It sets the isOn variable to false and prints the output.
+- `led.turnOn()` - 它把 isOn 变量设为 true 并打印输出。
+- `halogen.turnOff()` - 它把 isOn 变量设为 false 并打印输出。
 
-The variable `isOn` defined inside the class is also called an instance variable. It is because when we create an object of the class, it is called an instance of the class. And, each instance will have its own copy of the variable.
+在类内部定义的变量 `isOn` 也被称为实例变量。这是因为当我们创建类的对象时，这个对象被称为类的实例。而且，每个实例都会拥有自己的一份变量副本。
 
-That is, `led` and `halogen` objects will have their own copy of the `isOn` variable.
+也就是说，`led` 和 `halogen` 对象会各自拥有自己的 `isOn` 变量副本。
 
-### Example: Create objects inside the same class
+### 示例：在同一个类内部创建对象
 
-Note that in the previous example, we have created objects inside another class and accessed the members from that class.
+注意，在上一个示例中，我们是在另一个类中创建对象，并从那个类访问成员。
 
-However, we can also create objects inside the same class.
+不过，我们也可以在同一个类内部创建对象。
 
 ```java
 class Lamp {
 
-  // stores the value for light
-  // true if light is on
-  // false if light is off
+  // 存储灯光的值
+  // 灯亮时为 true
+  // 灯灭时为 false
   boolean isOn;
 
-  // method to turn on the light
+  // 打开灯的方法
   void turnOn() {
     isOn = true;
     System.out.println("Light on? " + isOn);
@@ -215,19 +215,19 @@ class Lamp {
 
   public static void main(String[] args) {
 
-    // create an object of Lamp
+    // 创建 Lamp 的对象
     Lamp led = new Lamp();
 
-    // access method using object
+    // 使用对象访问方法
     led.turnOn();
   }
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Light on? true
 ```
 
-Here, we are creating the object inside the `main()` method of the same class.
+这里，我们是在同一个类的 `main()` 方法内部创建对象。

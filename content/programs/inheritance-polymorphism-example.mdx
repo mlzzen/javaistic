@@ -1,47 +1,47 @@
 ---
-title: Java Program to Demonstrate Inheritance and Polymorphism
-shortTitle: Inheritance & Polymorphism
-description: Comprehensive Java program demonstrating inheritance concepts including extends keyword, method overriding, and polymorphism with real-world examples.
+title: 演示继承与多态的 Java 程序
+shortTitle: 继承与多态
+description: 通过完整的 Java 程序演示继承概念，包括 extends 关键字、方法重写，以及结合真实案例的多态应用。
 ---
 
-In this program, you'll learn about inheritance and polymorphism through practical examples that show how classes can inherit from other classes and how objects can take multiple forms.
+在这个程序中，你将通过实际示例学习继承与多态，了解类如何从其他类继承，以及对象如何呈现出多种形态。
 
-To understand this example, you should have the knowledge of the following Java programming topics:
+要理解这个示例，你应当了解以下 Java 编程主题：
 
-- [Java Inheritance](/docs/inheritance)
-- [Java Polymorphism](/docs/polymorphism)
-- [Java Class and Objects](/docs/class-objects)
-- [Java Methods](/docs/methods)
+- [Java 继承](/docs/inheritance)
+- [Java 多态](/docs/polymorphism)
+- [Java 类与对象](/docs/class-objects)
+- [Java 方法](/docs/methods)
 
-## Inheritance and Polymorphism Program
+## 继承与多态程序
 
-### Example 1: Basic Inheritance with Vehicle Classes
+### 示例 1：车辆类的基础继承
 
 ```java
-// Base class (Parent class)
+// 基类（父类）
 class Vehicle {
     protected String brand;
     protected String model;
     protected int year;
 
-    // Constructor
+    // 构造方法
     public Vehicle(String brand, String model, int year) {
         this.brand = brand;
         this.model = model;
         this.year = year;
     }
 
-    // Method to start the vehicle
+    // 启动车辆的方法
     public void start() {
         System.out.println("The " + brand + " " + model + " is starting...");
     }
 
-    // Method to stop the vehicle
+    // 停止车辆的方法
     public void stop() {
         System.out.println("The " + brand + " " + model + " is stopping...");
     }
 
-    // Method to display basic info
+    // 显示基本信息的方法
     public void displayInfo() {
         System.out.println("=== Vehicle Information ===");
         System.out.println("Brand: " + brand);
@@ -49,45 +49,45 @@ class Vehicle {
         System.out.println("Year: " + year);
     }
 
-    // Method that can be overridden
+    // 可被重写的方法
     public void makeSound() {
         System.out.println("Vehicle makes a sound");
     }
 }
 
-// Derived class (Child class)
+// 派生类（子类）
 class Car extends Vehicle {
     private int numberOfDoors;
     private String fuelType;
 
     public Car(String brand, String model, int year, int numberOfDoors, String fuelType) {
-        super(brand, model, year); // Call parent constructor
+        super(brand, model, year); // 调用父类构造方法
         this.numberOfDoors = numberOfDoors;
         this.fuelType = fuelType;
     }
 
-    // Override the makeSound method
+    // 重写 makeSound 方法
     @Override
     public void makeSound() {
         System.out.println("Car engine: Vroom vroom!");
     }
 
-    // Override displayInfo to include car-specific information
+    // 重写 displayInfo，加入汽车特有的信息
     @Override
     public void displayInfo() {
-        super.displayInfo(); // Call parent method
+        super.displayInfo(); // 调用父类方法
         System.out.println("Number of Doors: " + numberOfDoors);
         System.out.println("Fuel Type: " + fuelType);
         System.out.println("Type: Car");
     }
 
-    // Car-specific method
+    // 汽车特有的方法
     public void honk() {
         System.out.println("Car horn: Beep beep!");
     }
 }
 
-// Another derived class
+// 另一个派生类
 class Motorcycle extends Vehicle {
     private boolean hasSidecar;
 
@@ -108,7 +108,7 @@ class Motorcycle extends Vehicle {
         System.out.println("Type: Motorcycle");
     }
 
-    // Motorcycle-specific method
+    // 摩托车特有的方法
     public void wheelie() {
         System.out.println("Motorcycle doing a wheelie!");
     }
@@ -116,14 +116,14 @@ class Motorcycle extends Vehicle {
 
 class InheritanceDemo {
     public static void main(String[] args) {
-        // Create instances of different vehicle types
+        // 创建不同车辆类型的实例
         Vehicle genericVehicle = new Vehicle("Generic", "Model X", 2020);
         Car car = new Car("Toyota", "Camry", 2022, 4, "Gasoline");
         Motorcycle motorcycle = new Motorcycle("Honda", "CBR600", 2021, false);
 
         System.out.println("=== Testing Inheritance ===\n");
 
-        // Test generic vehicle
+        // 测试通用车辆
         genericVehicle.displayInfo();
         genericVehicle.start();
         genericVehicle.makeSound();
@@ -131,26 +131,26 @@ class InheritanceDemo {
 
         System.out.println("\n" + "=".repeat(40) + "\n");
 
-        // Test car
+        // 测试汽车
         car.displayInfo();
         car.start();
         car.makeSound();
-        car.honk(); // Car-specific method
+        car.honk(); // 汽车特有的方法
         car.stop();
 
         System.out.println("\n" + "=".repeat(40) + "\n");
 
-        // Test motorcycle
+        // 测试摩托车
         motorcycle.displayInfo();
         motorcycle.start();
         motorcycle.makeSound();
-        motorcycle.wheelie(); // Motorcycle-specific method
+        motorcycle.wheelie(); // 摩托车特有的方法
         motorcycle.stop();
     }
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 === Testing Inheritance ===
@@ -191,10 +191,10 @@ Motorcycle doing a wheelie!
 The Honda CBR600 is stopping...
 ```
 
-### Example 2: Polymorphism with Animal Classes
+### 示例 2：动物类的多态
 
 ```java
-// Base class
+// 基类
 abstract class Animal {
     protected String name;
     protected int age;
@@ -204,11 +204,11 @@ abstract class Animal {
         this.age = age;
     }
 
-    // Abstract method - must be implemented by subclasses
+    // 抽象方法 —— 必须由子类实现
     public abstract void makeSound();
     public abstract void move();
 
-    // Concrete method
+    // 具体方法
     public void eat() {
         System.out.println(name + " is eating...");
     }
@@ -315,7 +315,7 @@ class Bird extends Animal {
 
 class PolymorphismDemo {
     public static void main(String[] args) {
-        // Polymorphism: Animal references pointing to different object types
+        // 多态：Animal 引用指向不同的对象类型
         Animal[] animals = {
             new Dog("Buddy", 3, "Golden Retriever"),
             new Cat("Whiskers", 2, true),
@@ -326,15 +326,15 @@ class PolymorphismDemo {
 
         System.out.println("=== Demonstrating Polymorphism ===\n");
 
-        // Polymorphic behavior - same method call, different implementations
+        // 多态行为 —— 同样的方法调用，不同的实现
         for (Animal animal : animals) {
             System.out.println("--- Animal Details ---");
             animal.displayInfo();
-            animal.makeSound();  // Polymorphic method call
-            animal.move();       // Polymorphic method call
-            animal.eat();        // Inherited method
+            animal.makeSound();  // 多态方法调用
+            animal.move();       // 多态方法调用
+            animal.eat();        // 继承而来的方法
 
-            // Type checking and casting for specific behaviors
+            // 针对特定行为做类型检查与类型转换
             if (animal instanceof Dog) {
                 Dog dog = (Dog) animal;
                 dog.wagTail();
@@ -350,19 +350,19 @@ class PolymorphismDemo {
             System.out.println();
         }
 
-        // Demonstrating method overloading
+        // 演示方法重载
         System.out.println("=== Method Overloading Demo ===");
         AnimalTrainer trainer = new AnimalTrainer();
 
-        trainer.train(animals[0]);              // Train with Animal reference
-        trainer.train((Dog) animals[0]);        // Train with Dog reference
-        trainer.train((Dog) animals[0], "sit"); // Train with specific command
+        trainer.train(animals[0]);              // 使用 Animal 引用调用
+        trainer.train((Dog) animals[0]);        // 使用 Dog 引用调用
+        trainer.train((Dog) animals[0], "sit"); // 使用具体指令调用
     }
 }
 
-// Class demonstrating method overloading
+// 演示方法重载的类
 class AnimalTrainer {
-    // Method overloading - same method name, different parameters
+    // 方法重载 —— 方法名相同，参数不同
     public void train(Animal animal) {
         System.out.println("Training " + animal.name + " with basic commands");
     }
@@ -379,7 +379,7 @@ class AnimalTrainer {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 === Demonstrating Polymorphism ===
@@ -419,10 +419,10 @@ Teaching Buddy the command: sit
 Buddy barks: Woof! Woof!
 ```
 
-### Example 3: Real-World Employee Management System
+### 示例 3：真实场景中的员工管理系统
 
 ```java
-// Base Employee class
+// 员工基类
 class Employee {
     protected String name;
     protected int employeeId;
@@ -434,12 +434,12 @@ class Employee {
         this.baseSalary = baseSalary;
     }
 
-    // Method to calculate salary (can be overridden)
+    // 计算薪资的方法（可被重写）
     public double calculateSalary() {
         return baseSalary;
     }
 
-    // Method to display employee info
+    // 显示员工信息的方法
     public void displayInfo() {
         System.out.println("Name: " + name);
         System.out.println("ID: " + employeeId);
@@ -447,7 +447,7 @@ class Employee {
         System.out.println("Calculated Salary: $" + calculateSalary());
     }
 
-    // Method for work activity
+    // 工作内容的方法
     public void work() {
         System.out.println(name + " is working...");
     }
@@ -465,7 +465,7 @@ class Manager extends Employee {
 
     @Override
     public double calculateSalary() {
-        return baseSalary + bonus + (teamSize * 100); // $100 per team member
+        return baseSalary + bonus + (teamSize * 100); // 每位团队成员 100 美元
     }
 
     @Override
@@ -499,7 +499,7 @@ class Developer extends Employee {
 
     @Override
     public double calculateSalary() {
-        return baseSalary + (projectsCompleted * 500); // $500 per completed project
+        return baseSalary + (projectsCompleted * 500); // 每完成一个项目 500 美元
     }
 
     @Override
@@ -560,7 +560,7 @@ class SalesRep extends Employee {
 
 class EmployeeManagementDemo {
     public static void main(String[] args) {
-        // Create different types of employees
+        // 创建不同类型的员工
         Employee[] employees = {
             new Manager("Sarah Johnson", 101, 80000, 15000, 8),
             new Developer("Mike Chen", 102, 75000, "Java", 12),
@@ -579,7 +579,7 @@ class EmployeeManagementDemo {
             System.out.println();
             emp.work();
 
-            // Demonstrate instanceof and casting
+            // 演示 instanceof 与类型转换
             if (emp instanceof Manager) {
                 Manager mgr = (Manager) emp;
                 mgr.conductMeeting();
@@ -601,29 +601,29 @@ class EmployeeManagementDemo {
 }
 ```
 
-## Key Inheritance and Polymorphism Concepts
+## 继承与多态的核心概念
 
-1. **Inheritance**: Child classes inherit properties and methods from parent classes
-2. **Method Overriding**: Child classes provide specific implementations of parent methods
-3. **Polymorphism**: Objects of different types can be treated uniformly
-4. **Abstract Classes**: Classes that cannot be instantiated directly
-5. **Method Overloading**: Multiple methods with the same name but different parameters
-6. **instanceof operator**: Check object type at runtime
-7. **Type casting**: Convert object references between types
+1. **继承**：子类继承父类的属性与方法
+2. **方法重写**：子类为父类方法提供具体的实现
+3. **多态**：不同类型的对象可以用统一的方式处理
+4. **抽象类**：不能直接实例化的类
+5. **方法重载**：多个方法名称相同但参数不同
+6. **instanceof 运算符**：在运行时检查对象类型
+7. **类型转换**：在类型之间转换对象引用
 
-## Benefits Demonstrated
+## 演示出的优势
 
-- **Code Reusability**: Common functionality in base classes
-- **Maintainability**: Changes in base class affect all subclasses
-- **Flexibility**: Polymorphic behavior allows dynamic method resolution
-- **Extensibility**: Easy to add new types without changing existing code
+- **代码复用**：公共功能放在基类中
+- **可维护性**：基类的改动能影响所有子类
+- **灵活性**：多态行为支持动态方法解析
+- **可扩展性**：无需修改现有代码即可轻松添加新类型
 
-## Next Steps
+## 下一步
 
-Try extending these programs by:
+试着扩展这些程序：
 
-1. Adding more inheritance levels (multilevel inheritance)
-2. Implementing interfaces for multiple inheritance
-3. Creating abstract methods in base classes
-4. Adding more polymorphic behaviors
-5. Implementing design patterns using inheritance
+1. 添加更多继承层级（多级继承）
+2. 通过实现接口来支持多重继承
+3. 在基类中创建抽象方法
+4. 添加更多多态行为
+5. 使用继承实现设计模式

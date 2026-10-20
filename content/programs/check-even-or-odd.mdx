@@ -1,7 +1,7 @@
 ---
-title: Java Program to Check Even or Odd Number
-shortTitle: Check Even or Odd
-description: Learn to check if a number is even or odd in Java using modulus operator. Complete program with examples and explanations of different approaches.
+title: Java 程序：判断奇偶数
+shortTitle: 判断奇偶数
+description: 学习使用取模运算符在 Java 中判断一个数是偶数还是奇数。包含完整程序、示例以及不同思路的讲解。
 ---
 
 ```java
@@ -14,12 +14,12 @@ class CheckEvenOdd
     int num;
     System.out.println("Enter an Integer number:");
 
-    //The input provided by user is stored in num
+    //用户提供的输入会存储在 num 中
     Scanner input = new Scanner(System.in);
     num = input.nextInt();
 
-    /* If number is divisible by 2 then it's an even number
-     * else odd number*/
+    /* 如果该数能被 2 整除，那么它是偶数
+     * 否则是奇数*/
     if ( num % 2 == 0 )
         System.out.println("Entered number is even");
      else
@@ -28,7 +28,7 @@ class CheckEvenOdd
 }
 ```
 
-#### Output 1:
+#### 输出 1：
 
 ```plaintext
 Enter an Integer number:
@@ -36,7 +36,7 @@ Enter an Integer number:
 Entered number is even
 ```
 
-#### Output 2:
+#### 输出 2：
 
 ```plaintext
 Enter an Integer number:

@@ -1,21 +1,21 @@
 ---
-title: Java static keyword
-description: In this tutorial, we will learn how to use the Java static keyword.
+title: Java static 关键字
+description: 在本教程中，我们将学习如何使用 Java 的 static 关键字。
 ---
 
-## What is a `static` keyword in Java?
+## Java 中的 `static` 关键字是什么？
 
-In Java, if we want to access class members, we must first create an instance of the class. But there will be situations where we want to access class members without creating any variables.
-In those situations, we can use the `static` keyword in Java. If we want to access class members without creating an instance of the class, we need to declare the class members static.
-The `Math` class in Java has almost all of its members static. So, we can access its members without creating instances of the Math class.
+在 Java 中，如果我们要访问类的成员，必须先创建该类的一个实例。但有些情况下，我们希望不创建任何变量就能访问类的成员。
+在这些情况下，就可以使用 Java 中的 `static` 关键字。如果想不创建类的实例就访问类的成员，我们需要把这些类成员声明为 static。
+Java 中的 `Math` 类几乎所有成员都是 static 的。因此，我们可以不创建 Math 类的实例就访问它的成员。
 
-### Example 1
+### 示例 1
 
 ```java
 public class Main {
     public static void main( String[] args ) {
 
-        // accessing the methods of the Math class
+        // 访问 Math 类的方法
         System.out.println("Absolute value of -12 =  " + Math.abs(-12));
         System.out.println("Value of PI = " + Math.PI);
         System.out.println("Value of E = " + Math.E);
@@ -24,7 +24,7 @@ public class Main {
 }
 ```
 
-### Output:
+### 输出：
 
 ```bash
 Absolute value of -12 = 12
@@ -33,6 +33,6 @@ Value of E = 2.718281828459045
 2^2 = 4.0
 ```
 
-In the above example, we have not created any instances of the Math class. But we are able to access its methods: `abs()` and `pow()` and variables: `PI` and `E`.
+在上面的示例中，我们没有创建 Math 类的任何实例，却能够访问它的方法：`abs()` 和 `pow()`，以及变量：`PI` 和 `E`。
 
-It is possible because the methods and variables of the Math class are static.
+之所以可以这样，是因为 Math 类的方法和变量都是 static 的。

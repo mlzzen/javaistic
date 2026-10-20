@@ -1,70 +1,70 @@
 ---
-title: Java JDK, JRE and JVM
-description: Complete guide to JDK, JRE and JVM in Java. Learn the differences, relationships, and how they work together in Java development.
+title: Java JDK、JRE 和 JVM
+description: Java 中 JDK、JRE 和 JVM 的完整指南。了解它们的区别、相互关系，以及它们在 Java 开发中如何协同工作。
 icon: Cpu
 ---
 
-In this tutorial, you will learn about [JDK](#what-is-jdk), [JRE](#what-is-jre), and [JVM](#what-is-jvm). You will also learn the key differences between them.
+在本教程中，你将了解 [JDK](#what-is-jdk)、[JRE](#what-is-jre) 和 [JVM](#what-is-jvm)，还会了解它们之间的关键区别。
 
-## What is JVM?
+## 什么是 JVM？
 
-**JVM (Java Virtual Machine)** is an abstract machine that enables your computer to run a Java program.
+**JVM（Java 虚拟机）** 是一台抽象机器，它让你的计算机能够运行 Java 程序。
 
-When you run the Java program, Java compiler first compiles your Java code to bytecode. Then, the JVM translates bytecode into native machine code (set of instructions that a computer's CPU executes directly).
+当你运行 Java 程序时，Java 编译器会先把你的 Java 代码编译成字节码。然后，JVM 把字节码转换成原生机器码（计算机 CPU 直接执行的一组指令）。
 
-Java is a **platform-independent language**. It's because when you write Java code, it's ultimately written for JVM but not your physical machine (computer). Since JVM ​executes the Java bytecode which is platform-independent, Java is platform-independent.
+Java 是一门**与平台无关的语言**。这是因为你编写 Java 代码时，它最终是为 JVM 而不是你的物理机器（计算机）编写的。由于 JVM 执行的是与平台无关的 Java 字节码，所以 Java 是平台无关的。
 
 <div align="center">
-  ![Working of a Java Program](/img/docs/jvm-jre-jdk/1.svg)
+  ![Java 程序的运行过程](/img/docs/jvm-jre-jdk/1.svg)
   <p align="center" className="text-sm font-medium text-neutral-500">
-    Working of a Java Program
+    Java 程序的运行过程
   </p>
 </div>
 
-If you are interested in learning about JVM Architecture, visit [The JVM Architecture Explained](https://dzone.com/articles/jvm-architecture-explained).
+如果你有兴趣了解 JVM 的架构，请访问 [JVM 架构详解](https://dzone.com/articles/jvm-architecture-explained)。
 
-## What is JRE?
+## 什么是 JRE？
 
-**JRE (Java Runtime Environment)** is a software package that provides Java class libraries, **Java Virtual Machine (JVM)**, and other components that are required to run Java applications.
+**JRE（Java 运行环境）** 是一个软件包，它提供 Java 类库、**Java 虚拟机（JVM）** 以及运行 Java 应用程序所需的其他组件。
 
-JRE is the superset of JVM.
+JRE 是 JVM 的超集。
 
 <div align="center">
-  ![Java Runtime Environment](/img/docs/jvm-jre-jdk/2.svg)
+  ![Java 运行环境](/img/docs/jvm-jre-jdk/2.svg)
   <p align="center" className="text-sm font-medium text-neutral-500">
-    Java Runtime Environment
+    Java 运行环境
   </p>
 </div>
 
-If you need to run Java programs, but not develop them, JRE is what you need. You can download JRE from [Java SE Runtime Environment 8 Downloads page](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html).
+如果你只需要运行 Java 程序，而不需要开发它们，那么你需要的正是 JRE。你可以从 [Java SE 运行环境 8 下载页面](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)下载 JRE。
 
-## What is JDK?
+## 什么是 JDK？
 
-**JDK (Java Development Kit)** is a software development kit required to develop applications in Java. When you download JDK, JRE is also downloaded with it.
+**JDK（Java 开发工具包）** 是开发 Java 应用程序所需的软件开发工具包。当你下载 JDK 时，JRE 也会随之一起下载。
 
-In addition to JRE, JDK also contains a number of development tools (compilers, JavaDoc, Java Debugger, etc).
+除了 JRE，JDK 还包含许多开发工具（编译器、JavaDoc、Java 调试器等）。
 
 <div align="center"  className="lg:px-36">
 
-![Java Development Kit](/img/docs/jvm-jre-jdk/3.svg)
+![Java 开发工具包](/img/docs/jvm-jre-jdk/3.svg)
 
 <p align="center" className="text-sm font-medium text-neutral-500">
-  Java Development Kit
+  Java 开发工具包
 </p>
 
 </div>
 
-If you want to develop Java applications, [download JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html).
+如果你想开发 Java 应用程序，请[下载 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)。
 
-## Relationship between JVM, JRE, and JDK.
+## JVM、JRE 和 JDK 之间的关系
 
 <div className="mt-8" />
 <div align="center" className="lg:px-36">
 
-![Relationship between JVM, JRE, and JDK](/img/docs/jvm-jre-jdk/4.svg)
+![JVM、JRE 和 JDK 之间的关系](/img/docs/jvm-jre-jdk/4.svg)
 
 <p align="center" className="text-sm font-medium text-neutral-500">
-  Relationship between JVM, JRE, and JDK
+  JVM、JRE 和 JDK 之间的关系
 </p>
 
 </div>

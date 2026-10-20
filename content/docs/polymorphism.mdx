@@ -1,51 +1,51 @@
 ---
-title: Java Polymorphism
-description: Complete guide to Java polymorphism with examples. Learn method overloading, method overriding, runtime polymorphism, and dynamic method dispatch.
+title: Java 多态
+description: 通过示例完整讲解 Java 多态。学习方法重载、方法重写、运行时多态和动态方法调度。
 icon: Shapes
 ---
 
-Polymorphism is one of the core principles of Object-Oriented Programming (OOP). The word "polymorphism" comes from Greek, meaning "many forms." In Java, polymorphism allows objects of different types to be treated as objects of a common base type, while still maintaining their specific behaviors.
+多态是面向对象编程（OOP）的核心原则之一。“polymorphism”一词源自希腊语，意思是“多种形态”。在 Java 中，多态允许把不同类型的对象当作某个共同基础类型的对象来处理，同时仍然保留它们各自特有的行为。
 
-## What is Polymorphism?
+## 什么是多态？
 
-Polymorphism enables a single interface to represent different underlying data types. It allows you to write code that can work with objects of multiple types, as long as they share a common interface or superclass.
+多态让同一个接口能够代表不同的底层数据类型。它让你可以编写能处理多种类型对象的代码，只要这些对象共享同一个接口或父类。
 
-## Types of Polymorphism in Java
+## Java 中多态的类型
 
-### 1. Compile-time Polymorphism (Static Polymorphism)
+### 1. 编译时多态（静态多态）
 
-- **Method Overloading**
-- **Operator Overloading** (limited in Java)
+- **方法重载**
+- **运算符重载**（Java 中受限）
 
-### 2. Runtime Polymorphism (Dynamic Polymorphism)
+### 2. 运行时多态（动态多态）
 
-- **Method Overriding**
-- **Dynamic Method Dispatch**
+- **方法重写**
+- **动态方法调度**
 
-## Method Overloading (Compile-time Polymorphism)
+## 方法重载（编译时多态）
 
-Method overloading allows multiple methods with the same name but different parameters within the same class.
+方法重载允许在同一个类中存在多个同名但参数不同的方法。
 
-### Example: Method Overloading
+### 示例：方法重载
 
 ```java
 class Calculator {
-    // Method with 2 integer parameters
+    // 带有 2 个 int 参数的方法
     public int add(int a, int b) {
         return a + b;
     }
 
-    // Method with 3 integer parameters
+    // 带有 3 个 int 参数的方法
     public int add(int a, int b, int c) {
         return a + b + c;
     }
 
-    // Method with 2 double parameters
+    // 带有 2 个 double 参数的方法
     public double add(double a, double b) {
         return a + b;
     }
 
-    // Method with different parameter types
+    // 参数类型不同的方法
     public String add(String a, String b) {
         return a + b;
     }
@@ -63,11 +63,11 @@ class Main {
 }
 ```
 
-## Method Overriding (Runtime Polymorphism)
+## 方法重写（运行时多态）
 
-Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass.
+方法重写允许子类为父类中已经定义的方法提供自己的具体实现。
 
-### Example: Method Overriding
+### 示例：方法重写
 
 ```java
 class Animal {
@@ -117,40 +117,40 @@ class Bird extends Animal {
 }
 ```
 
-## Runtime Polymorphism and Dynamic Method Dispatch
+## 运行时多态与动态方法调度
 
-Runtime polymorphism is achieved through method overriding and dynamic method dispatch. The JVM determines which method to call at runtime based on the actual object type.
+运行时多态通过方法重写和动态方法调度来实现。JVM 会在运行时根据对象的实际类型决定调用哪个方法。
 
-### Example: Runtime Polymorphism
+### 示例：运行时多态
 
 ```java
 class Main {
     public static void main(String[] args) {
-        // Reference variable of type Animal
+        // Animal 类型的引用变量
         Animal animal;
 
-        // Creating objects of different types
+        // 创建不同类型的对象
         animal = new Dog();
-        animal.makeSound(); // Dog barks: Woof! Woof!
-        animal.move();      // Dog runs on four legs
+        animal.makeSound(); // 狗叫：汪！汪！
+        animal.move();      // 狗用四条腿奔跑
 
         animal = new Cat();
-        animal.makeSound(); // Cat meows: Meow! Meow!
-        animal.move();      // Cat walks gracefully
+        animal.makeSound(); // 猫叫：喵！喵！
+        animal.move();      // 猫优雅地行走
 
         animal = new Bird();
-        animal.makeSound(); // Bird chirps: Tweet! Tweet!
-        animal.move();      // Bird flies in the sky
+        animal.makeSound(); // 鸟叫：啾！啾！
+        animal.move();      // 鸟在天空中飞翔
     }
 }
 ```
 
-### Array of Polymorphic Objects
+### 多态对象数组
 
 ```java
 class AnimalShelter {
     public static void main(String[] args) {
-        // Array of Animal references
+        // Animal 引用组成的数组
         Animal[] animals = {
             new Dog(),
             new Cat(),
@@ -161,7 +161,7 @@ class AnimalShelter {
 
         System.out.println("Animal Shelter Sounds:");
         for (Animal animal : animals) {
-            animal.makeSound(); // Polymorphic method call
+            animal.makeSound(); // 多态方法调用
             animal.move();
             System.out.println("---");
         }
@@ -169,7 +169,7 @@ class AnimalShelter {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Animal Shelter Sounds:
@@ -190,7 +190,7 @@ Cat walks gracefully
 ---
 ```
 
-## Real-World Example: Shape Calculator
+## 实战示例：图形计算器
 
 ```java
 abstract class Shape {
@@ -200,11 +200,11 @@ abstract class Shape {
         this.color = color;
     }
 
-    // Abstract methods to be implemented by subclasses
+    // 由子类实现的抽象方法
     public abstract double calculateArea();
     public abstract double calculatePerimeter();
 
-    // Common method for all shapes
+    // 所有图形共有的方法
     public void displayInfo() {
         System.out.println("Shape: " + this.getClass().getSimpleName());
         System.out.println("Color: " + color);
@@ -265,7 +265,7 @@ class Triangle extends Shape {
 
     @Override
     public double calculateArea() {
-        // Using Heron's formula
+        // 使用海伦公式
         double s = (side1 + side2 + side3) / 2;
         return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
     }
@@ -278,7 +278,7 @@ class Triangle extends Shape {
 
 class ShapeCalculator {
     public static void main(String[] args) {
-        // Array of different shapes
+        // 不同图形组成的数组
         Shape[] shapes = {
             new Circle("Red", 5.0),
             new Rectangle("Blue", 4.0, 6.0),
@@ -288,11 +288,11 @@ class ShapeCalculator {
         System.out.println("=== Shape Calculator ===\n");
 
         for (Shape shape : shapes) {
-            shape.displayInfo(); // Polymorphic method call
+            shape.displayInfo(); // 多态方法调用
             System.out.println();
         }
 
-        // Calculate total area using polymorphism
+        // 使用多态计算总面积
         double totalArea = 0;
         for (Shape shape : shapes) {
             totalArea += shape.calculateArea();
@@ -303,9 +303,9 @@ class ShapeCalculator {
 }
 ```
 
-## Interface-based Polymorphism
+## 基于接口的多态
 
-Interfaces provide another way to achieve polymorphism in Java.
+接口为实现 Java 中的多态提供了另一种方式。
 
 ```java
 interface Drawable {
@@ -377,7 +377,7 @@ class Square implements Drawable, Moveable {
 
 class GraphicsEditor {
     public static void main(String[] args) {
-        // Polymorphism with interfaces
+        // 使用接口实现多态
         Drawable[] drawables = {
             new Circle(10, 20, 5.0),
             new Square(30, 40, 8.0)
@@ -402,51 +402,51 @@ class GraphicsEditor {
 }
 ```
 
-## Method Overloading vs Method Overriding
+## 方法重载与方法重写的区别
 
-| Aspect              | Method Overloading                                    | Method Overriding                                              |
+| 对比项              | 方法重载                                    | 方法重写                                              |
 | ------------------- | ----------------------------------------------------- | -------------------------------------------------------------- |
-| **Definition**      | Multiple methods with same name, different parameters | Subclass provides specific implementation of superclass method |
-| **Inheritance**     | Not required                                          | Required                                                       |
-| **Parameters**      | Must be different                                     | Must be same                                                   |
-| **Return Type**     | Can be different                                      | Must be same (or covariant)                                    |
-| **Access Modifier** | Can be different                                      | Cannot be more restrictive                                     |
-| **Binding**         | Compile-time                                          | Runtime                                                        |
-| **Performance**     | Faster                                                | Slightly slower                                                |
+| **定义**      | 同名但参数不同的多个方法 | 子类为父类方法提供具体实现 |
+| **继承**     | 不需要                                          | 需要                                                       |
+| **参数**      | 必须不同                                     | 必须相同                                                   |
+| **返回类型**     | 可以不同                                      | 必须相同（或协变）                                    |
+| **访问修饰符** | 可以不同                                      | 不能更严格                                     |
+| **绑定**         | 编译时                                          | 运行时                                                        |
+| **性能**     | 更快                                                | 稍慢                                                |
 
-## Benefits of Polymorphism
+## 多态的好处
 
-### 1. Code Reusability
+### 1. 代码复用
 
 ```java
-// One method can work with multiple types
+// 一个方法可以处理多种类型
 public void feedAnimal(Animal animal) {
-    animal.makeSound(); // Works with Dog, Cat, Bird, etc.
+    animal.makeSound(); // 适用于 Dog、Cat、Bird 等
 }
 ```
 
-### 2. Flexibility and Extensibility
+### 2. 灵活性与可扩展性
 
 ```java
-// Easy to add new types without changing existing code
+// 无需修改现有代码即可轻松添加新类型
 class Fish extends Animal {
     @Override
     public void makeSound() {
         System.out.println("Fish makes bubbles");
     }
 }
-// No need to modify existing methods that use Animal
+// 无需修改使用 Animal 的现有方法
 ```
 
-### 3. Maintainability
+### 3. 可维护性
 
 ```java
-// Changes in implementation don't affect client code
-Animal pet = new Dog(); // Can easily change to Cat or Bird
-pet.makeSound(); // Method call remains the same
+// 实现的变化不会影响调用方代码
+Animal pet = new Dog(); // 可以轻松换成 Cat 或 Bird
+pet.makeSound(); // 方法调用保持不变
 ```
 
-## Advanced Example: Plugin System
+## 进阶示例：插件系统
 
 ```java
 interface Plugin {
@@ -500,7 +500,7 @@ class PluginManager {
         System.out.println("=== Plugin Manager ===");
         for (Plugin plugin : plugins) {
             System.out.println("Loading: " + plugin.getName() + " v" + plugin.getVersion());
-            plugin.execute(); // Polymorphic method call
+            plugin.execute(); // 多态方法调用
             System.out.println("---");
         }
     }
@@ -519,19 +519,19 @@ class Application {
 }
 ```
 
-## Key Points to Remember
+## 需要记住的要点
 
-- **Polymorphism** allows objects of different types to be treated uniformly
-- **Method overloading** is compile-time polymorphism (same method name, different parameters)
-- **Method overriding** is runtime polymorphism (subclass provides specific implementation)
-- **Dynamic method dispatch** determines which method to call at runtime
-- Use **abstract classes** and **interfaces** to define common behavior
-- Polymorphism promotes **code reusability** and **flexibility**
-- The actual method called is determined by the **object type**, not the reference type
-- Polymorphism is essential for creating **extensible** and **maintainable** code
+- **多态**允许把不同类型的对象统一对待
+- **方法重载**是编译时多态（方法名相同、参数不同）
+- **方法重写**是运行时多态（子类提供具体实现）
+- **动态方法调度**在运行时决定调用哪个方法
+- 使用**抽象类**和**接口**来定义共同行为
+- 多态促进**代码复用**和**灵活性**
+- 实际调用的方法由**对象类型**决定，而不是引用类型
+- 多态对于编写**可扩展**、**可维护**的代码至关重要
 
 <Callout>
 
-**Best Practice:** Use polymorphism to write code that depends on abstractions (interfaces or abstract classes) rather than concrete implementations. This makes your code more flexible and easier to extend.
+**最佳实践：** 用多态来编写依赖抽象（接口或抽象类）而不是具体实现的代码。这样你的代码会更灵活，也更容易扩展。
 
 </Callout>

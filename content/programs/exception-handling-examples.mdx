@@ -1,20 +1,20 @@
 ---
-title: Java Program to Handle Exceptions with Try-Catch
-shortTitle: Exception Handling
-description: Learn exception handling in Java with practical examples of try-catch blocks, multiple exceptions, and custom error handling strategies.
+title: Java 程序：使用 try-catch 处理异常
+shortTitle: 异常处理
+description: 通过 try-catch 块、多种异常和自定义错误处理策略的实用示例，学习 Java 中的异常处理。
 ---
 
-In this program, you'll learn how to handle exceptions gracefully using try-catch blocks, ensuring your program doesn't crash when errors occur.
+在这个程序中，你将学习如何使用 try-catch 块从容地处理异常，确保程序在发生错误时不会崩溃。
 
-To understand this example, you should have the knowledge of the following Java programming topics:
+要理解这个示例，你应该了解以下 Java 编程主题：
 
-- [Java Exception Handling](/docs/exception-handling)
-- [Java Basic Input and Output](/docs/basic-input-output)
-- [Java Arrays](/docs/arrays)
+- [Java 异常处理](/docs/exception-handling)
+- [Java 基础输入输出](/docs/basic-input-output)
+- [Java 数组](/docs/arrays)
 
-## Program to Handle Exceptions
+## 处理异常的程序
 
-### Example 1: Basic Try-Catch Exception Handling
+### 示例 1：基本的 try-catch 异常处理
 
 ```java
 import java.util.Scanner;
@@ -49,7 +49,7 @@ class BasicExceptionHandling {
 }
 ```
 
-#### Sample Output (Division by zero):
+#### 示例输出（除以零）：
 
 ```
 === Division Calculator ===
@@ -60,7 +60,7 @@ Exception message: / by zero
 Division operation completed.
 ```
 
-#### Sample Output (Invalid input):
+#### 示例输出（无效输入）：
 
 ```
 === Division Calculator ===
@@ -70,7 +70,7 @@ Exception type: InputMismatchException
 Division operation completed.
 ```
 
-### Example 2: Array Index Exception Handling
+### 示例 2：数组索引异常处理
 
 ```java
 class ArrayExceptionHandling {
@@ -84,7 +84,7 @@ class ArrayExceptionHandling {
 
         System.out.println("\n=== Testing Array Access ===");
 
-        // Test different index values
+        // 测试不同的索引值
         int[] testIndices = {2, 5, -1, 10};
 
         for (int index : testIndices) {
@@ -102,7 +102,7 @@ class ArrayExceptionHandling {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 Array contents:
@@ -129,7 +129,7 @@ Error: Index 10 is out of bounds!
 Valid indices are 0 to 4
 ```
 
-### Example 3: Multiple Exception Types and Custom Validation
+### 示例 3：多种异常类型与自定义校验
 
 ```java
 import java.util.Scanner;
@@ -193,7 +193,7 @@ class StudentValidationDemo {
                 System.out.print("Enter student GPA (0.0-4.0): ");
                 double gpa = Double.parseDouble(scanner.nextLine());
 
-                // Try to create student object
+                // 尝试创建学生对象
                 student = new Student(name, age, gpa);
                 System.out.println("Student registered successfully!");
                 student.displayInfo();
@@ -210,7 +210,7 @@ class StudentValidationDemo {
             }
         }
 
-        // Test updating student information
+        // 测试更新学生信息
         System.out.println("=== Testing Student Updates ===");
 
         try {
@@ -230,7 +230,7 @@ class StudentValidationDemo {
 }
 ```
 
-#### Sample Output (with errors):
+#### 示例输出（包含错误）：
 
 ```
 === Student Registration System ===
@@ -266,7 +266,7 @@ Enter new GPA: 4.5
 Update failed: GPA must be between 0.0 and 4.0!
 ```
 
-### Example 4: File Operations with Exception Handling
+### 示例 4：带异常处理的文件操作
 
 ```java
 import java.io.*;
@@ -276,7 +276,7 @@ class FileExceptionHandling {
         String fileName = "test.txt";
         String content = "Hello, this is a test file!\nJava Exception Handling Example.";
 
-        // Writing to file with exception handling
+        // 带异常处理的文件写入
         System.out.println("=== Writing to File ===");
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(content);
@@ -285,7 +285,7 @@ class FileExceptionHandling {
             System.out.println("Error writing to file: " + e.getMessage());
         }
 
-        // Reading from file with exception handling
+        // 带异常处理的文件读取
         System.out.println("\n=== Reading from File ===");
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -300,7 +300,7 @@ class FileExceptionHandling {
             System.out.println("Error reading file: " + e.getMessage());
         }
 
-        // Trying to read non-existent file
+        // 尝试读取不存在的文件
         System.out.println("\n=== Trying to Read Non-Existent File ===");
         try (BufferedReader reader = new BufferedReader(new FileReader("nonexistent.txt"))) {
             System.out.println(reader.readLine());
@@ -313,7 +313,7 @@ class FileExceptionHandling {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```
 === Writing to File ===
@@ -327,28 +327,28 @@ Line 2: Java Exception Handling Example.
 Error: File 'nonexistent.txt' was not found!
 ```
 
-## Key Exception Handling Concepts
+## 异常处理的关键概念
 
-1. **try-catch blocks**: Handle specific exceptions gracefully
-2. **Multiple catch blocks**: Handle different exception types differently
-3. **finally block**: Code that always executes (cleanup)
-4. **Custom exceptions**: Validate business logic
-5. **try-with-resources**: Automatic resource management
+1. **try-catch 块**：从容地处理特定异常
+2. **多个 catch 块**：以不同方式处理不同的异常类型
+3. **finally 块**：始终会执行的代码（清理）
+4. **自定义异常**：校验业务逻辑
+5. **try-with-resources**：自动资源管理
 
-## Best Practices Demonstrated
+## 演示的最佳实践
 
-- Always handle specific exceptions before general ones
-- Use meaningful error messages
-- Clean up resources properly
-- Validate user input
-- Don't ignore exceptions
+- 始终先处理特定异常，再处理一般异常
+- 使用有意义的错误信息
+- 正确地清理资源
+- 校验用户输入
+- 不要忽略异常
 
-## Next Steps
+## 下一步
 
-Try extending these programs by:
+试着通过这些方式扩展这些程序：
 
-1. Creating custom exception classes
-2. Adding logging for exceptions
-3. Implementing retry mechanisms
-4. Handling network-related exceptions
-5. Building a robust error reporting system
+1. 创建自定义异常类
+2. 为异常添加日志记录
+3. 实现重试机制
+4. 处理与网络相关的异常
+5. 构建健壮的错误报告系统

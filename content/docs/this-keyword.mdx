@@ -1,13 +1,13 @@
 ---
-title: Java this keyword
-description: In this tutorial, we will learn the use of 'this' keyword in Java.
+title: Java this 关键字
+description: 在本教程中，我们将学习 Java 中 this 关键字的用法。
 ---
 
-## What is 'this' keyword in Java?
+## Java 中的“this”关键字是什么？
 
-In Java, the `this` keyword is used within a class to refer to the current instance (object) of that class. It’s commonly used in methods or constructors to reference the current object’s properties or to call other constructors within the same class.
+在 Java 中，`this` 关键字用在类内部，指向该类的当前实例（对象）。它常用于方法或构造方法中，用来引用当前对象的属性，或者在同一个类中调用其他构造方法。
 
-### Example
+### 示例
 
 ```java
 class Main {
@@ -25,50 +25,50 @@ class Main {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 this reference = Main@23fc625e
 object reference = Main@23fc625e
 ```
 
-In this example, `this` refers to the `obj` instance of Main. Both `this` and `obj` share the same memory reference, indicating that this represents the current object.
+在这个示例中，`this` 指向 Main 的 `obj` 实例。`this` 和 `obj` 共享同一个内存引用，说明它代表的就是当前对象。
 
-## Common Uses of the this Keyword
+## this 关键字的常见用法
 
-### 1. Resolving Variable Name Conflicts
+### 1. 解决变量名冲突
 
-When instance variables and parameters have the same name, using `this` helps to avoid ambiguity:
+当实例变量和参数同名时，使用 `this` 可以帮助消除歧义：
 
 ```java
 class MyClass {
     int age;
 
     MyClass(int age) {
-        this.age = age; // Uses `this` to differentiate instance variable from parameter
+        this.age = age; // 用 `this` 区分实例变量与参数
     }
 }
 ```
 
-Without `this`:
+不使用 `this` 时：
 
 ```java
 class Main {
     int age;
     Main(int age) {
-        age = age; // No `this`, so no assignment to the instance variable
+        age = age; // 没有 `this`，所以不会给实例变量赋值
     }
 
     public static void main(String[] args) {
         Main obj = new Main(8);
-        System.out.println("obj.age = " + obj.age); // Output: obj.age = 0
+        System.out.println("obj.age = " + obj.age); // 输出：obj.age = 0
     }
 }
 ```
 
-### 2. Using this with Getters and Setters
+### 2. 在 getter 和 setter 中使用 this
 
-`this` is often used in setter methods to differentiate between instance variables and parameters:
+`this` 常用于 setter 方法中，用来区分实例变量和参数：
 
 ```java
 class Main {
@@ -90,32 +90,32 @@ class Main {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 obj.name: Toshiba
 ```
 
-### 3. Constructor Overloading with this()
+### 3. 用 this() 实现构造方法重载
 
-In constructor overloading, `this()` can be used to call another constructor within the same class, reducing code duplication:
+在构造方法重载中，可以用 `this()` 调用同一个类中的另一个构造方法，从而减少代码重复：
 
 ```java
 class Complex {
     private int a, b;
 
-    // Constructor with two parameters
+    // 有两个参数的构造方法
     Complex(int i, int j) {
         this.a = i;
         this.b = j;
     }
 
-    // Single parameter constructor calls two-parameter constructor
+    // 单参数构造方法调用双参数构造方法
     Complex(int i) {
         this(i, i);
     }
 
-    // No-argument constructor calls single-parameter constructor
+    // 无参构造方法调用单参数构造方法
     Complex() {
         this(0);
     }
@@ -130,18 +130,18 @@ class Complex {
         Complex c2 = new Complex(3);
         Complex c3 = new Complex();
 
-        System.out.println(c1); // Output: 2 + 3i
-        System.out.println(c2); // Output: 3 + 3i
-        System.out.println(c3); // Output: 0 + 0i
+        System.out.println(c1); // 输出：2 + 3i
+        System.out.println(c2); // 输出：3 + 3i
+        System.out.println(c3); // 输出：0 + 0i
     }
 }
 ```
 
-Here, `this()` helps to manage multiple constructors, improving readability and reducing code duplication. However, it should be used carefully, as excessive use can slow down the program.
+在这里，`this()` 有助于管理多个构造方法，提高可读性并减少代码重复。不过要谨慎使用，因为过度使用会拖慢程序的运行速度。
 
-### 4. Passing this as an Argument
+### 4. 把 this 作为参数传递
 
-You can use `this` to pass the current object as an argument to other methods:
+你可以用 `this` 把当前对象作为参数传给其他方法：
 
 ```java
 class ThisExample {
@@ -172,7 +172,7 @@ class ThisExample {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 Before passing this:
@@ -181,11 +181,11 @@ After passing this:
 x = 3, y = 0
 ```
 
-In this example, `this` allows the `add()` method to modify the current instance variables directly.
+在这个示例中，`this` 让 `add()` 方法能够直接修改当前实例的变量。
 
-## Key Points
+## 要点
 
-- **Variable Disambiguation:** `this` resolves conflicts when instance variables and parameters share the same name.
-- **Getters and Setters:** `this` is often used in setters to distinguish instance variables.
-- **Constructor Overloading:** `this()` can call other constructors within the same class, helping to reduce code redundancy.
-- **Passing Current Object:** `this` allows you to pass the current object as a method argument, enabling modifications on the current instance.
+- **变量消歧：**实例变量和参数同名时，`this` 可以解决冲突。
+- **getter 和 setter：**`this` 常用于 setter 中区分实例变量。
+- **构造方法重载：**`this()` 可以调用同一个类中的其他构造方法，有助于减少代码冗余。
+- **传递当前对象：**`this` 让你可以把当前对象作为方法参数传入，从而修改当前实例。

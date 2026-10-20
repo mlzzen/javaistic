@@ -1,17 +1,17 @@
 ---
-title: Java Program to check Leap year
-ShortTitle: Check Leap year
-description: In this program, you'll learn to check wheather the given Year (integer) is a leap year or not.
+title: Java 程序：判断闰年
+ShortTitle: 判断闰年
+description: 在本程序中，你将学习如何判断给定的年份（整数）是否为闰年。
 ---
 
-To understand this example, you should have the knowledge of the following Java programming topics:
+要理解本示例，你应当了解以下 Java 编程主题：
 
-- [Java Operator](/docs/operator)
-- [Java Basic Input and Output](/docs/basic-input-output)
+- [Java 运算符](/docs/operator)
+- [Java 基础输入与输出](/docs/basic-input-output)
 
-## Check Leap year
+## 判断闰年
 
-A java program that checks wheather the given year is leap year or not is as follows:
+下面是一个判断给定年份是否为闰年的 Java 程序：
 
 ```java
 import java.util.Scanner;
@@ -21,11 +21,11 @@ class checkLeapYear{
     int year;
     boolean isLeapYear;
     System.out.print("Enter the year to check: ");
-    // instance of scanner class
+    // Scanner 类的实例
     Scanner input = new Scanner(System.in);
-    // taking user input in year variable
+    // 把用户输入存入 year 变量
     year = input.nextInt();
-    // checking weather the year is leap or not
+    // 检查该年份是否为闰年
     isLeapYear = year % 4 == 0;
 
     if(isLeapYear){
@@ -38,26 +38,26 @@ class checkLeapYear{
 }
 ```
 
-#### Output 1
+#### 输出 1
 
 ```plaintext
 Enter the year to check: 2003
 2003 isn't leap year
 ```
 
-#### Output 2
+#### 输出 2
 
 ```plaintext
 Enter the year to check: 2004
 2004 is leap year
 ```
 
-To check weather a `year` is `leap` or not we only need to check weather it's `divisible by 4` or not if it doesn't leave reminder then leap year else not a leap year
+要判断某个 `year` 是否 `leap`（闰年），我们只需检查它是否 `divisible by 4`：如果除后没有余数，就是闰年，否则不是闰年。
 
 <Callout>
 
-Don't know how to take input from the user ? Look at [this examples](/docs/basic-input-output#java-input)
+不知道怎么从用户处获取输入？看看[这些示例](/docs/basic-input-output#java-input)
 
-Here two input numbers are taken from user one after another with space in between them which distinguish between two different inputs, this useful behavior is because of the default settings of Scanner called as Delimiter, [learn more here](https://www.javatpoint.com/post/java-scanner-delimiter-method).
+这里从用户处先后读取两个输入数字，两者之间用空格分隔，以此区分两个不同的输入。这一实用的行为源于 Scanner 的默认设置，即分隔符（Delimiter），[在这里了解更多](https://www.javatpoint.com/post/java-scanner-delimiter-method)。
 
 </Callout>

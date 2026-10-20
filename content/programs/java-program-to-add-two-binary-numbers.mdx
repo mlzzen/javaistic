@@ -1,39 +1,39 @@
 ---
-title: Java Program to Add two Binary Numbers
-shortTitle: Add two Binary Numbers
-description: In this tutorial we will write a java program to add two binary numbers.
+title: Java 程序：两个二进制数相加
+shortTitle: 两个二进制数相加
+description: 在本教程中，我们将编写一个 Java 程序，把两个二进制数相加。
 ---
 
-Binary number system has only two symbols **0** & **1** so a **binary numbers** consists of only 0’s and 1’s. Before we write a program for addition, lets see how we do the addition on paper, this is shown in the diagram below:
-[Addition of two binary numbers]
+二进制数制只有 **0** 和 **1** 两个符号，因此**二进制数**只由 0 和 1 组成。在编写加法程序之前，先看看我们在纸上是如何做加法的，如下图所示：
+[两个二进制数相加的示意图]
 
-## Adding binary numbers in Java
+## 在 Java 中相加二进制数
 
-### Code:
+### 代码：
 
 ```java
 import java.util.Scanner;
 public class JavaExample {
    public static void main(String[] args)
    {
-	//Two variables to hold two input binary numbers
+	//两个变量，用于存放两个输入的二进制数
 	long b1, b2;
 	int i = 0, carry = 0;
 
-	//This is to hold the output binary number
+	//用于存放输出的二进制数
 	int[] sum = new int[10];
 
-	//To read the input binary numbers entered by user
+	//读取用户输入的二进制数
 	Scanner scanner = new Scanner(System.in);
 
-	//getting first binary number from user
+	//获取用户输入的第一个二进制数
 	System.out.print("Enter first binary number: ");
 	b1 = scanner.nextLong();
-	//getting second binary number from user
+	//获取用户输入的第二个二进制数
 	System.out.print("Enter second binary number: ");
 	b2 = scanner.nextLong();
 
-	//closing scanner after use to avoid memory leak
+	//使用后关闭 scanner，避免内存泄漏
 	scanner.close();
 	while (b1 != 0 || b2 != 0)
 	{
@@ -55,7 +55,7 @@ public class JavaExample {
 }
 ```
 
-### Output:
+### 输出：
 
 ```plaintext
 Enter first binary number: 11100

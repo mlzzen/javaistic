@@ -1,52 +1,52 @@
 ---
-title: Java while & do...while loop
-description: In this tutorial, we will learn how to use while and do while loop in Java with the help of examples.
+title: Java while 与 do...while 循环
+description: 在本教程中，我们将借助示例学习如何在 Java 中使用 while 和 do while 循环。
 ---
 
-In computer programming, loops are used to repeat a block of code. For example, if you want to show a message 100 times, then you can use a loop. It's just a simple example; you can achieve much more with loops.
+在计算机编程中，循环用于重复执行某段代码。例如，如果你想显示 100 次消息，就可以使用循环。这只是一个简单的例子；用循环你能做到的事情远不止这些。
 
-In the previous tutorial, you learned about [Java for loop](./for-loop). Here, you are going to learn about `while` and `do...while` loops.
+在上一节教程中，你学习了 [Java for 循环](./for-loop)。这里，你将学习 `while` 循环和 `do...while` 循环。
 
-## Java while loop
+## Java while 循环
 
-Java while loop is used to run a specific code until a certain condition is met. The syntax of the while loop is:
+Java while 循环用于重复执行特定代码，直到满足某个条件为止。while 循环的语法是：
 
 ```java
 while (testExpression) {
-    // body of loop
+    // 循环体
 }
 ```
 
-Here,
+这里的含义是：
 
-1. A `while` loop evaluates the **textExpression** inside the parenthesis `()`.
-2. If the **textExpression** evaluates to `true`, the code inside the `while` loop is executed.
-3. The **textExpression** is evaluated again.
-4. This process continues until the **textExpression** is `false`.
-5. When the **textExpression** evaluates to `false`, the loop stops.
+1. `while` 循环先对括号 `()` 中的 **textExpression** 求值。
+2. 如果 **textExpression** 的值为 `true`，就执行 `while` 循环中的代码。
+3. 再次对 **textExpression** 求值。
+4. 这个过程一直持续，直到 **textExpression** 为 `false`。
+5. 当 **textExpression** 的值为 `false` 时，循环停止。
 
-To learn more about the conditions, visit [Java relational](./operators#3-java-relational-operators) and [logical operators](./operators#4-java-logical-operators).
-
----
-
-## Flowchart of while loop
-
-<img src="https://picsum.photos/600x400" alt="Flowchart of Java while loop" />
+想了解更多关于条件的内容，请访问 [Java 关系运算符](./operators#3-java-relational-operators)和[逻辑运算符](./operators#4-java-logical-operators)。
 
 ---
 
-### Example 1: Display Numbers from 1 to 5
+## while 循环的流程图
+
+<img src="https://picsum.photos/600x400" alt="Java while 循环流程图" />
+
+---
+
+### 示例 1：显示 1 到 5 的数字
 
 ```java
-// Program to display numbers from 1 to 5
+// 显示 1 到 5 的数字的程序
 
 class Main {
   public static void main(String[] args) {
 
-    // declare variables
+    // 声明变量
     int i = 1, n = 5;
 
-    // while loop from 1 to 5
+    // 从 1 到 5 的 while 循环
     while(i <= n) {
       System.out.println(i);
       i++;
@@ -55,7 +55,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 1
@@ -65,21 +65,21 @@ class Main {
 5
 ```
 
-Here is how this program works.
+这个程序是这样工作的。
 
-| Iteration | Variable         | Condition: i `<=` n | Action                                     |
-| --------- | ---------------- | ------------------- | ------------------------------------------ |
-| 1st       | `i = 1` `n = 5`  | `true`              | `1` is printed. `i` is increased to **2**. |
-| 2nd       | `i = 2` `n = 5 ` | `true`              | `2` is printed. `i` is increased to **3**. |
-| 3rd       | `i = 3` `n = 5`  | `true`              | `3` is printed.`i` is increased to **4**.  |
-| 4th       | `i = 4` `n = 5`  | `true`              | `4` is printed. `i` is increased to **5**. |
-| 5th       | `i = 5` ` n = 5` | `true`              | `5` is printed. `i` is increased to **6**. |
-| 6th       | `i = 6` `n = 5`  | `false`             | The loop is terminated                     |
+| 迭代   | 变量             | 条件：i `<=` n | 动作                            |
+| ------ | ---------------- | -------------- | ------------------------------- |
+| 第 1 次 | `i = 1` `n = 5`  | `true`         | 打印 `1`。`i` 增加到 **2**。    |
+| 第 2 次 | `i = 2` `n = 5 ` | `true`         | 打印 `2`。`i` 增加到 **3**。    |
+| 第 3 次 | `i = 3` `n = 5`  | `true`         | 打印 `3`。`i` 增加到 **4**。    |
+| 第 4 次 | `i = 4` `n = 5`  | `true`         | 打印 `4`。`i` 增加到 **5**。    |
+| 第 5 次 | `i = 5` ` n = 5` | `true`         | 打印 `5`。`i` 增加到 **6**。    |
+| 第 6 次 | `i = 6` `n = 5`  | `false`        | 循环终止                        |
 
-### Example 2: Sum of Positive Numbers Only
+### 示例 2：只求正数之和
 
 ```java
-// Java program to find the sum of positive numbers
+// 求正数之和的 Java 程序
 import java.util.Scanner;
 
 class Main {
@@ -87,17 +87,17 @@ class Main {
 
     int sum = 0;
 
-    // create an object of Scanner class
+    // 创建 Scanner 类的对象
     Scanner input = new Scanner(System.in);
 
-    // take integer input from the user
+    // 从用户处获取整数输入
     System.out.println("Enter a number");
     int number = input.nextInt();
 
-    // while loop continues
-    // until entered number is positive
+    // while 循环持续执行
+    // 直到输入的数字为正数
     while (number >= 0) {
-      // add only positive numbers
+      // 只累加正数
       sum += number;
 
       System.out.println("Enter a number");
@@ -110,7 +110,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 Enter a number
@@ -124,53 +124,53 @@ Enter a number
 Sum = 39
 ```
 
-In the above program, we have used the [Scanner class](./scanner) to take input from the user. Here, `nextInt()` takes integer input from the user.
+在上面的程序中，我们使用 [Scanner 类](./scanner)从用户处获取输入。这里，`nextInt()` 从用户处读取整数输入。
 
-The `while` loop continues until the user enters a negative number. During each iteration, the number entered by the user is added to the `sum` variable.
+`while` 循环会一直执行，直到用户输入负数。在每次迭代中，用户输入的数字都会被加到 `sum` 变量上。
 
-When the user enters a negative number, the loop terminates. Finally, the total sum is displayed.
+当用户输入负数时，循环终止。最后，显示总和。
 
-## Java do...while loop
+## Java do...while 循环
 
-The `do...while` loop is similar to while loop. However, the body of `do...while` loop is executed once before the test expression is checked. For example,
+`do...while` 循环与 while 循环类似。不过，`do...while` 循环的循环体会在检查测试表达式之前先执行一次。例如，
 
 ```java
 do {
-    // body of loop
+    // 循环体
 } while(textExpression);
 ```
 
-Here,
+这里的含义是：
 
-1. The body of the loop is executed at first. Then the **textExpression** is evaluated.
-2. If the **textExpression** evaluates to `true`, the body of the loop inside the `do` statement is executed again.
-3. The **textExpression** is evaluated once again.
-4. If the **textExpression** evaluates to `true`, the body of the loop inside the `do` statement is executed again.
-5. This process continues until the **textExpression** evaluates to false. Then the loop stops.
+1. 先执行循环体，然后对 **textExpression** 求值。
+2. 如果 **textExpression** 的值为 `true`，就再次执行 `do` 语句中的循环体。
+3. 再次对 **textExpression** 求值。
+4. 如果 **textExpression** 的值为 `true`，就再次执行 `do` 语句中的循环体。
+5. 这个过程一直持续，直到 **textExpression** 的值为 false。这时循环停止。
 
-## Flowchart of do...while loop
+## do...while 循环的流程图
 
-{/* ![Flowchart of Java do...while loop](https://picsum.photos/600x400?text=Flowchart+of+Java+do...while+loop) */}
+{/* ![Java do...while 循环流程图](https://picsum.photos/600x400?text=Flowchart+of+Java+do...while+loop) */}
 
-Let's see the working of `do...while` loop.
+下面来看 `do...while` 循环的工作过程。
 
 ---
 
-### Example 3: Display Numbers from 1 to 5
+### 示例 3：显示 1 到 5 的数字
 
 ```java
-// Java Program to display numbers from 1 to 5
+// 显示 1 到 5 的数字的 Java 程序
 
 import java.util.Scanner;
 
-// Program to find the sum of natural numbers from 1 to 100.
+// 求 1 到 100 的自然数之和的程序。
 
 class Main {
   public static void main(String[] args) {
 
     int i = 1, n = 5;
 
-    // do...while loop from 1 to 5
+    // 从 1 到 5 的 do...while 循环
     do {
       System.out.println(i);
       i++;
@@ -179,7 +179,7 @@ class Main {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 1
@@ -189,23 +189,23 @@ class Main {
 5
 ```
 
-Here is how this program works.
+这个程序是这样工作的。
 
-| Iteration | Variable         | Condition: i `<=` n | Action                                     |
-| --------- | ---------------- | ------------------- | ------------------------------------------ |
-|           | `i = 1` `n = 5`  | not checked         | `1` is printed. `i` is increased to **2**. |
-| 1st       | `i = 2` `n = 5 ` | `true`              | `2` is printed. `i` is increased to **3**. |
-| 2nd       | `i = 3` `n = 5`  | `true`              | `3` is printed.`i` is increased to **4**.  |
-| 3rd       | `i = 4` `n = 5`  | `true`              | `4` is printed. `i` is increased to **5**. |
-| 4th       | `i = 5` ` n = 5` | `true`              | `5` is printed. `i` is increased to **6**. |
-| 5th       | `i = 6` `n = 5`  | `false`             | The loop is terminated                     |
+| 迭代   | 变量             | 条件：i `<=` n | 动作                            |
+| ------ | ---------------- | -------------- | ------------------------------- |
+|        | `i = 1` `n = 5`  | 未检查         | 打印 `1`。`i` 增加到 **2**。    |
+| 第 1 次 | `i = 2` `n = 5 ` | `true`         | 打印 `2`。`i` 增加到 **3**。    |
+| 第 2 次 | `i = 3` `n = 5`  | `true`         | 打印 `3`。`i` 增加到 **4**。    |
+| 第 3 次 | `i = 4` `n = 5`  | `true`         | 打印 `4`。`i` 增加到 **5**。    |
+| 第 4 次 | `i = 5` ` n = 5` | `true`         | 打印 `5`。`i` 增加到 **6**。    |
+| 第 5 次 | `i = 6` `n = 5`  | `false`        | 循环终止                        |
 
 ---
 
-### Example 4: Sum of Positive Numbers
+### 示例 4：求正数之和
 
 ```java
-// Java program to find the sum of positive numbers
+// 求正数之和的 Java 程序
 import java.util.Scanner;
 
 class Main {
@@ -214,13 +214,13 @@ class Main {
     int sum = 0;
     int number = 0;
 
-    // create an object of Scanner class
+    // 创建 Scanner 类的对象
     Scanner input = new Scanner(System.in);
 
-    // do...while loop continues
-    // until entered number is positive
+    // do...while 循环持续执行
+    // 直到输入的数字为正数
     do {
-      // add only positive numbers
+      // 只累加正数
       sum += number;
       System.out.println("Enter a number");
       number = input.nextInt();
@@ -232,7 +232,7 @@ class Main {
 }
 ```
 
-#### Output 1
+#### 输出 1
 
 ```plaintext
 Enter a number
@@ -246,9 +246,9 @@ Enter a number
 Sum = 39
 ```
 
-Here, the user enters a positive number, that number is added to the `sum` variable. And this process continues until the number is negative. When the number is negative, the loop terminates and displays the sum without adding the negative number.
+这里，用户输入一个正数，这个数就会被加到 `sum` 变量上。这个过程一直持续，直到数字为负数。当数字为负数时，循环终止，并显示不包含该负数的总和。
 
-#### Output 2
+#### 输出 2
 
 ```plaintext
 Enter a number
@@ -256,49 +256,49 @@ Enter a number
 Sum is 0
 ```
 
-Here, the user enters a negative number. The test condition will be `false` but the code inside of the loop executes once.
+这里，用户输入了一个负数。测试条件的结果会是 `false`，但循环内的代码仍然会执行一次。
 
-## Infinite while loop
+## 无限 while 循环
 
-If **the condition** of a loop is always `true`, the loop runs for infinite times (until the memory is full). For example,
+如果循环的**条件**始终为 `true`，循环就会无限次执行（直到内存被占满）。例如，
 
 ```java
-// infinite while loop
+// 无限 while 循环
 while(true){
-    // body of loop
+    // 循环体
 }
 ```
 
-## Infinite do...while loop
+## 无限 do...while 循环
 
-Here is an example of an infinite `do...while` loop.
+下面是无限 `do...while` 循环的一个例子。
 
 ```java
-// infinite do...while loop
+// 无限 do...while 循环
 int count = 1;
 do {
-   // body of loop
+   // 循环体
 } while(count == 1)
 ```
 
-In the above programs, the **textExpression** is always `true`. Hence, the loop body will run for infinite times.
+在上面的程序中，**textExpression** 始终为 `true`。因此，循环体会无限次执行。
 
 ---
 
-## for and while loops
+## for 循环与 while 循环
 
-The `for` loop is used when the number of iterations is known. For example,
+当迭代次数已知时，使用 `for` 循环。例如，
 
 ```java
 for (let i = 1; i <=5; ++i) {
-   // body of loop
+   // 循环体
 }
 ```
 
-And `while` and `do...while` loops are generally used when the number of iterations is unknown. For example,
+而 `while` 和 `do...while` 循环通常用于迭代次数未知的情况。例如，
 
 ```java
 while (condition) {
-    // body of loop
+    // 循环体
 }
 ```

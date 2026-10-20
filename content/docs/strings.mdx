@@ -1,33 +1,33 @@
 ---
-title: Java Strings
-description: Complete guide to Java Strings with examples. Learn String methods, manipulation, comparison, StringBuilder, StringBuffer, and string formatting.
+title: Java 字符串
+description: 通过示例全面了解 Java 字符串。学习 String 方法、字符串操作、字符串比较、StringBuilder、StringBuffer 以及字符串格式化。
 icon: Type
 ---
 
-In Java, strings are objects that represent sequences of characters. The `String` class is one of the most commonly used classes in Java programming.
+在 Java 中，字符串是表示字符序列的对象。`String` 类是 Java 编程中最常用的类之一。
 
-## What is a String in Java?
+## 什么是 Java 中的字符串？
 
-A string is a sequence of characters. In Java, strings are objects of the `String` class. Unlike primitive data types, strings are reference types.
+字符串是字符的序列。在 Java 中，字符串是 `String` 类的对象。与基本数据类型不同，字符串是引用类型。
 
 ```java
 String message = "Hello, World!";
 ```
 
-Here, `message` is a string variable that holds the value "Hello, World!".
+这里，`message` 是一个字符串变量，保存着值“Hello, World!”。
 
-## Creating Strings in Java
+## 在 Java 中创建字符串
 
-There are two main ways to create strings in Java:
+在 Java 中创建字符串主要有两种方式：
 
-### 1. String Literal
+### 1. 字符串字面量
 
 ```java
 String str1 = "Java Programming";
 String str2 = "Javaistic";
 ```
 
-### 2. Using new Keyword
+### 2. 使用 new 关键字
 
 ```java
 String str1 = new String("Java Programming");
@@ -36,57 +36,57 @@ String str2 = new String("Javaistic");
 
 <Callout>
 
-**Note:** String literals are stored in the string pool for memory efficiency, while strings created with `new` keyword are stored in the heap memory.
+**注意：** 字符串字面量存储在字符串池中以提高内存效率，而使用 `new` 关键字创建的字符串存储在堆内存中。
 
 </Callout>
 
-## String Methods
+## 字符串方法
 
-Java provides many useful methods for string manipulation:
+Java 提供了许多用于字符串操作的有用方法：
 
-### 1. length() Method
+### 1. length() 方法
 
-Returns the number of characters in the string.
-
-```java
-class Main {
-    public static void main(String[] args) {
-        String str = "Java";
-        System.out.println("Length: " + str.length()); // Output: 4
-    }
-}
-```
-
-### 2. charAt() Method
-
-Returns the character at the specified index.
+返回字符串中的字符数。
 
 ```java
 class Main {
     public static void main(String[] args) {
         String str = "Java";
-        System.out.println("Character at index 1: " + str.charAt(1)); // Output: a
+        System.out.println("Length: " + str.length()); // 输出：4
     }
 }
 ```
 
-### 3. substring() Method
+### 2. charAt() 方法
 
-Extracts a portion of the string.
+返回指定索引处的字符。
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Java";
+        System.out.println("Character at index 1: " + str.charAt(1)); // 输出：a
+    }
+}
+```
+
+### 3. substring() 方法
+
+提取字符串的一部分。
 
 ```java
 class Main {
     public static void main(String[] args) {
         String str = "Java Programming";
-        System.out.println("Substring: " + str.substring(5)); // Output: Programming
-        System.out.println("Substring: " + str.substring(0, 4)); // Output: Java
+        System.out.println("Substring: " + str.substring(5)); // 输出：Programming
+        System.out.println("Substring: " + str.substring(0, 4)); // 输出：Java
     }
 }
 ```
 
-### 4. toLowerCase() and toUpperCase()
+### 4. toLowerCase() 和 toUpperCase()
 
-Convert string to lowercase or uppercase.
+将字符串转换为小写或大写。
 
 ```java
 class Main {
@@ -98,23 +98,23 @@ class Main {
 }
 ```
 
-### 5. indexOf() Method
+### 5. indexOf() 方法
 
-Returns the index of the first occurrence of a character or substring.
+返回某个字符或子字符串第一次出现处的索引。
 
 ```java
 class Main {
     public static void main(String[] args) {
         String str = "Java Programming";
-        System.out.println("Index of 'a': " + str.indexOf('a')); // Output: 1
-        System.out.println("Index of 'Programming': " + str.indexOf("Programming")); // Output: 5
+        System.out.println("Index of 'a': " + str.indexOf('a')); // 输出：1
+        System.out.println("Index of 'Programming': " + str.indexOf("Programming")); // 输出：5
     }
 }
 ```
 
-## String Comparison
+## 字符串比较
 
-### 1. Using equals() Method
+### 1. 使用 equals() 方法
 
 ```java
 class Main {
@@ -129,7 +129,7 @@ class Main {
 }
 ```
 
-### 2. Using equalsIgnoreCase() Method
+### 2. 使用 equalsIgnoreCase() 方法
 
 ```java
 class Main {
@@ -142,7 +142,7 @@ class Main {
 }
 ```
 
-### 3. Using compareTo() Method
+### 3. 使用 compareTo() 方法
 
 ```java
 class Main {
@@ -150,20 +150,20 @@ class Main {
         String str1 = "Apple";
         String str2 = "Banana";
 
-        System.out.println(str1.compareTo(str2)); // negative value (Apple < Banana)
+        System.out.println(str1.compareTo(str2)); // 负值（Apple < Banana）
     }
 }
 ```
 
 <Callout>
 
-**Important:** Never use `==` operator to compare strings. It compares references, not content.
+**重要：** 永远不要使用 `==` 运算符来比较字符串。它比较的是引用，而不是内容。
 
 </Callout>
 
-## String Concatenation
+## 字符串拼接
 
-### 1. Using + Operator
+### 1. 使用 + 运算符
 
 ```java
 class Main {
@@ -176,7 +176,7 @@ class Main {
 }
 ```
 
-### 2. Using concat() Method
+### 2. 使用 concat() 方法
 
 ```java
 class Main {
@@ -189,11 +189,11 @@ class Main {
 }
 ```
 
-## StringBuilder and StringBuffer
+## StringBuilder 和 StringBuffer
 
-When you need to perform many string operations, use `StringBuilder` or `StringBuffer` for better performance.
+当你需要执行大量字符串操作时，请使用 `StringBuilder` 或 `StringBuffer` 以获得更好的性能。
 
-### StringBuilder Example
+### StringBuilder 示例
 
 ```java
 class Main {
@@ -205,28 +205,28 @@ class Main {
 
         System.out.println(sb.toString()); // Java Programming
 
-        // Insert at specific position
+        // 在指定位置插入
         sb.insert(5, "is ");
         System.out.println(sb.toString()); // Java is Programming
 
-        // Delete characters
+        // 删除字符
         sb.delete(5, 8);
         System.out.println(sb.toString()); // Java Programming
     }
 }
 ```
 
-### StringBuffer vs StringBuilder
+### StringBuffer 与 StringBuilder
 
-| Feature       | StringBuilder                | StringBuffer                |
+| 特性     | StringBuilder | StringBuffer |
 | ------------- | ---------------------------- | --------------------------- |
-| Thread Safety | Not thread-safe              | Thread-safe                 |
-| Performance   | Faster                       | Slower                      |
-| Usage         | Single-threaded applications | Multi-threaded applications |
+| 线程安全     | 非线程安全                  | 线程安全                    |
+| 性能     | 更快                        | 更慢                        |
+| 使用场景     | 单线程应用                  | 多线程应用                  |
 
-## String Formatting
+## 字符串格式化
 
-### 1. Using printf() Method
+### 1. 使用 printf() 方法
 
 ```java
 class Main {
@@ -234,12 +234,12 @@ class Main {
         String name = "John";
         int age = 25;
         System.out.printf("Name: %s, Age: %d%n", name, age);
-        // Output: Name: John, Age: 25
+        // 输出：Name: John, Age: 25
     }
 }
 ```
 
-### 2. Using String.format() Method
+### 2. 使用 String.format() 方法
 
 ```java
 class Main {
@@ -252,32 +252,32 @@ class Main {
 }
 ```
 
-## Common String Operations Example
+## 常见字符串操作示例
 
 ```java
 class StringExample {
     public static void main(String[] args) {
         String text = "  Java Programming Language  ";
 
-        // Remove whitespace
+        // 移除空白字符
         String trimmed = text.trim();
         System.out.println("Trimmed: '" + trimmed + "'");
 
-        // Split string
+        // 拆分字符串
         String[] words = trimmed.split(" ");
         for (String word : words) {
             System.out.println("Word: " + word);
         }
 
-        // Replace characters
+        // 替换字符
         String replaced = trimmed.replace("Java", "Python");
         System.out.println("Replaced: " + replaced);
 
-        // Check if string contains substring
+        // 检查字符串是否包含子字符串
         boolean contains = trimmed.contains("Programming");
         System.out.println("Contains 'Programming': " + contains);
 
-        // Check if string starts with or ends with
+        // 检查字符串是否以某内容开头或结尾
         boolean startsWith = trimmed.startsWith("Java");
         boolean endsWith = trimmed.endsWith("Language");
         System.out.println("Starts with 'Java': " + startsWith);
@@ -286,7 +286,7 @@ class StringExample {
 }
 ```
 
-**Output:**
+**输出：**
 
 ```plaintext
 Trimmed: 'Java Programming Language'
@@ -299,17 +299,17 @@ Starts with 'Java': true
 Ends with 'Language': true
 ```
 
-## Key Points to Remember
+## 需要记住的要点
 
-- Strings in Java are **immutable** - once created, they cannot be changed
-- Use `StringBuilder` for frequent string modifications
-- Always use `.equals()` method to compare string content
-- String literals are stored in the string pool for memory efficiency
-- Use `.trim()` to remove leading and trailing whitespace
-- The `String` class provides many useful methods for manipulation
+- Java 中的字符串是**不可变**的：一旦创建，就不能更改
+- 频繁修改字符串时使用 `StringBuilder`
+- 始终使用 `.equals()` 方法比较字符串内容
+- 字符串字面量存储在字符串池中以提高内存效率
+- 使用 `.trim()` 去除开头和结尾的空白字符
+- `String` 类提供了许多有用的操作方法
 
 <Callout>
 
-**Performance Tip:** When concatenating many strings, use `StringBuilder` instead of the `+` operator to avoid creating multiple intermediate string objects.
+**性能提示：** 拼接大量字符串时，请使用 `StringBuilder` 而不是 `+` 运算符，以避免创建多个中间字符串对象。
 
 </Callout>

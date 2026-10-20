@@ -1,22 +1,22 @@
 ---
-title: Java Program to Find GCD and LCM
-description: Learn to calculate Greatest Common Divisor (GCD) and Least Common Multiple (LCM) using various algorithms including Euclidean method, recursion, and array operations.
+title: 用 Java 程序求最大公约数与最小公倍数
+description: 学习用多种算法计算最大公约数（GCD）与最小公倍数（LCM），包括欧几里得算法、递归以及数组运算。
 ---
 
-## Introduction
+## 简介
 
-The **Greatest Common Divisor (GCD)** and **Least Common Multiple (LCM)** are fundamental mathematical concepts with wide applications in programming, cryptography, and mathematics.
+**最大公约数（GCD）** 与 **最小公倍数（LCM）** 是基础的数学概念，在编程、密码学和数学领域都有广泛的应用。
 
-- **GCD**: The largest positive integer that divides both numbers without a remainder
-- **LCM**: The smallest positive integer that is divisible by both numbers
+- **最大公约数**：能同时整除两个数且没有余数的最大正整数
+- **最小公倍数**：能同时被两个数整除的最小正整数
 
-**Key Relationship**: `LCM(a, b) = (a × b) / GCD(a, b)`
+**关键关系**：`LCM(a, b) = (a × b) / GCD(a, b)`
 
-This tutorial covers multiple algorithms to calculate GCD and LCM in Java, from basic approaches to advanced mathematical methods.
+本教程涵盖在 Java 中计算最大公约数与最小公倍数的多种算法，从基础做法到进阶的数学方法。
 
-## Method 1: Basic GCD and LCM (Brute Force)
+## 方法 1：基本的最大公约数与最小公倍数（暴力法）
 
-This straightforward approach checks all possible divisors to find GCD.
+这种直观的做法会检查所有可能的因数，从而找出最大公约数。
 
 ```java
 import java.util.Scanner;
@@ -61,7 +61,7 @@ public class BasicGCDLCM {
 }
 ```
 
-**Sample Output:**
+**输出示例：**
 
 ```
 Enter first number: 12
@@ -70,16 +70,16 @@ GCD of 12 and 18 = 6
 LCM of 12 and 18 = 36
 ```
 
-## Method 2: Euclidean Algorithm (Most Efficient)
+## 方法 2：欧几里得算法（最高效）
 
-The Euclidean algorithm is the most efficient method for finding GCD, based on the principle that GCD(a, b) = GCD(b, a % b).
+欧几里得算法是求最大公约数最高效的方法，它的依据是 GCD(a, b) = GCD(b, a % b)。
 
 ```java
 import java.util.Scanner;
 
 public class EuclideanGCDLCM {
 
-    // Iterative Euclidean Algorithm
+    // 迭代版欧几里得算法
     public static int findGCD(int a, int b) {
         while (b != 0) {
             int temp = b;
@@ -89,7 +89,7 @@ public class EuclideanGCDLCM {
         return a;
     }
 
-    // Recursive Euclidean Algorithm
+    // 递归版欧几里得算法
     public static int findGCDRecursive(int a, int b) {
         if (b == 0) {
             return a;
@@ -101,7 +101,7 @@ public class EuclideanGCDLCM {
         return (long) a * b / findGCD(a, b);
     }
 
-    // Method to show step-by-step calculation
+    // 逐步展示计算过程的方法
     public static int findGCDWithSteps(int a, int b) {
         System.out.println("Finding GCD using Euclidean Algorithm:");
         System.out.println("GCD(" + a + ", " + b + ")");
@@ -132,7 +132,7 @@ public class EuclideanGCDLCM {
         int a = Math.abs(num1);
         int b = Math.abs(num2);
 
-        // Show step-by-step calculation
+        // 逐步展示计算过程
         int gcd = findGCDWithSteps(a, b);
         long lcm = findLCM(a, b);
 
@@ -141,7 +141,7 @@ public class EuclideanGCDLCM {
         System.out.println("GCD (Recursive): " + findGCDRecursive(a, b));
         System.out.println("LCM: " + lcm);
 
-        // Verification
+        // 验证
         System.out.println("\nVerification:");
         System.out.println(a + " × " + b + " = " + ((long) a * b));
         System.out.println("GCD × LCM = " + gcd + " × " + lcm + " = " + (gcd * lcm));
@@ -151,7 +151,7 @@ public class EuclideanGCDLCM {
 }
 ```
 
-**Sample Output:**
+**输出示例：**
 
 ```
 Enter first number: 48
@@ -174,9 +174,9 @@ Verification:
 GCD × LCM = 6 × 144 = 864
 ```
 
-## Method 3: Extended Euclidean Algorithm
+## 方法 3：扩展欧几里得算法
 
-The Extended Euclidean Algorithm finds GCD and also the coefficients x and y such that ax + by = GCD(a, b).
+扩展欧几里得算法不仅能求出最大公约数，还能求出满足 ax + by = GCD(a, b) 的系数 x 与 y。
 
 ```java
 import java.util.Scanner;
@@ -230,9 +230,9 @@ public class ExtendedEuclideanAlgorithm {
 }
 ```
 
-## Method 4: GCD and LCM for Multiple Numbers
+## 方法 4：多个数的最大公约数与最小公倍数
 
-This program calculates GCD and LCM for arrays of numbers.
+这个程序用于计算一组数的最大公约数与最小公倍数。
 
 ```java
 import java.util.Scanner;
@@ -253,19 +253,19 @@ public class MultipleNumbersGCDLCM {
         return a * b / gcd((int)a, (int)b);
     }
 
-    // GCD of multiple numbers
+    // 多个数的最大公约数
     public static int findArrayGCD(int[] numbers) {
         int result = numbers[0];
         for (int i = 1; i < numbers.length; i++) {
             result = gcd(result, numbers[i]);
             if (result == 1) {
-                break; // Early termination for optimization
+                break; // 提前结束，优化性能
             }
         }
         return result;
     }
 
-    // LCM of multiple numbers
+    // 多个数的最小公倍数
     public static long findArrayLCM(int[] numbers) {
         long result = numbers[0];
         for (int i = 1; i < numbers.length; i++) {
@@ -296,7 +296,7 @@ public class MultipleNumbersGCDLCM {
         System.out.println("GCD of all numbers: " + arrayGCD);
         System.out.println("LCM of all numbers: " + arrayLCM);
 
-        // Show pairwise calculations for educational purposes
+        // 为便于教学，展示两两计算的过程
         System.out.println("\nStep-by-step calculation:");
         int tempGCD = numbers[0];
         long tempLCM = numbers[0];
@@ -318,9 +318,9 @@ public class MultipleNumbersGCDLCM {
 }
 ```
 
-## Method 5: Prime Factorization Approach
+## 方法 5：质因数分解法
 
-This method uses prime factorization to calculate GCD and LCM, which is educational for understanding the mathematical foundation.
+这种方法通过质因数分解来计算最大公约数与最小公倍数，很适合用来理解背后的数学原理。
 
 ```java
 import java.util.*;
@@ -330,13 +330,13 @@ public class PrimeFactorizationGCDLCM {
     public static Map<Integer, Integer> primeFactorization(int n) {
         Map<Integer, Integer> factors = new HashMap<>();
 
-        // Handle factor 2
+        // 处理因子 2
         while (n % 2 == 0) {
             factors.put(2, factors.getOrDefault(2, 0) + 1);
             n /= 2;
         }
 
-        // Handle odd factors
+        // 处理奇数因子
         for (int i = 3; i * i <= n; i += 2) {
             while (n % i == 0) {
                 factors.put(i, factors.getOrDefault(i, 0) + 1);
@@ -344,7 +344,7 @@ public class PrimeFactorizationGCDLCM {
             }
         }
 
-        // If n is still > 2, it's a prime
+        // 如果 n 仍然大于 2，说明它是质数
         if (n > 2) {
             factors.put(n, 1);
         }
@@ -408,16 +408,16 @@ public class PrimeFactorizationGCDLCM {
         System.out.print("Enter second number: ");
         int num2 = scanner.nextInt();
 
-        // Get prime factorizations
+        // 获取质因数分解结果
         Map<Integer, Integer> factors1 = primeFactorization(Math.abs(num1));
         Map<Integer, Integer> factors2 = primeFactorization(Math.abs(num2));
 
-        // Display factorizations
+        // 展示质因数分解
         System.out.println("\nPrime Factorizations:");
         displayFactorization(Math.abs(num1), factors1);
         displayFactorization(Math.abs(num2), factors2);
 
-        // Calculate GCD and LCM
+        // 计算最大公约数与最小公倍数
         int gcd = calculateGCDFromFactors(factors1, factors2);
         long lcm = calculateLCMFromFactors(factors1, factors2);
 
@@ -425,7 +425,7 @@ public class PrimeFactorizationGCDLCM {
         System.out.println("GCD = " + gcd);
         System.out.println("LCM = " + lcm);
 
-        // Verify with Euclidean algorithm
+        // 用欧几里得算法验证
         int euclideanGCD = gcd(Math.abs(num1), Math.abs(num2));
         System.out.println("\nVerification with Euclidean Algorithm:");
         System.out.println("GCD = " + euclideanGCD + " " + (gcd == euclideanGCD ? "✓" : "✗"));
@@ -444,16 +444,16 @@ public class PrimeFactorizationGCDLCM {
 }
 ```
 
-## Method 6: Complete Interactive GCD/LCM Calculator
+## 方法 6：完整的交互式最大公约数与最小公倍数计算器
 
-A comprehensive program with all methods and additional features.
+一个集成了所有方法并带有附加功能的综合程序。
 
 ```java
 import java.util.*;
 
 public class CompleteGCDLCMCalculator {
 
-    // Euclidean Algorithm
+    // 欧几里得算法
     public static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;
@@ -467,7 +467,7 @@ public class CompleteGCDLCMCalculator {
         return (long) a * b / gcd(a, b);
     }
 
-    // Array operations
+    // 数组操作
     public static int arrayGCD(int[] arr) {
         int result = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -484,12 +484,12 @@ public class CompleteGCDLCMCalculator {
         return result;
     }
 
-    // Check if two numbers are coprime
+    // 判断两个数是否互质
     public static boolean areCoprime(int a, int b) {
         return gcd(a, b) == 1;
     }
 
-    // Find all common divisors
+    // 找出所有公因数
     public static List<Integer> findCommonDivisors(int a, int b) {
         List<Integer> divisors = new ArrayList<>();
         int gcdValue = gcd(a, b);
@@ -606,45 +606,45 @@ public class CompleteGCDLCMCalculator {
 }
 ```
 
-## Key Concepts and Algorithms
+## 核心概念与算法
 
-### **1. Euclidean Algorithm**
+### **1. 欧几里得算法**
 
-- **Principle**: GCD(a, b) = GCD(b, a mod b)
-- **Time Complexity**: O(log(min(a, b)))
-- **Most efficient method**
+- **原理**：GCD(a, b) = GCD(b, a mod b)
+- **时间复杂度**：O(log(min(a, b)))
+- **最高效的方法**
 
-### **2. Extended Euclidean Algorithm**
+### **2. 扩展欧几里得算法**
 
-- Finds GCD and coefficients x, y such that ax + by = GCD(a, b)
-- Useful in modular arithmetic and cryptography
+- 求出最大公约数，以及满足 ax + by = GCD(a, b) 的系数 x、y
+- 在模运算和密码学中很有用
 
-### **3. Relationship Between GCD and LCM**
+### **3. 最大公约数与最小公倍数的关系**
 
 - `LCM(a, b) × GCD(a, b) = a × b`
-- This identity allows efficient LCM calculation
+- 利用这个等式可以高效地计算最小公倍数
 
-### **4. Properties**
+### **4. 性质**
 
 - **GCD(a, 0) = a**
 - **LCM(a, b) ≥ max(a, b)**
 - **GCD(a, b) ≤ min(a, b)**
-- **If GCD(a, b) = 1, then a and b are coprime**
+- **若 GCD(a, b) = 1，则 a 与 b 互质**
 
-## Time and Space Complexity
+## 时间复杂度与空间复杂度
 
-| Algorithm           | Time Complexity   | Space Complexity  | Use Case              |
+| 算法 | 时间复杂度 | 空间复杂度 | 适用场景 |
 | ------------------- | ----------------- | ----------------- | --------------------- |
-| Brute Force         | O(min(a, b))      | O(1)              | Small numbers         |
-| Euclidean           | O(log(min(a, b))) | O(1)              | General use           |
-| Recursive Euclidean | O(log(min(a, b))) | O(log(min(a, b))) | Educational           |
-| Prime Factorization | O(√n)             | O(log n)          | Understanding factors |
+| 暴力法 | O(min(a, b)) | O(1) | 较小的数 |
+| 欧几里得算法 | O(log(min(a, b))) | O(1) | 通用 |
+| 递归欧几里得 | O(log(min(a, b))) | O(log(min(a, b))) | 教学演示 |
+| 质因数分解 | O(√n) | O(log n) | 理解因数结构 |
 
-## Practice Exercises
+## 练习题
 
-1. **Reduce Fractions**: Use GCD to simplify fractions to lowest terms
-2. **Scheduling Problems**: Find when events repeat using LCM
-3. **Array Operations**: Find GCD and LCM of arrays efficiently
-4. **Modular Arithmetic**: Use Extended Euclidean for inverse calculations
+1. **约分**：用最大公约数把分数化为最简形式
+2. **排期问题**：用最小公倍数找出事件重复发生的时刻
+3. **数组操作**：高效地求一组数的最大公约数与最小公倍数
+4. **模运算**：用扩展欧几里得算法计算逆元
 
-Understanding GCD and LCM algorithms is essential for many advanced programming concepts and mathematical applications!
+理解最大公约数与最小公倍数的算法，是掌握许多进阶编程概念与数学应用的基础！

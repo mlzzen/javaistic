@@ -1,23 +1,23 @@
 ---
-title: Java Program to Check Perfect Number
-description: Learn to identify perfect numbers in Java with multiple methods, optimizations, and comprehensive examples.
+title: 用 Java 程序判断完数
+description: 学习用多种方法在 Java 中识别完数，包含优化思路与完整示例。
 ---
 
-## Introduction
+## 简介
 
-A **Perfect Number** is a positive integer that is equal to the sum of its proper positive divisors (excluding the number itself). Perfect numbers are rare and have fascinated mathematicians for centuries.
+**完数**（Perfect Number）是一个正整数，它等于自身所有真因数（不包含它本身）之和。完数十分稀少，几个世纪以来一直让数学家着迷。
 
-**Examples:**
+**示例：**
 
-- **6** is perfect: divisors are 1, 2, 3 → 1 + 2 + 3 = 6
-- **28** is perfect: divisors are 1, 2, 4, 7, 14 → 1 + 2 + 4 + 7 + 14 = 28
-- **496** is perfect: sum of divisors equals 496
+- **6** 是完数：因数为 1、2、3 → 1 + 2 + 3 = 6
+- **28** 是完数：因数为 1、2、4、7、14 → 1 + 2 + 4 + 7 + 14 = 28
+- **496** 是完数：所有因数之和等于 496
 
-This tutorial demonstrates multiple approaches to check perfect numbers in Java, from basic to optimized solutions.
+本教程演示在 Java 中判断完数的多种实现方式，从基础写法到优化方案。
 
-## Method 1: Basic Approach with Complete Divisor Check
+## 方法 1：完整检查因数的基本做法
 
-This straightforward method finds all divisors by checking every number from 1 to n-1.
+这种直观的方法会检查从 1 到 n-1 的每一个数，从而找出所有因数。
 
 ```java
 import java.util.Scanner;
@@ -27,13 +27,13 @@ public class PerfectNumberBasic {
 
     public static boolean isPerfectNumber(int number) {
         if (number <= 1) {
-            return false;  // Perfect numbers are positive and > 1
+            return false;  // 完数是正数且大于 1
         }
 
         int sum = 0;
         ArrayList<Integer> divisors = new ArrayList<>();
 
-        // Find all proper divisors (1 to number-1)
+        // 找出所有真因数（1 到 number-1）
         for (int i = 1; i < number; i++) {
             if (number % i == 0) {
                 divisors.add(i);
@@ -41,7 +41,7 @@ public class PerfectNumberBasic {
             }
         }
 
-        // Display divisors for educational purposes
+        // 为便于教学，把因数打印出来
         System.out.print("Divisors of " + number + ": ");
         for (int divisor : divisors) {
             System.out.print(divisor + " ");
@@ -68,7 +68,7 @@ public class PerfectNumberBasic {
 }
 ```
 
-**Sample Output:**
+**输出示例：**
 
 ```
 Enter a number to check if it's perfect: 28
@@ -77,9 +77,9 @@ Sum of divisors: 28
 28 is a Perfect Number! ✓
 ```
 
-## Method 2: Optimized Approach (Up to Square Root)
+## 方法 2：优化做法（只检查到平方根）
 
-This optimized version reduces time complexity by only checking divisors up to the square root.
+这个优化版本只检查到平方根为止的因数，从而降低了时间复杂度。
 
 ```java
 import java.util.Scanner;
@@ -91,15 +91,15 @@ public class PerfectNumberOptimized {
             return false;
         }
 
-        int sum = 1; // 1 is always a divisor (except for 1 itself)
+        int sum = 1; // 1 永远是因数（1 本身除外）
 
-        // Check divisors up to square root
+        // 只检查到平方根为止的因数
         for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
-                sum += i; // Add the divisor
+                sum += i; // 加上这个因数
 
-                // Add the corresponding divisor (number/i)
-                // but avoid adding the square root twice
+                // 再加上与它配对的因数（number/i）
+                // 但避免把平方根重复加两次
                 if (i * i != number) {
                     sum += number / i;
                 }
@@ -132,9 +132,9 @@ public class PerfectNumberOptimized {
 }
 ```
 
-## Method 3: Find All Perfect Numbers in a Range
+## 方法 3：找出某个范围内的所有完数
 
-This program finds all perfect numbers within a specified range.
+这个程序会找出指定范围内的所有完数。
 
 ```java
 import java.util.Scanner;
@@ -194,7 +194,7 @@ public class FindPerfectNumbers {
 }
 ```
 
-**Sample Output:**
+**输出示例：**
 
 ```
 Enter the start of range: 1
@@ -205,16 +205,16 @@ Perfect numbers found: [6, 28, 496]
 Total count: 3
 ```
 
-## Method 4: Using Euclid's Formula for Even Perfect Numbers
+## 方法 4：用欧几里得公式生成偶完数
 
-Euclid discovered that every even perfect number has the form 2^(p-1) × (2^p - 1), where 2^p - 1 is prime.
+欧几里得发现，每一个偶完数都可以写成 2^(p-1) × (2^p - 1) 的形式，其中 2^p - 1 是质数。
 
 ```java
 import java.util.Scanner;
 
 public class EuclidPerfectNumbers {
 
-    // Check if a number is prime
+    // 判断一个数是否为质数
     public static boolean isPrime(long number) {
         if (number < 2) return false;
         if (number == 2) return true;
@@ -228,16 +228,16 @@ public class EuclidPerfectNumbers {
         return true;
     }
 
-    // Generate perfect number using Euclid's formula
+    // 使用欧几里得公式生成完数
     public static long generatePerfectNumber(int p) {
         if (!isPrime(p)) {
-            return -1; // p must be prime
+            return -1; // p 必须是质数
         }
 
         long mersennePrime = (1L << p) - 1; // 2^p - 1
 
         if (!isPrime(mersennePrime)) {
-            return -1; // 2^p - 1 must also be prime (Mersenne prime)
+            return -1; // 2^p - 1 也必须是质数（梅森质数）
         }
 
         return (1L << (p - 1)) * mersennePrime; // 2^(p-1) × (2^p - 1)
@@ -260,13 +260,13 @@ public class EuclidPerfectNumbers {
         } else {
             System.out.println("Perfect number generated: " + perfectNumber);
 
-            // Verify it's actually perfect
+            // 验证它确实是完数
             System.out.println("Verification: " + (isPerfectNumberOptimized(perfectNumber) ? "✓ Confirmed" : "✗ Error"));
         }
 
-        // Show first few perfect numbers using known Mersenne primes
+        // 用已知的梅森质数展示前几个完数
         System.out.println("\nFirst few perfect numbers:");
-        int[] mersennePrimes = {2, 3, 5, 7, 13, 17, 19}; // Known Mersenne prime exponents
+        int[] mersennePrimes = {2, 3, 5, 7, 13, 17, 19}; // 已知的梅森质数指数
 
         for (int prime : mersennePrimes) {
             long perfect = generatePerfectNumber(prime);
@@ -295,9 +295,9 @@ public class EuclidPerfectNumbers {
 }
 ```
 
-## Method 5: Interactive Perfect Number Explorer
+## 方法 5：交互式完数探索器
 
-A comprehensive program that combines all methods with a user-friendly menu.
+一个把上述各种方法整合在一起、带友好菜单的综合程序。
 
 ```java
 import java.util.Scanner;
@@ -420,40 +420,40 @@ public class PerfectNumberExplorer {
 }
 ```
 
-## Mathematical Background
+## 数学背景
 
-### **What Makes a Number Perfect?**
+### **什么样的数才算完数？**
 
-A perfect number n satisfies: **σ(n) - n = n**, where σ(n) is the sum of all divisors including n itself.
+一个完数 n 满足：**σ(n) - n = n**，其中 σ(n) 是包含 n 本身在内的所有因数之和。
 
-### **Known Facts:**
+### **已知事实：**
 
-1. **Even Perfect Numbers**: All known perfect numbers are even
-2. **Euclid's Theorem**: Every even perfect number has the form 2^(p-1) × (2^p - 1)
-3. **Mersenne Primes**: When 2^p - 1 is prime, it's called a Mersenne prime
-4. **Rarity**: Only 51 perfect numbers are known as of 2024
+1. **偶完数**：目前已知的完数全都是偶数
+2. **欧几里得定理**：每个偶完数都具有 2^(p-1) × (2^p - 1) 的形式
+3. **梅森质数**：当 2^p - 1 是质数时，称它为梅森质数
+4. **稀有性**：截至 2024 年，已知的完数只有 51 个
 
-### **First Few Perfect Numbers:**
+### **前几个完数：**
 
 - 6 = 2^1 × (2^2 - 1) = 2 × 3
 - 28 = 2^2 × (2^3 - 1) = 4 × 7
 - 496 = 2^4 × (2^5 - 1) = 16 × 31
 - 8128 = 2^6 × (2^7 - 1) = 64 × 127
 
-## Time and Space Complexity
+## 时间复杂度与空间复杂度
 
-| Method           | Time Complexity | Space Complexity             | Best For                  |
+| 方法 | 时间复杂度 | 空间复杂度 | 适用场景 |
 | ---------------- | --------------- | ---------------------------- | ------------------------- |
-| Basic            | O(n)            | O(k) where k = divisor count | Learning/Small numbers    |
-| Optimized        | O(√n)           | O(1)                         | General use               |
-| Range Search     | O(m × √n)       | O(1)                         | Finding multiple          |
-| Euclid's Formula | O(√p)           | O(1)                         | Generating large perfects |
+| 基础法 | O(n) | O(k)，k 为因数个数 | 学习/较小的数 |
+| 优化法 | O(√n) | O(1) | 通用 |
+| 范围搜索 | O(m × √n) | O(1) | 一次查找多个 |
+| 欧几里得公式 | O(√p) | O(1) | 生成较大的完数 |
 
-## Practice Exercises
+## 练习题
 
-1. **Abundant vs Perfect vs Deficient**: Classify numbers based on sum of proper divisors
-2. **Perfect Number Factorization**: Show the prime factorization of perfect numbers
-3. **Near-Perfect Numbers**: Find numbers where sum of proper divisors = n ± 1
-4. **Performance Comparison**: Benchmark different methods for large numbers
+1. **盈数、完数与亏数**：根据真因数之和给数字分类
+2. **完数的质因数分解**：展示完数的质因数分解形式
+3. **近乎完数**：找出真因数之和等于 n ± 1 的数
+4. **性能比较**：针对较大的数，对不同的方法做性能基准测试
 
-Perfect numbers beautifully demonstrate the intersection of mathematics and programming, making them excellent for learning algorithmic thinking!
+完数完美地展现了数学与编程的交汇之处，非常适合用来训练算法思维！

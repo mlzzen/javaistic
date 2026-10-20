@@ -1,62 +1,62 @@
 ---
-title: Java Methods
-description: In this tutorial, we will learn how to implements methods or functions in Java.
+title: Java 方法
+description: 在本教程中，我们将学习如何在 Java 中实现方法（函数）。
 ---
 
-## What is a Method in Java?
+## Java 中的方法是什么？
 
-In Java, a method is a collection of statements designed to perform specific tasks and, optionally, return a result to the caller. A Java method can also execute a task without returning any value. Methods enable code reuse by eliminating the need to retype code. Importantly, in Java, every method must belong to a class.
+在 Java 中，方法是一组语句的集合，用于执行特定任务，并且可以选择向调用者返回结果。Java 方法也可以只执行任务而不返回任何值。方法通过省去重复输入代码的需要，实现了代码复用。重要的是，在 Java 中每个方法都必须属于某个类。
 
-## Types of Methods in Java
+## Java 中方法的类型
 
-- `User-defined Methods`: Custom methods created by the programmer based on specific requirements.
-- `Standard Library Methods`: Built-in methods provided by Java, ready for immediate use.
+- `用户定义方法`：程序员根据具体需求自行创建的方法。
+- `标准库方法`：Java 提供的内置方法，可以直接使用。
 
-## Declaring a Java Method
+## 声明 Java 方法
 
-The basic syntax for a method declaration is:
+方法声明的基本语法是：
 
 ```java
 returnType methodName() {
-  // method body
+  // 方法体
 }
 ```
 
-1. **returnType:** Specifies the type of value returned by the method. If it doesn’t return a value, the return type is void.
-2. **methodName:** The identifier used to call the method.
-3. **method body:** Code inside `{ }` that defines the task to be performed.
+1. **returnType：** 指定方法返回值的类型。如果方法不返回值，返回类型就是 void。
+2. **methodName：** 用于调用该方法的标识符。
+3. **方法体：** `{ }` 内的代码，定义了要执行的任务。
 
-### Example 1:
+### 示例 1：
 
 ```java
 int addNumbers() {
-  // code
+  // 代码
 }
 ```
 
-In this example, `addNumbers()` is the method name, and its return type is `int`.
+在这个示例中，`addNumbers()` 是方法名，它的返回类型是 `int`。
 
-### For a more detailed declaration:
+### 更详细的声明：
 
 ```java
 modifier static returnType methodName(parameter1, parameter2, ...) {
-  // method body
+  // 方法体
 }
 ```
 
-1. **modifier:** Defines access type (e.g., public, private).
-2. **static:** If included, the method can be called without creating an object.
-3. **parameter1, parameter2, ...parameterN:** Values passed to the method.
+1. **modifier：** 定义访问类型（例如 public、private）。
+2. **static：** 如果加上它，方法无需创建对象就能被调用。
+3. **parameter1, parameter2, ...parameterN：** 传给方法的值。
 
-### Example 2:
+### 示例 2：
 
-The `sqrt()` method in the Math class is static, so it can be accessed as `Math.sqrt()` without creating an instance of Math.
+Math 类中的 `sqrt()` 方法是静态的，因此可以用 `Math.sqrt()` 访问，而不需要创建 Math 的实例。
 
-## Calling a Method in Java
+## 调用 Java 方法
 
-To use a method, call it by name followed by parentheses.
+要使用一个方法，就用方法名加上括号来调用它。
 
-### Java Method Call Example
+### Java 方法调用示例
 
 ```java
 class Main {
@@ -66,26 +66,26 @@ class Main {
 
   public static void main(String[] args) {
     int num1 = 25, num2 = 15;
-    Main obj = new Main(); // Create object of Main class
+    Main obj = new Main(); // 创建 Main 类的对象
     int result = obj.addNumbers(num1, num2);
     System.out.println("Sum is: " + result);
   }
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 Sum is: 40
 ```
 
-Here, the `addNumbers()` method takes two parameters and returns their sum. Since it's not static, it requires an object to be called.
+这里，`addNumbers()` 方法接收两个参数并返回它们的和。由于它不是静态的，所以需要一个对象才能调用。
 
-## Method Return Types
+## 方法的返回类型
 
-A method may or may not return a value. The return statement is used to return a value.
+方法可以返回值，也可以不返回值。返回语句用于返回一个值。
 
-### Example 1: Method returns integer value
+### 示例 1：方法返回整数值
 
 ```java
 public static int square(int num) {
@@ -93,27 +93,27 @@ public static int square(int num) {
 }
 ```
 
-### Example 2: Method does not return any value
+### 示例 2：方法不返回任何值
 
 ```java
-// void keyword is used as function does not return any value
+// 函数不返回任何值，因此使用 void 关键字
 public void printSquare(int num) {
   System.out.println(num * num);
 }
 ```
 
-## Method Parameters
+## 方法参数
 
-Methods can accept parameters, which are values passed to the method.
+方法可以接收参数，参数就是传给方法的值。
 
-### Examples
+### 示例
 
-- **With Parameters:** `int addNumbers(int a, int b)`
-- **Without Parameters:** `int addNumbers()`
+- **带参数：** `int addNumbers(int a, int b)`
+- **不带参数：** `int addNumbers()`
 
-When calling a method with parameters, you must provide values for each parameter.
+调用带参数的方法时，你必须为每个参数提供值。
 
-### Example of Method Parameters
+### 方法参数示例
 
 ```java
 class Main {
@@ -127,13 +127,13 @@ class Main {
 
   public static void main(String[] args) {
     Main obj = new Main();
-    obj.display1();          // No parameters
-    obj.display2(24);        // Single parameter
+    obj.display1();          // 没有参数
+    obj.display2(24);        // 单个参数
   }
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 Method without parameter
@@ -142,15 +142,15 @@ Method with a single parameter: 24
 
 <Callout>
 
-**Note:** _Java requires that argument types match the parameter types._
+**注意：** _Java 要求实参类型与参数类型相匹配。_
 
 </Callout>
 
-## Standard Library Methods
+## 标准库方法
 
-Java includes built-in methods available in the Java Class Library (JCL), which comes with the [JVM and JRE](/docs/jvm-jre-jdk).
+Java 包含 Java 类库（JCL）中提供的内置方法，它们随 [JVM 与 JRE](/docs/jvm-jre-jdk)一起提供。
 
-### Example
+### 示例
 
 ```java
 public class Main {
@@ -160,17 +160,17 @@ public class Main {
 }
 ```
 
-### Output
+### 输出
 
 ```bash
 Square root of 4 is: 2.0
 ```
 
-## Advantages of Using Methods
+## 使用方法的好处
 
-### 1. Code Reusability
+### 1. 代码复用
 
-Define once, use multiple times.
+定义一次，多次使用。
 
 ```java
 private static int getSquare(int x) {
@@ -183,7 +183,7 @@ public static void main(String[] args) {
 }
 ```
 
-### Output:
+### 输出：
 
 ```bash
 Square of 1 is: 1
@@ -193,6 +193,6 @@ Square of 4 is: 16
 Square of 5 is: 25
 ```
 
-### 2. Improved Readability
+### 2. 更好的可读性
 
-Grouping code into methods makes it easier to read and debug.
+把代码分组到方法中，可以让代码更易读、更易调试。

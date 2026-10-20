@@ -1,203 +1,202 @@
 ---
-title: Java Data Types
-description: Complete guide to Java primitive data types with examples. Learn about int, char, boolean, double, float, byte, short, and long data types.
+title: Java 数据类型
+description: Java 基本数据类型完整指南（含示例）。了解 int、char、boolean、double、float、byte、short 和 long 数据类型。
 icon: Database
 ---
 
-## Java Data Types
+## Java 数据类型
 
-As the name suggests, data types specify the type of data that can be stored inside [variables in Java](/docs/variables-and-literals).
+顾名思义，数据类型规定了可以存储在 [Java 变量](/docs/variables-and-literals) 中的数据类型。
 
-Java is a statically-typed language. This means that all variables must be declared before they can be used.
+Java 是一种静态类型语言。这意味着所有变量在使用前都必须先声明。
 
 ```java
 int speed;
 ```
 
-Here, `speed` is a variable, and the data type of the variable is `int`.
+这里，`speed` 是一个变量，该变量的数据类型是 `int`。
 
-The `int` data type determines that the `speed` variable can only contain integers.
+`int` 数据类型决定了 `speed` 变量只能存放整数。
 
-There are 8 data types predefined in Java programming language, known as primitive data types.
+Java 编程语言中预定义了 8 种数据类型，称为基本数据类型。
 
 <Callout>
 
-**Note :** In addition to primitive data types, there are also referenced
-types (object type).
+**注意：** 除了基本数据类型，还有引用类型（对象类型）。
 
 </Callout>
 
-## 8 Primitive Data Types
+## 8 种基本数据类型
 
-### 1. boolean type
+### 1. boolean 类型
 
-- The `boolean` data type has two possible values, either true or false.
-- They are usually used for **true/false** conditions.
-- **Default value : `false`**.
+- `boolean` 数据类型有两个可能的值：true 或 false。
+- 它们通常用于 **true/false** 条件判断。
+- **默认值：`false`**。
 
-#### Example 1: Java `boolean` data type
+#### 示例 1：Java `boolean` 数据类型
 
 ```java
 class Main {
   public static void main(String[] args) {
     boolean flag = true;
-    System.out.println(flag); // prints true
+    System.out.println(flag); // 输出 true
   }
 }
 ```
 
-### 2. byte type
+### 2. byte 类型
 
-- The `byte` data type can have values from **-128** to **127** (8-bit signed two's complement integer).
-- If it's certain that the value of a variable will be within -128 to 127, then it is used instead of int to save memory.
-- **Default value : 0**
+- `byte` 数据类型的取值范围是 **-128** 到 **127**（8 位有符号二进制补码整数）。
+- 如果可以确定变量的值在 -128 到 127 之间，就可以用它代替 int 以节省内存。
+- **默认值：0**
 
-#### Example 2: Java `byte` data type
+#### 示例 2：Java `byte` 数据类型
 
 ```java
 class Main {
   public static void main(String[] args) {
     byte range;
     range = 124;
-    System.out.println(range);    // prints 124
+    System.out.println(range);    // 输出 124
   }
 }
 ```
 
-### 3. short type
+### 3. short 类型
 
-- The `short` data type in Java can have values from **-32768** to **32767** (16-bit signed two's complement integer).
-- If it's certain that the value of a variable will be within -32768 and 32767, then it is used instead of other integer data types (`int`, `long`).
-- **Default value : 0**
+- Java 中的 `short` 数据类型的取值范围是 **-32768** 到 **32767**（16 位有符号二进制补码整数）。
+- 如果可以确定变量的值在 -32768 到 32767 之间，就可以用它代替其他整数数据类型（`int`、`long`）。
+- **默认值：0**
 
-#### Example 3: Java `short` data type
+#### 示例 3：Java `short` 数据类型
 
 ```java
 class Main {
   public static void main(String[] args) {
     short temperature;
     temperature = -200;
-    System.out.println(temperature); // prints -200
+    System.out.println(temperature); // 输出 -200
   }
 }
 ```
 
-### 4. int type
+### 4. int 类型
 
-- The int data type can have values from **-2<sup>31</sup>** to **2<sup>31</sup> -1** (32-bit signed two's complement integer).
-- If you are using Java 8 or later, you can use an unsigned 32-bit integer. This will have a minimum value of 0 and a maximum value of 2<sup>32-1</sup>. To learn more, visit [How to use the unsigned integer in java 8?](http://stackoverflow.com/questions/25556017/how-to-use-the-unsigned-integer-in-java-8)
-- **Default value : 0**
+- int 数据类型的取值范围是 **-2<sup>31</sup>** 到 **2<sup>31</sup> -1**（32 位有符号二进制补码整数）。
+- 如果你使用的是 Java 8 或更高版本，可以使用无符号 32 位整数。它的最小值为 0，最大值为 2<sup>32-1</sup>。想了解更多，请访问 [如何在 Java 8 中使用无符号整数？](http://stackoverflow.com/questions/25556017/how-to-use-the-unsigned-integer-in-java-8)
+- **默认值：0**
 
-#### Example 4: Java `int` data type
+#### 示例 4：Java `int` 数据类型
 
 ```java
 class Main {
   public static void main(String[] args) {
     int range = -4250000;
-    System.out.println(range); // print -4250000
+    System.out.println(range); // 输出 -4250000
   }
 }
 ```
 
-### 5. long type
+### 5. long 类型
 
-- The `long` data type can have values from **-2<sup>63</sup>** to **2<sup>63</sup> -1** (64-bit signed two's complement integer).
-- If you are using Java 8 or later, you can use an unsigned 64-bit integer with a minimum value of 0 and a maximum value of 2<sup>64</sup> -1.
-- **Default value : 0**
+- `long` 数据类型的取值范围是 **-2<sup>63</sup>** 到 **2<sup>63</sup> -1**（64 位有符号二进制补码整数）。
+- 如果你使用的是 Java 8 或更高版本，可以使用无符号 64 位整数，其最小值为 0，最大值为 2<sup>64</sup> -1。
+- **默认值：0**
 
-#### Example 5: Java `long` data type
+#### 示例 5：Java `long` 数据类型
 
 ```java
 class LongExample {
   public static void main(String[] args) {
     long range = -42332200000L;
-    System.out.println(range); // prints -42332200000
+    System.out.println(range); // 输出 -42332200000
   }
 }
 ```
 
-Notice, the use of `L` at the end of `-42332200000`. This represents that it's an integral literal of the `long` type. You will learn about integral literals later in this article.
+注意 `-42332200000` 末尾使用的 `L`。它表示这是一个 `long` 类型的整数字面量。你将在本文后面了解整数字面量。
 
-### 6. double type
+### 6. double 类型
 
-- The `double` data type is a double-precision 64-bit floating-point.
-- It should never be used for precise values such as currency.
-- **Default value : 0.0 (0.0d)**
+- `double` 数据类型是双精度 64 位浮点数。
+- 它绝不应该用于货币等需要精确值的场景。
+- **默认值：0.0（0.0d）**
 
-#### Example 6: Java `double` data type
+#### 示例 6：Java `double` 数据类型
 
 ```java
 class Main {
   public static void main(String[] args) {
     double number = -42.3;
-    System.out.println(number); // prints -42.3
+    System.out.println(number); // 输出 -42.3
   }
 }
 ```
 
-### 7. float type
+### 7. float 类型
 
-- The `float` data type is a single-precision 32-bit floating-point.Learn more about [single-precision and double-precision floating-point](http://stackoverflow.com/questions/801117/whats-the-difference-between-a-single-precision-and-double-precision-floating-p) if you are interested.
-- It should never be used for precise values such as currency.
-- **Default value : 0.0 (0.0f)**
+- `float` 数据类型是单精度 32 位浮点数。如果你感兴趣，可以进一步了解 [单精度与双精度浮点数](http://stackoverflow.com/questions/801117/whats-the-difference-between-a-single-precision-and-double-precision-floating-p)。
+- 它绝不应该用于货币等需要精确值的场景。
+- **默认值：0.0（0.0f）**
 
-#### Example 7: Java `float` data type
+#### 示例 7：Java `float` 数据类型
 
 ```java highlight=3
 class Main {
   public static void main(String[] args) {
     float number = -42.3f;
-    System.out.println(number); // prints -42.3
+    System.out.println(number); // 输出 -42.3
   }
 }
 ```
 
-Notice that, we have used `-42.3f` instead of `-42.3` in the above program. It's because `-42.3` is a `double` literal.
-To tell the compiler to treat `-42.3` as `float` rather than `double`, you need to use `f` or `F`.
-If you want to know about single-precision and double-precision, visit Java single-precision and double-precision floating-point.
+注意，在上面的程序中我们使用了 `-42.3f` 而不是 `-42.3`。这是因为 `-42.3` 是一个 `double` 字面量。
+要告诉编译器把 `-42.3` 当作 `float` 而不是 `double`，你需要使用 `f` 或 `F`。
+如果你想了解单精度和双精度，请访问 Java 单精度和双精度浮点数。
 
-### 8. char type
+### 8. char 类型
 
-- It's a 16-bit Unicode character.
-- The minimum value of the `char` data type is `'\u0000'` (0) and the maximum value of the is `'\uffff'`.
-- **Default value : '\u0000'**
+- 它是 16 位 Unicode 字符。
+- `char` 数据类型的最小值是 `'\u0000'`（0），最大值是 `'\uffff'`。
+- **默认值：'\u0000'**
 
-#### Example 8: Java `char` data type
+#### 示例 8：Java `char` 数据类型
 
 ```java
 class Main {
   public static void main(String[] args) {
     char letter = '\u0051';
-    System.out.println(letter); // prints Q
+    System.out.println(letter); // 输出 Q
   }
 }
 ```
 
-Here, the Unicode value of Q is `\u0051`. Hence, we get Q as the output.
+这里，Q 的 Unicode 值是 `\u0051`。因此，我们得到的输出是 Q。
 
-Here is another example:
+再看一个例子：
 
 ```java
 class Main {
   public static void main(String[] args) {
     char letter1 = '9';
-    System.out.println(letter1); // prints 9
+    System.out.println(letter1); // 输出 9
     char letter2 = 65;
-    System.out.println(letter2); // prints A
+    System.out.println(letter2); // 输出 A
   }
 }
 ```
 
-Here, we have assigned 9 as a character (specified by single quotes) to the letter1 variable. However, the letter2 variable is assigned 65 as an integer number (no single quotes).
+这里，我们把 9 作为字符（用单引号指定）赋给了 letter1 变量。而 letter2 变量被赋值为整数 65（没有单引号）。
 
-Hence, A is printed to the output. It is because Java treats characters as integral types and the ASCII value of A is 65. To learn more about ASCII, visit What is ASCII Code?.
+因此，输出中打印的是 A。这是因为 Java 把字符当作整数类型处理，而 A 的 ASCII 值是 65。想进一步了解 ASCII，请访问“什么是 ASCII 码？”。
 
-## String type
+## 字符串类型
 
-Java also provides support for character strings via java.lang.String class. Strings in Java are not primitive types. Instead, they are objects. For example,
+Java 还通过 java.lang.String 类支持字符串。Java 中的字符串不是基本类型，而是对象。例如：
 
 ```java
 String myString = "Java Programming";
 ```
 
-Here, myString is an object of the String class. To learn more, visit [Java Strings](/docs/string).
+这里，myString 是 String 类的一个对象。想了解更多，请访问 [Java 字符串](/docs/string)。

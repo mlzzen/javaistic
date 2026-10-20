@@ -1,34 +1,34 @@
 ---
-title: Java break Statement
-description: In this tutorial, we will learn how to use the Java break statement to terminate a loop or switch statement.
+title: Java break 语句
+description: 在本教程中，我们将学习如何使用 Java break 语句来终止循环或 switch 语句。
 ---
 
-While working with loops, it is sometimes desirable to skip some statements inside the loop or terminate the loop immediately without checking the test expression.
+在使用循环时，有时我们希望跳过循环内的某些语句，或者不再检查测试表达式而立即终止循环。
 
-In such cases, `break` and `continue` statements are used. You will learn about the Java continue statement in the next tutorial.
+这时就会用到 `break` 和 `continue` 语句。你将在下一节教程中学习 Java continue 语句。
 
-The break statement in Java terminates the loop immediately, and the control of the program moves to the next statement following the loop.
+Java 中的 break 语句会立即终止循环，程序的控制权转移到循环之后的下一条语句。
 
-It is almost always used with decision-making statements (Java if...else Statement).
+它几乎总是与决策语句（Java if...else 语句）一起使用。
 
-Here is the syntax of the break statement in Java:
+下面是 Java 中 break 语句的语法：
 
 ```java
 break;
 ```
 
-## Example 1: Java break statement
+## 示例 1：Java break 语句
 
-Java while loop is used to run a specific code until a certain condition is met. The syntax of the while loop is:
+Java while 循环用于重复执行特定代码，直到满足某个条件为止。while 循环的语法是：
 
 ```java
 class Test {
     public static void main(String[] args) {
 
-        // for loop
+        // for 循环
         for (int i = 1; i <= 10; ++i) {
 
-            // if the value of i is 5 the loop terminates
+            // 如果 i 的值为 5，循环终止
             if (i == 5) {
                 break;
             }
@@ -38,7 +38,7 @@ class Test {
 }
 ```
 
-#### Output
+#### 输出
 
 ```plaintext
 1
@@ -47,7 +47,7 @@ class Test {
 4
 ```
 
-In the above program, we are using the `for` loop to print the value of i in each iteration. To know how for loop works, visit the Java `for` loop. Here, notice the statement,
+在上面的程序中，我们使用 `for` 循环在每次迭代中打印 i 的值。想了解 for 循环的工作原理，请访问 Java `for` 循环。这里请注意这条语句：
 
 ```java
 if (i == 5) {
@@ -55,4 +55,4 @@ if (i == 5) {
 }
 ```
 
-This means when the value of `i` is equal to 5, the loop terminates. Hence we get the output with values less than 5 only.
+这意味着当 `i` 的值等于 5 时，循环终止。因此我们得到的输出中只包含小于 5 的值。

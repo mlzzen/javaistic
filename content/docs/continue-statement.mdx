@@ -1,42 +1,42 @@
 ---
-title: Java continue Statement
-description: In this tutorial, we will learn how to use the Java continue statement to skip the current iteration of a loop.
+title: Java continue 语句
+description: 在本教程中，我们将学习如何使用 Java continue 语句跳过循环的当前迭代。
 ---
 
-While working with loops, sometimes you might want to skip some statements or terminate the loop. In such cases, break and continue statements are used.
+在使用循环时，有时你可能想跳过某些语句，或者终止循环。这时就会用到 break 和 continue 语句。
 
-To learn about the break statement, visit Java break. Here, we will learn about the continue statement.
+想了解 break 语句，请访问 Java break。这里，我们将学习 continue 语句。
 
 ## Java continue
 
-The continue statement skips the current iteration of a loop (for, while, do...while, etc).
+continue 语句会跳过循环（for、while、do...while 等）的当前迭代。
 
-After the continue statement, the program moves to the end of the loop. And, test expression is evaluated (update statement is evaluated in case of the for loop).
+执行 continue 语句后，程序会跳到循环的末尾。然后对测试表达式求值（在 for 循环中则是对更新语句求值）。
 
-Here's the syntax of the continue statement.
+下面是 continue 语句的语法。
 
 ```java
 continue;
 ```
 
-Note: The continue statement is almost always used in decision-making statements (if...else Statement).
+注意：continue 语句几乎总是用在决策语句（if...else 语句）中。
 
-## Working of Java continue statement
+## Java continue 语句的工作原理
 
-The working of continue statement with Java while, do...while, and for loop.
-Working of Java continue Statement
+下面介绍 continue 语句在 Java while、do...while 和 for 循环中的工作原理。
+Java continue 语句的工作原理
 
-### Example 1: Java continue statement
+### 示例 1：Java continue 语句
 
 ```java
 class Main {
   public static void main(String[] args) {
 
-    // for loop
+    // for 循环
     for (int i = 1; i <= 10; ++i) {
 
-      // if value of i is between 4 and 9
-      // continue is executed
+      // 如果 i 的值在 4 和 9 之间
+      // 就执行 continue
       if (i > 4 && i < 9) {
         continue;
       }
@@ -46,7 +46,7 @@ class Main {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 1
@@ -57,7 +57,7 @@ class Main {
 10
 ```
 
-In the above program, we are using the for loop to print the value of i in each iteration. To know how for loop works, visit Java for loop. Notice the statement,
+在上面的程序中，我们使用 for 循环在每次迭代中打印 i 的值。想了解 for 循环的工作原理，请访问 Java for 循环。请注意这条语句：
 
 ```java
 if (i > 4 && i < 9) {
@@ -65,11 +65,11 @@ if (i > 4 && i < 9) {
 }
 ```
 
-Here, the continue statement is executed when the value of i becomes more than 4 and less than 9.
+这里，当 i 的值大于 4 且小于 9 时，就会执行 continue 语句。
 
-It then skips the print statement for those values. Hence, the output skips the values 5, 6, 7, and 8.
+于是这些数值对应的打印语句被跳过。因此，输出中跳过了 5、6、7 和 8。
 
-### Example 2: Compute the sum of 5 positive numbers
+### 示例 2：计算 5 个正数之和
 
 ```java
 import java.util.Scanner;
@@ -78,16 +78,16 @@ class Main {
   public static void main(String[] args) {
 
     Double number, sum = 0.0;
-    // create an object of Scanner
+    // 创建一个 Scanner 对象
     Scanner input = new Scanner(System.in);
 
     for (int i = 1; i < 6; ++i) {
       System.out.print("Enter number " + i + " : ");
-      // takes input from the user
+      // 从用户处获取输入
       number = input.nextDouble();
 
-      // if number is negative
-      // continue statement is executed
+      // 如果数字为负数
+      // 就执行 continue 语句
       if (number <= 0.0) {
         continue;
       }
@@ -100,7 +100,7 @@ class Main {
 }
 ```
 
-#### Output:
+#### 输出：
 
 ```plaintext
 Enter number 1: 2.2
@@ -111,7 +111,7 @@ Enter number 5: -3
 Sum = 7.8
 ```
 
-In the above example, we have used the for loop to print the sum of 5 positive numbers. Notice the line,
+在上面的示例中，我们使用 for 循环来求 5 个正数之和。请注意这一行：
 
 ```java
 if (number < 0.0) {
@@ -119,6 +119,6 @@ if (number < 0.0) {
 }
 ```
 
-Here, when the user enters a negative number, the continue statement is executed. This skips the current iteration of the loop and takes the program control to the update expression of the loop.
+这里，当用户输入负数时，就会执行 continue 语句。这会跳过循环的当前迭代，并把程序的控制权交给循环的更新表达式。
 
-Note: To take input from the user, we have used the Scanner object. To learn more, visit Java Scanner.
+注意：为了从用户处获取输入，我们使用了 Scanner 对象。想了解更多内容，请访问 Java Scanner。
